@@ -1,0 +1,7 @@
+position{
+    default-static
+    relative - relative to the static positioning
+    fixed - fixed to a some position from the body context
+    sticky - get stick to a point
+    absolute - fallback to the realtively placed parent element
+}
