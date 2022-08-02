@@ -100,7 +100,7 @@ img#home-portrait {
     width: 480px;
     height: 620px;
     right: 50px;
-    top: -20px;
+    top: -7px;
     filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.25));
 }
 
@@ -126,6 +126,11 @@ div#more {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#expand:hover {
+    background-color: gainsboro;
+    cursor: pointer;
 }
 
 /* about */
