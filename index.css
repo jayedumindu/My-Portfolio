@@ -132,7 +132,6 @@ div#more {
 
 #about {
     height: auto;
-    border-bottom: 1px solid #1B2155 ;
     display: flex;
     justify-content: flex-end;
     background: linear-gradient(180deg, #BBC8CE 0%, rgba(255, 255, 255, 0) 100%);
@@ -174,4 +173,94 @@ div#more {
     font-weight: 550;
     font-size: 18px;
     line-height: 28px;
+}
+
+/* carrier */
+#carrier {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.3fr 1fr 1fr 1fr 1fr;
+    position: relative;
+    width: auto;
+    height: auto;
+    background-image: url(assets/images/carrier-background.jpg);
+    /* background-position: center; */
+    background-size: cover;
+}
+
+#carrier-heading {
+    grid-column: 1 / span 2 ;
+    grid-row: 1 / 1;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.info-box{
+    text-align: center;
+    width: 389px;
+    height: 145px;
+    display: inline-block;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    justify-self: center;
+    align-self: center;
+}
+
+.info-box-data {
+    font-family: 'Work Sans';
+    font-weight: 800px;
+}
+
+#lap1 {
+    top: 150px;
+    left: calc(50% - 50px);
+    position: absolute;
+}
+
+#lap2 {
+    top: 310px;
+    left: calc(50% - 50px);
+    position: absolute;
+}
+
+#lap3 {
+    bottom: 220px;
+    left: calc(50% - 50px);
+    position: absolute;
+}
+
+#lap4 {
+    bottom: 50px;
+    left: calc(50% - 50px);
+    position: absolute;
+}
+
+#line {
+    left: 50%;
+    top: 110px;
+    height: 85%;
+    position: absolute;
+}
+
+#carrier-box1 {
+    margin-top: 20px;
+    align-self: end;
+    grid-column: 1 / 1 ;
+    grid-row: 2 / 2;
+}
+
+#carrier-box2 {
+    grid-column: 2 / 2 ;
+    grid-row: 3 / 3;
+}
+
+#carrier-box3 {
+    grid-column: 1 / 1 ;
+    grid-row: 4 / 4;
+}
+
+#carrier-box4 {
+    margin-bottom: 30px;
+    grid-column: 2 / 2 ;
+    grid-row: 5 / 5;
 }
