@@ -5,3 +5,10 @@ position{
     sticky - get stick to a point
     absolute - fallback to the realtively placed parent element
 }
+
+display{
+    inline - no effect of width and height
+    inline-block - display as inline but width and height takes place
+}
+
+<<<<<<--------- deafult browser styles added by browser -------->>>>>>
