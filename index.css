@@ -1,3 +1,7 @@
+/* google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
 /* removing deafult properties */
 body, body * {
     z-index: 0;
@@ -5,20 +9,18 @@ body, body * {
     margin: 0px;
 }
 
-a {
-    padding: 30px;
-}
-
 h1, h2, h3, h4, h5, p, button, a{
     font-style: normal;
     padding: 10px;
-    font-family: sans-serif;
+    font-family: 'Roboto Mono';
 }
 
 h1 {
+    color: rgb(45, 40, 65);
     font-weight: 600;
     font-size: 64px;
     line-height: 77px;
+    text-shadow: -3px -3px 3px rgba(192, 129, 129, 0.342);
 }
 
 h3 {
@@ -28,15 +30,27 @@ h3 {
 }
 
 h4 {
-    font-weight: 500;
-    font-size: 18px;
+    font-weight: 550;
+    font-size: 22px;
     line-height: 24px;
 }
 
-p, a {
-    font-weight: 400;
+a {
+    font-weight: 550;
+    font-size: 20px;
+    padding: 30px;
+}
+
+p {
+    font-weight: 500;
+    font-family: 'Work Sans';
     font-size: 20px;
     line-height: 24px;
+}
+.main-section {
+    position: relative;
+    height: 703px;
+    width:auto;
 }
 
 /* navigation bar */
@@ -74,7 +88,6 @@ p, a {
 
 /* homepage */
 #home {
-    height: 703px;
     display: grid;
     grid-template-columns: auto;
     justify-content: space-evenly;
@@ -84,18 +97,16 @@ p, a {
 
 img#home-portrait {
     position: absolute;
-    width: 500px;
-    height: 650px;
-    right: 80px;
+    width: 480px;
+    height: 620px;
+    right: 50px;
     top: -20px;
     filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.25));
 }
 
 #overflow-text {
-    color: black;
     position: absolute;
     top: 160px;
-    text-shadow: 1px -2px 1px whitesmoke;
 }
 /* done */
 div#home-desc {
@@ -115,4 +126,52 @@ div#more {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* about */
+
+#about {
+    height: auto;
+    border-bottom: 1px solid #1B2155 ;
+    display: flex;
+    justify-content: flex-end;
+    background: linear-gradient(180deg, #BBC8CE 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+#about-portrait {
+    visibility: none;
+    position: absolute;
+    width: 520px;
+    height: 657px;
+    left: 260px;
+    top: 210px;
+}
+
+#about-text {
+    position: relative;
+    margin-right: 70px;
+}
+
+#about-portrait-eclipse {
+    position: absolute;
+    right: 0;
+    height: 1064px;
+}
+
+#about-portrait-frame {
+    width: 569px;
+    height: 778px;
+    position: absolute;
+    left: 200px;
+    top: 150px;
+}
+
+.about-desc {
+    padding: 15px;
+    margin-left: 50px;
+    list-style-type: disc;
+    font-family: 'Work Sans';
+    font-weight: 550;
+    font-size: 18px;
+    line-height: 28px;
 }
