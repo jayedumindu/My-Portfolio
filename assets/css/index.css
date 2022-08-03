@@ -114,7 +114,7 @@ img#home-portrait {
     position: absolute;
     top: 160px;
 }
-/* done */
+
 div#home-desc {
     color: #323438;
     display: flex;
@@ -464,12 +464,10 @@ div#more {
 #e-school {
     grid-row: 3/3;
     grid-column: 1/1;
-    /* align-self: start; */
 }
 #blue-ocean {
     grid-row: 3/3;
     grid-column: 3/3;
-    /* align-self: start; */
 }
 
 /* button transitions */
@@ -503,3 +501,18 @@ svg {
     stroke-dashoffset: -480;
 }
   
+/* feedback-area */
+
+#feedback {
+    display: inline-flex;
+}
+
+#feedback-header {
+    font-size: 25px;
+    color: #927979;
+    text-align: center;
+}
+
+/* #slideArea {
+
+} */
