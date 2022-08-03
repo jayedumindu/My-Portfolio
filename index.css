@@ -9,6 +9,12 @@ body, body * {
     margin: 0px;
 }
 
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 h1, h2, h3, h4, h5, p, button, a{
     font-style: normal;
     padding: 10px;
@@ -214,7 +220,6 @@ div#more {
     width: auto;
     height: auto;
     background-image: url(assets/images/carrier-background.jpg);
-    /* background-position: center; */
     background-size: cover;
 }
 
@@ -294,3 +299,207 @@ div#more {
     grid-column: 2 / 2 ;
     grid-row: 5 / 5;
 }
+
+/* srevices */
+
+#services {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+
+#service-heading {
+    margin: 20px;
+    color: #FFFFFF;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+}
+
+#ser-eclipse {
+    width: 100%;
+}
+
+#service-main {
+    position: absolute;
+    top: 200px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.services-box {
+    padding: 20px;
+    background-color: aliceblue;
+    width: 227px;
+    height: 317px;
+    border-radius: 10px;
+    filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.25));
+    transition: all ease 0.2s;
+}
+
+.ser-list-head {
+    font-family: 'Work Sans';
+}
+
+.services-box:hover {
+    cursor: pointer;
+    filter: none;
+    transform: scale(0.99);
+}
+
+.ser-list {
+    list-style-image: url(assets/images/service-check-icon.png);
+    margin-left: 30px;
+    font-family: 'Work Sans';
+    line-height: 0.8cm;
+    color: #1c222e;
+}
+
+#service-tech {
+    margin-top: 250px;
+    margin-bottom: 100px;
+    width: auto;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+}
+
+/* projects */
+
+#projects {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr 2fr;
+    align-items: start;
+    background-image: url(assets/images/projects-cover.png);
+    background-size: cover;
+    width: 100%;
+}
+
+#pro-header {
+    text-align: center;
+    color: aliceblue;
+    font-size: 50px;
+}
+
+#pro-desc {
+    text-align: center;
+    display: inline-block;
+    width: 500px;
+    background-color: #BEC9CF;
+    align-items: center;
+    padding: 20px;
+}
+
+#pro-article {
+    align-self: center;
+    justify-self: center;
+    grid-column: 2/2;
+    grid-row: 2/2;
+}
+
+#social-topic {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+#social-icon {
+    position: relative;
+    width: 35px;
+    height: 50px;
+    bottom: -15px;
+}
+
+.pro-pallets-grp1 {
+    background: linear-gradient(180deg, #927979 0%, rgba(227, 227, 227, 0) 100%);
+    filter: drop-shadow(8px 8px 32px rgba(64, 68, 77, 0.08));
+    border-radius: 8px;
+    padding: 20px;
+    width: 277px;
+    height: 317px;
+    text-align: center;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    align-self: center;
+    justify-self: center;
+}
+
+.pro-pallets-grp2 {
+    background: linear-gradient(180deg, #525C44 0%, rgba(82, 92, 68, 0) 100%);
+    filter: drop-shadow(8px 8px 32px rgba(64, 68, 77, 0.08));
+    border-radius: 8px;
+    padding: 20px;
+    width: 277px;
+    height: 317px;
+    text-align: center;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    align-self: center;
+    justify-self: center;
+}
+
+.pro-pallets-grp2 h2, .pro-pallets-grp1 h2 {
+    color: #FFFBFA;
+}
+
+.pro-pallets-grp2 p {
+    padding: 20px;
+    color: #AFBCCF;
+}
+
+.pro-pallets-grp1 p {
+    padding: 20px;
+    color: #FCE6E6;
+}
+
+#farmeez {
+    grid-row: 1/1;
+    grid-column: 1/1;
+}
+#expo-rail {
+    grid-row: 1/1;
+    grid-column: 3/3;
+}
+#e-school {
+    grid-row: 3/3;
+    grid-column: 1/1;
+    /* align-self: start; */
+}
+#blue-ocean {
+    grid-row: 3/3;
+    grid-column: 3/3;
+    /* align-self: start; */
+}
+
+/* button transitions */
+.pro-btn {
+    position: relative;
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    outline: none;
+    transition: 1s ease-in-out;
+}
+  
+svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: #fff;
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+}
+  
+.pro-btn:hover {
+    background: rgba(148, 147, 163, 0.2);
+}
+  
+.pro-btn:hover svg {
+    stroke-dashoffset: -480;
+}
+  
