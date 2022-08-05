@@ -106,7 +106,7 @@
             </div>
         </section>
         
-        <section id="carrier" class="main-section">
+        <section id="carrier" class="main-section" style="background-image:  url(assets/images/carrier-background.jpg);">
             <h1 id="carrier-heading">ACCOMPISHMENTS</h1>
             <!-- divs for article-box(s) -->
             <div class="info-box" id="carrier-box1">
@@ -189,7 +189,7 @@
             </article>
         </section>
 
-        <section id="projects">
+        <section id="projects" style="background-image: url(assets/images/projects-cover.png);">
             <article id="pro-article">
                 <h1 id="pro-header">FEATURED PROJECTS</h1>
                 <p id="pro-desc">
@@ -260,31 +260,34 @@
             <h1 id="feedback-header">CLIENTS'S FEEDBACK</h1>
             <!-- for slides -->
             <section id="slideArea">
-                <button>prev</button>
+                <img src="assets/images/left-ico.svg" alt="prev" class="control-btn">
                 <div id="slide">
+                    <img src="assets/images/demo-profile.png" alt="profile" id="feedback-profile">
                     <p> simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</p>
-                    <h4>Sundar Pichai</h4>
-                    <h3>CEO at Google</h3>
-                    <input type="range" id="range" min="0" max="5" value="1"><br><br>
+                    <h4 id="profile-name">Sundar Pichai <br> <span>CEO at Google</span></h4>
                 </div>
                 <!-- buttons for navigation -->
-                <button>next</button>
+                <img src="assets/images/right-ico.svg" alt="next" class="control-btn">
             </section>
             <!-- for input area -->
             <section id="feedbackArea">
-                <form>
-                    <fieldset>
-                        <legend>we would love to hear from you!</legend>
-                        <label for="name">Your Name : </label>
-                        <input type="text" id="name"><br><br>
-                        <label for="proffesion">Proffesion : </label>
-                        <input type="text" id="proffesion"><br><br>
-                        <label for="message">Message : </label>
-                        <input type="text" id="message"><br><br>
-                        <label for="range">Review with stars : </label>
-                        <input type="range" id="range" min="0" max="5"><br><br>
-                        <button type="submit">Submit</button>
-                    </fieldset>
+                <form id="feedback-form">
+                        <h4 id="">We would love to hear from you!</h4>
+                        <div>
+                            <p>Name</p>
+                            <input type="text" id="name">
+                            <p>Proffession</p>
+                            <input type="text" id="proffesion">
+                        </div>
+                        <div>
+                            <p>Message</p>
+                            <textarea id="message" name="story" rows="5" cols="33">
+                                It was a dark and stormy night...
+                            </textarea>
+                        </div>
+                        <div>
+                            <button type="submit" id="feedback">Submit</button>
+                        </div>
                 </form>
             </section>
         </section>
