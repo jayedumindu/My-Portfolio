@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+}
+
+#main {
+    width: 100vw;
+    height: 100vh;
+}
+
+.coloured-rect {
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+    position: absolute;
+}
+
+#red-rect {
+    left: 0;
+    top: 0;
+    background-color: red;
+}
+#green-rect {
+    right: 0;
+    top: 0;
+    background-color: green;
+}
+#yellow-rect {
+    bottom: 0;
+    left: 0;
+    background-color: yellow;
+}
+#pink-rect {
+    right: 0;
+    bottom: 0;
+    background-color: pink;
+}
+
+.white-circle {
+    width: calc(100% / 4);
+    height: 50%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 100%;
+    background-color: white;
+    position: absolute;
+}
+
+.red-square{
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    background-color: red;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+}
+
+#middle-square {
+    background-color: white;
+    width: calc(100% / 8);
+    height: 25%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+}
+
+#middle-square>div {
+    background-color: red;
+    width: 50%;
+    height: 50%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 50%;
+    position: absolute;
+}
+
+/* QUARTER CIRCLES */
+
+.quarter-circle {
+    width: calc(100% / 8);
+    height: 25%;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#TOP-LEFT {
+    left: calc((100% / -8) / 2);
+    top: calc(25% / -2);
+}
+
+#BOTTOM-LEFT {
+    left: calc((100% / -8) / 2);
+    bottom: calc(25% / -2);
+}
+
+#BOTTOM-RIGHT {
+    right: calc((100% / -8) / 2);
+    bottom: calc(25% / -2);
+}
+
+#TOP-RIGHT {
+    right: calc((100% / -8) / 2);
+    top: calc(25% / -2);
+}
+
+.half-circle {
+    background-color: white;
+    margin: auto;
+    width: calc(100% / 16);
+    height: calc(100% / 8);
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.half-circle[id='top'] {
+    top: calc((100% / -8) / 2);
+    border-radius: 0 0 50% 50%;
+}
+
+.half-circle[id='bottom'] {  
+    bottom: calc((100% / -8) / 2);
+    border-radius: 50% 50% 0 0;
+}
