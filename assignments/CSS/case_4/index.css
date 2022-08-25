@@ -29,6 +29,7 @@ card colours - red, blue, grey, orange
 }
 
 .header {
+    z-index: 1;
     position: sticky;
     top: 0;
     padding: 20px;
