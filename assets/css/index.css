@@ -68,8 +68,6 @@ p {
 }
 .main-section {
     position: relative;
-    height: 703px;
-    width:auto;
 }
 
 /* navigation bar */
@@ -107,6 +105,7 @@ p {
 
 /* homepage */
 #home {
+    height: 703px;
     display: grid;
     grid-template-columns: auto;
     justify-content: space-evenly;
@@ -203,7 +202,7 @@ div#more {
 #about-portrait-eclipse {
     position: absolute;
     right: 0;
-    height: 1064px;
+    height: 100%;
 }
 
 #about-portrait-frame {
@@ -232,7 +231,6 @@ div#more {
     position: relative;
     width: auto;
     height: auto;
-    /* background-image: url(assets/images/carrier-background.jpg); */
     background-size: cover;
 }
 
@@ -386,7 +384,6 @@ div#more {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 2fr 1fr 2fr;
     align-items: start;
-    /* background-image: url(assets/images/projects-cover.png); */
     background-size: cover;
     width: 100%;
 }
@@ -624,3 +621,62 @@ button#feedback {
     width: 376px;
     height: 105px;
 }
+
+/* Contact */
+#contact {
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(233, 233, 235, 0.92) 40.63%, rgba(28, 34, 46, 0.1) 100%);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#contact>h1 {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+#info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* footer */
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    background-color: #202931;
+}
+
+footer>div {
+    text-align: center;
+}
+
+footer h1 {
+    all: initial;
+    font-size: 30px;
+    color: white;
+    padding: 30px;
+    display: inline-block;
+}
+
+footer>ul>li {
+    color: #AFBCCF;
+    display: inline;
+}
+
+footer>p {
+    color: grey;
+    font-size: smaller;
+    padding-bottom: 30px;
+}
+
+
+
