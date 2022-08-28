@@ -71,9 +71,10 @@ p {
     font-size: 20px;
     line-height: 24px;
 }
+
 .main-section {
     position: relative;
-}
+}    
 
 /* navigation bar */
 #header {

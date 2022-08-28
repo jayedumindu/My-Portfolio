@@ -1,0 +1,56 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,1fr);
+}
+
+#b1 {
+    background-color: red;
+}
+
+#b2 {
+    background-color: green;
+}
+
+#b3 {
+    background-color: red;
+}
+
+#b4 {
+    background-color: rebeccapurple;
+}
+
+#b5 {
+    background-color: rgb(234, 85, 110);
+}
+
+#b6 {
+    background-color: blue;
+}
+
+#b7 {
+    background-color: brown;
+}
+
+#b8 {
+    background-color: pink;
+}
+
+#b9 {
+    background-color: purple;
+}
+
+#b10 {
+    background-color: yellow;
+}
+
+#b11 {
+    background-color: grey;
+}
+
+#b12 {
+    background-color: aqua;
+}
