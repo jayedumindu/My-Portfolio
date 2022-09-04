@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(5, 2fr);
+    height: 100vh;
+    align-items: center;
+}
+
+div{
+    position: relative;
+    color: aliceblue;
+    background-color: blueviolet;
+    width: fit-content;
+    padding: 0 5px;
+    box-shadow: -2px -2px 5px grey;
+    height: fit-content;
+    left: -200px;
+    transition: left 1s;
+}
+
+body>div:nth-child(3) {
+    left: -230px;
+}
+body>div:nth-child(4) {
+    left: -210px;
+}
+
+body>div:nth-child(3):hover, body>div:nth-child(4):hover{
+    left: 0;
+}
+
+div:hover {
+    left: 0;
+}
+
+
