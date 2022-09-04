@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    height: 100vh;
+    background-color: rgb(116, 116, 201);
+}
+
+h1{
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    color: aliceblue;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#ring, #marker {
+    width: 500px;
+    height: 500px;
+}
+
+#ring {
+    background-color: aliceblue;
+}
+
+#marker {
+    border-radius: 50%;
+    background: linear-gradient(0deg, transparent 70%, #bd1c1c 30%);
+    transition: all 1s; 
+}
+
+#circle {
+    background-color: grey;
+    width: 400px;
+    height: 400px;
+}
+
+#circle, #ring {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+}
+
+#circle:hover {
+    cursor: pointer;
+}
+
+#ring:hover > #marker{
+    transform: rotate(360deg); 
+}
