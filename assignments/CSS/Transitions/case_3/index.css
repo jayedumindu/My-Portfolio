@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    height: 100vh;
+}
+
+div {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    background-color: orange;
+    border-radius: 50px;
+    animation: shakabum 5s ease-in-out 0s infinite alternate;
+}
+
+@keyframes shakabum {
+    0%{
+        background-color: blue;
+        margin: 10vh 0 0 0;
+    }
+    25%{
+        background-color: yellow;
+        margin: 10vh 0 0 90vw;
+        transform: rotate(360deg);
+    }
+    50%{
+        background-color: rgb(255, 0, 0);
+        margin: 80vh 0 0 90vw;
+        transform: rotate(0deg);
+    }
+    75%{
+        background-color: rgb(212, 65, 218);
+        margin: 80vh 0 0 0;
+        transform: rotate(360deg);
+    }
+    100%{
+        background-color: rgb(8, 0, 255);
+        margin: 10vh 0 0 0;
+        transform: rotate(0deg);
+    }
+}
