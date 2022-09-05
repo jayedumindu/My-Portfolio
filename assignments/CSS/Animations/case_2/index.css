@@ -8,12 +8,12 @@ div{
     border-radius: 50%;
     width: 250px;
     height: 250px;
-    animation: droplet 3s linear 0s infinite normal;
+    animation: droplet 1s linear 0s infinite normal;
 }
 
 @keyframes droplet {
     0%{
-        border: 5px solid rgb(198, 83, 83);
+        border: 10px solid rgb(198, 83, 83);
         opacity: 1;
     }
     25%{
