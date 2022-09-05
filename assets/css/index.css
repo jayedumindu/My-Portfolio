@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
 
 /* removing deafult properties */
 body, body * {
@@ -74,6 +74,7 @@ p {
 
 .main-section {
     position: relative;
+    width: 100vw;
 }    
 
 /* navigation bar */
@@ -327,7 +328,6 @@ div#more {
 }
 
 #service-heading {
-    margin: 20px;
     color: #FFFFFF;
     text-align: center;
     position: absolute;
