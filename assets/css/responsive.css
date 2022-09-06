@@ -10,23 +10,12 @@
 
 }
 
-/* tablet */
-@media all and (min-width:425px) and (max-width:768px) {
 
-}
+  
 
-/* mobile large */
-@media all and (min-width:375px) and (max-width:425px) {
 
-}   
-
-/* mobile medium */
-@media all and (min-width:320px) and (max-width:375px) {
-
-}
-
-/* mobile small */
-@media all and (min-width:320px) and (max-width:768px) {
+/* mobile small,medium,large */
+@media (min-width:320px) and (max-width:768px) {
 
     #navbar {
         display: none;
@@ -53,6 +42,10 @@
         top: 80px;
         width: 80%;
         text-align: center;
+    }
+
+    div#home-desc *{
+        padding: 0;
     }
 
     #home-desc>img{
@@ -173,7 +166,7 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(5, auto);
-        background-image: none;
+        background-image: hidden;
         align-items: center;
         height: fit-content;
     }
@@ -184,7 +177,8 @@
 
     #pro-article, #pro-desc{
         width: 100%;
-        padding: 0;
+        padding: 5px;
+        border-radius: 5px;
     }
 
 
@@ -271,5 +265,89 @@
     }
 
 }
+
+/* mobile-large : tablet */
+@media all and (min-width:425px) and (max-width:768px) {
+
+
+    h3,p,h4 {
+        font-size: 0.9em;
+    }
+
+    #about-text {
+        width: 100%;
+    }
+
+    #about-text h4 {
+        text-align: center;
+    }
+
+    .about-desc {
+        text-align: center;
+    }
+
+
+    /* services */
+
+    #service-heading {
+        font-size: 30px;
+    }
+
+    #service-main {
+        flex-wrap: nowrap;
+    }
+
+    .services-box {
+        width: max-content;
+        height: max-content;
+    }
+
+    /* projects */
+
+    #projects {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+    }
+
+    #projects br {
+        display: none;
+    }
+
+    #pro-article {
+        grid-column: 1 / span 2;
+        grid-row: 1 / 1;
+    }
+
+    #pro-header {
+        font-size: 25px;
+    }
+
+    #farmeez, #expo-rail, #e-school, #blue-ocean {
+        width: 60%;
+        grid-column: auto;
+    }
+
+    /* feedback */
+
+    #feedback #name, #feedback #proffesion {
+        position: relative;
+        right: -10px;
+    }
+
+    #feedback textarea#message {
+        position: relative;
+        right: -20px;
+    }
+
+    /* map */
+    
+    section#map {
+        width: 100%;
+    }
+
+
+
+}
+
 
 
