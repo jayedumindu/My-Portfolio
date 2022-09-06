@@ -617,7 +617,8 @@ label {
 }
 
 button#feedback {
-    padding: 20px;
+    margin-top: 30px;
+    padding: 5px 20px;
     color: #FFFBFA;
     background: rgba(80, 94, 219, 0.72);
     border-radius: 5px;

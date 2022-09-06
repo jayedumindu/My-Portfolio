@@ -18,7 +18,7 @@
 /* mobile large */
 @media all and (min-width:375px) and (max-width:425px) {
 
-}
+}   
 
 /* mobile medium */
 @media all and (min-width:320px) and (max-width:375px) {
@@ -26,7 +26,7 @@
 }
 
 /* mobile small */
-@media all and (max-width:320px) {
+@media all and (min-width:320px) and (max-width:768px) {
 
     #navbar {
         display: none;
@@ -45,15 +45,21 @@
         font-family: 'Courier New', Courier, monospace;
     }
 
+    /* home */
+
     div#home-desc {
+        justify-self: center;
         position: relative;
         top: 80px;
-        width: 280px;
+        width: 80%;
         text-align: center;
     }
 
     #home-desc>img{
-        right: 100px;   
+        position: absolute;
+        right: 0;
+        left: 0;
+        margin: auto;
         top: -150px;
         width: 120px;
         height: 155px;
@@ -72,7 +78,7 @@
     }
 
     #about-text {
-        margin-right: 0;
+        margin: auto;
     }
 
     #about-text>h1 {
@@ -190,6 +196,80 @@
         margin: 50px 0;
     }
     
+    /* feedback */
+
+    #feedback {
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #feedback-profile {
+        padding-left: 10px;
+      }
+
+    #feedback-header {
+        font-size: 20px;
+    }
+
+    .control-btn {
+        display: none;
+    }
+
+    #slideArea {
+        width: 90%;
+    }
+
+    #feedback-form>div:nth-child(3) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #slideArea p, #slideArea h4, #slideArea span{
+        font-size: 0.8em;
+        line-height: 20px;
+    }
+
+    #name, #proffesion, textarea#message {
+        width: 80%;
+    }
+
+    /* contact */
+    #contact h1:first-child {
+        font-size: 20px;
+    }
+
+    section#map iframe {
+        width: 100%;
+    }
+
+    #info {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #sendMsgForm>form {
+        grid-template-columns: auto;
+        grid-template-rows: repeat(5, auto);
+    }
+
+    #sendMsgForm>form>input, #sendMsgForm>form>textarea {
+        width: 80%;
+    }
+
+    #sendMsgForm>form>input, #sendMsgForm>form>textarea, #sendMsgForm>form #contact-btn {
+        grid-column: auto;
+        grid-row: auto;
+        justify-self: center;
+    }
+
+    #sendMsgForm>form #contact-btn {
+        margin: 20px 0 0 0 ;
+    }
+
 }
 
 
