@@ -15,6 +15,7 @@
     <!-- stylesheet -->
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="script" href="index.js">
     <script src="https://kit.fontawesome.com/fc094c53fd.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -273,7 +274,7 @@
             <!-- for input area -->
             <section id="feedbackArea">
                 <form id="feedback-form">
-                        <h4 id="">We would love to hear from you!</h4>
+                        <h4>We would love to hear from you!</h4>
                         <div>
                             <p>Name</p>
                             <input type="text" id="name">
@@ -349,5 +350,25 @@
         <p>2022 All Rights Reserved</p>
     </footer>
 </body>
+<script>
+    // menu opener
+    let isClicked = false;
+    document.getElementById('opener').addEventListener('click',openMenu)
+
+    function openMenu() {
+   
+        let navbar = document.querySelector('nav');
+        if (!isClicked) {
+            navbar.style.cssText = 'transform: translateY(0); margin-top: 44px;';
+            document.getElementById('home').style.cssText = 'margin-top: 296px;'; 
+            isClicked = true;
+        } else {
+            navbar.style.cssText = 'transform: translateY(-100%);';
+            document.getElementById('home').style.cssText = 'margin-top: 0;'; 
+            isClicked = false 
+        }
+        
+    }
+</script>
 </html>
 

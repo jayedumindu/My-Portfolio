@@ -1,24 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
-
-/* laptop large */
-@media all and (min-width:1024px) and (max-width:1440px) {
-
-}
-
-/* laptop small */
-@media all and (min-width:768px) and (max-width:1024px) {
-
-}
-
-
   
-
-
 /* mobile small,medium,large */
 @media (min-width:320px) and (max-width:768px) {
 
+    .nav-items {
+        display: block;
+        text-align: center;
+    }
+
     #navbar {
-        display: none;
+        z-index: 0;
+        width: 100vw;
+        background-color: antiquewhite;
+    }
+
+    #navbar li a{
+        width: 100%;
+        font-size: small;
+    }
+
+
+    nav {
+        transform: translateY(-100%);
+        position: absolute;
+        transition: all 0.5s;
     }
 
     h3,p,h4 {
@@ -35,6 +40,10 @@
     }
 
     /* home */
+
+    #home {
+        transition: all 0.5s;
+    }
 
     div#home-desc {
         justify-self: center;
@@ -267,7 +276,7 @@
 }
 
 /* mobile-large : tablet */
-@media all and (min-width:425px) and (max-width:768px) {
+@media all and (min-width:768px) {
 
 
     h3,p,h4 {
@@ -345,9 +354,224 @@
         width: 100%;
     }
 
-
-
 }
+
+/* laptop small */
+@media all and (min-width:769px) and (max-width:1024px) {
+
+    #opener {
+        display: none;
+    }
+
+    /* home */
+    #home {
+        width: 100%;
+    }
+
+    div#home-desc {
+        justify-self: end;
+        width: 100%;
+    }
+
+    #home-portrait {
+        display: none;
+    }
+
+    h1#overflow-text {
+        font-size: 2em;
+        top: 180px;
+    }
+
+    /* about */
+
+    #about-text > h1 {
+        text-align: center;
+    }
+
+    #about-text h4 {
+        font-weight: 800;
+        font-size: 30px;
+    }
+
+    #about-text {
+        width: 90%;
+        margin: 0;
+    }
+
+    img#home-portrait {
+        right: -180px;
+        top: -10px;
+        transform: rotate(-20deg);
+    }
+
+    div#about-text > div{
+        background-color: rgba(191, 206, 240, 0.6);
+        margin-bottom: 20px;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    #about-portrait-eclipse, #about-portrait-frame, #about-portrait {
+        display: none;
+    }
+
+    /* carrier */
+
+    #carrier {
+        background-position: center;
+    }
+
+    /* services */
+
+    #service-tech {
+        margin-top: 350px;
+    }
+
+    #service-main {
+        top: 150px;
+    }
+
+    #service-heading {
+        font-size: 35px;
+    }
+
+    /* projects */
+
+    #projects {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 3fr;
+        align-items: center;
+    }
+
+    #pro-article {
+        grid-column: 1 / span 4;
+        grid-row: 1 / 1;
+    }
+
+    #farmeez {
+        grid-row: 2/2;
+        grid-column: 1/1;
+    }
+    #expo-rail {
+        grid-row: 2/2;
+        grid-column: 2/2;
+    }
+    #e-school {
+        grid-row: 2/2;
+        grid-column: 3/3;
+    }
+    #blue-ocean {
+        grid-row: 2/2;
+        grid-column: 4/4;
+    }
+
+    /* feedback */
+    #feedback h1 {
+        font-size: 30px;
+    }
+
+    #feedback-form h4 {
+        font-size: larger;
+    }
+
+    /* contact */
+    #sendMsgForm > form {
+        column-gap: 0;
+    }
+
+    address h3,address p {
+        font-size: small;
+    }
+
+    #sendMsgForm>form input{
+        margin: 0;
+    }
+
+    #sendMsgForm button#contact-btn {
+        padding: 10px 40px;
+    }
+
+    section#map iframe{
+        width: 100%;
+    } 
+}
+
+@media all and (min-width:1025px) {
+    #opener {
+        display: none;
+    }
+}
+
+/* laptop large */
+@media all and (min-width:1440px) {
+    header>h4#opener {
+        display: none;
+    }
+
+    #about-text {
+        width: 50%;
+    }
+
+    section#map iframe{
+        width: 100%;
+    } 
+
+    #about-text > h1 {
+        text-align: center;
+    }
+
+    #about-text h4 {
+        font-weight: 800;
+        font-size: 30px;
+    }
+
+    #service-heading {
+        font-size: 45px;
+    }
+
+    #home-desc h3{
+        font-size: 30px;
+        font-weight: 500;
+    }
+
+    #home-desc p{
+        font-family: 'Inter';
+        font-size: larger;
+    }
+
+    /* projects */
+
+    #projects {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 2fr 1fr 2fr;
+    }
+
+    #pro-article {
+        grid-column: 2/2;
+        grid-row: 2/2;
+    }
+
+    #farmeez {
+        grid-row: 1/1;
+        grid-column: 1/1;
+    }
+    #expo-rail {
+        grid-row: 1/1;
+        grid-column: 3/3;
+    }
+    #e-school {
+        grid-row: 3/3;
+        grid-column: 1/1;
+    }
+    #blue-ocean {
+        grid-row: 3/3;
+        grid-column: 3/3;
+    }
+}
+
+
+
+
 
 
 
