@@ -368,18 +368,32 @@
         width: 100%;
     }
 
+    #home-desc h3:nth-child(1){
+        font-size: 1.5em;
+    }
+
     div#home-desc {
         justify-self: end;
         width: 100%;
     }
 
-    #home-portrait {
-        display: none;
+    #home p {
+        font-family: 'Inter';
+        font-weight: 800;
     }
 
     h1#overflow-text {
-        font-size: 2em;
+        font-size: 3em;
         top: 180px;
+        left: 50px;
+    }
+
+    img#home-portrait {
+        content: url(../images/home-portrait-1.png);
+        width: 450px;
+        height: 450px;
+        top: 75px;
+        right: 80px;
     }
 
     /* about */
@@ -396,12 +410,6 @@
     #about-text {
         width: 90%;
         margin: 0;
-    }
-
-    img#home-portrait {
-        right: -180px;
-        top: -10px;
-        transform: rotate(-20deg);
     }
 
     div#about-text > div{
