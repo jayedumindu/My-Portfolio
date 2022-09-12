@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
   
 /* mobile small,medium,large */
-@media (min-width:320px) and (max-width:768px) {
+@media (min-width:320px) and (max-width:767px) {
 
     .nav-items {
         display: block;
