@@ -3,6 +3,10 @@
 /* mobile small,medium,large */
 @media (min-width:320px) and (max-width:767px) {
 
+    .feedback-sliders {
+        display: none;
+    }
+
     .nav-items {
         display: block;
         text-align: center;
@@ -14,11 +18,10 @@
         background-color: antiquewhite;
     }
 
-    #navbar li a{
+    #navbar li a {
         width: 100%;
         font-size: small;
     }
-
 
     nav {
         transform: translateY(-100%);
@@ -238,6 +241,7 @@
 
     #name, #proffesion, textarea#message {
         width: 80%;
+        right: 0;
     }
 
     /* contact */
@@ -357,7 +361,19 @@
 }
 
 /* laptop small */
-@media all and (min-width:769px) and (max-width:1024px) {
+@media all and (min-width:768px) and (max-width:1024px) {
+
+    #service-tech > img {
+        margin-right: -15px;
+    }
+
+    svg {
+        display: none;
+    }
+
+    .pro-btn {
+        width: fit-content;
+    }
 
     #opener {
         display: none;
@@ -380,6 +396,8 @@
     #home p {
         font-family: 'Inter';
         font-weight: 800;
+        background-color: rgba(217, 217, 217, 0.4);
+        border-radius: 5px;
     }
 
     h1#overflow-text {
