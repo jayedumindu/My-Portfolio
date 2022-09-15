@@ -196,14 +196,16 @@ div#more {
     height: 657px;
     right: 8px;
     bottom: 0;
+    opacity: 0.7;
   }
 
 
 #about-portrait-2 {
+    opacity: 0.7;
     position: absolute;
     width: 600px;
     height: 600px;
-   left: 16px;
+    left: 16px;
     top: 150px;
 }
 
@@ -633,16 +635,16 @@ label {
 }
 
 button#feedback {
+    font-weight: bold;
     margin-top: 30px;
     padding: 10px 20px;
     background: rgba(172, 163, 144, 0.72);
-    color: #3d231c;
+    color: #0c0402;
     border-radius: 5px;
 }
 
 button#feedback:hover {
-    color: #ffffff;
-    background: rgba(109, 78, 11, 0.72);
+    opacity: 0.8;
     cursor: pointer;
 }
 
