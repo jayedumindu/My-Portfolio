@@ -6,12 +6,13 @@
     .nav-items {
         display: block;
         text-align: center;
+        border-bottom: 1px solid rgb(153, 178, 204);
     }
 
     #navbar {
         z-index: 0;
         width: 100vw;
-        background-color: antiquewhite;
+        background-color: rgba(166, 194, 211, 0.944);
     }
 
     #navbar li a {
@@ -87,7 +88,8 @@
 
     #about-portrait-2 {
         margin: auto;
-        transform: translateX(10%);
+        transform: translateX(5%);
+        top: 50px;
     }
 
     #about-text>h1 {
@@ -242,9 +244,6 @@
         justify-content: center;
     }
 
-    .feedback-sliders {
-        display: none;
-    }
 
     #slideArea p, #slideArea h4, #slideArea span{
         font-size: 0.8em;
@@ -255,6 +254,11 @@
         width: 80%;
         right: 0;
     }
+
+    #feedback-slider1,  #feedback-slider2 {
+        visibility: hidden;
+    }
+
 
     /* contact */
     #contact h1:first-child {
@@ -292,9 +296,13 @@
 
 }
 
-@media all and (min-width:420px) {
-    .feedback-sliders {
-        display: none;
+@media all and (width:320px) {
+    #slideArea p {
+        padding: 5px;
+        font-size: 0.5em;
+    }
+    #profile-name {
+        text-align: left;
     }
 }
 
@@ -535,6 +543,10 @@
         font-size: larger;
     }
 
+    #feedback-slider1,  #feedback-slider2 {
+        visibility: initial;
+    }
+
     /* contact */
     #sendMsgForm > form {
         column-gap: 0;
@@ -567,8 +579,15 @@
       }
 }
 
+@media all and (min-width:1024px) and (max-width:1440px) {  
+    header>h4#opener {
+        display: none;
+    }
+}
+
 /* laptop large */
 @media all and (min-width:1440px) {
+
     header>h4#opener {
         display: none;
     }
