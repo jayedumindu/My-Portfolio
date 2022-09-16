@@ -330,6 +330,14 @@
         opacity: 0.7;
     }
 
+    #about-portrait-2 {
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        transform: translateX(0);
+    }
+
 
     /* services */
 
@@ -653,6 +661,11 @@
     }
 }
 
+@media all and (min-width:1920px) {
+    #home {
+        height: 100vh;
+    }
+}
 
 
 

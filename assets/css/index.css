@@ -254,8 +254,8 @@ div#more {
     width: 389px;
     height: 145px;
     display: inline-block;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: #d8dee0;
+    box-shadow: 0px 4px 4px rgba(140, 173, 198, 0.279);
     justify-self: center;
     align-self: center;
 }
@@ -266,6 +266,7 @@ div#more {
 }
 
 .info-box-data {
+    list-style-type: none;
     padding-top: 10px;
     text-align: center;
     font-family: 'Work Sans';
