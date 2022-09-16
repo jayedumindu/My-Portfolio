@@ -661,9 +661,9 @@
     }
 }
 
-@media all and (min-width:1920px) {
-    #home {
-        height: 100vh;
+@media all and (width:1920px) {
+    img#home-portrait {
+        right: 346px;
     }
 }
 
