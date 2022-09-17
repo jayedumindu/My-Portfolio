@@ -296,6 +296,11 @@
 
 }
 
+@media all and (min-width:320px) and (max-width:420px) {
+    #about-portrait-2 {
+        display: none;
+    }
+}
 @media all and (width:320px) {
     #slideArea p {
         padding: 5px;
