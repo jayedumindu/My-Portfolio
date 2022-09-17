@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="p-5"> Under Maintenance : Orders </h1>
+<div class="progress">
+     <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div>
+</div>
+
+<div class="row mt-5" id="order-window">
+  <form class="col-6 text-start p-5">
+    <div class="mb-3">
+        <h3> Customer ID : C-002 </h3>
+      </div>
+
+    <div class="mb-3">
+          <label for="cname" class="form-label">Customer Name</label>
+          <input type="text" class="form-control" id="cname" placeholder="Gamini Senarathna">
+    </div>
+
+<div class="mb-3" style="width:25%;">
+    <label for="cage" class="form-label">Age</label>
+        <input type="number" class="form-control" id="cage" placeholder="20">
+</div>
+
+<div class="mb-3">
+    <label for="casdd" class="form-label">Address</label>
+        <input type="text" class="form-control" id="casdd" placeholder="15-A/Chatham Street/Colombo7">
+</div>
+
+<div class="form-check">
+    <input class="form-check-input" type="radio" name="flexRadioDefault" id="male">
+    <label class="form-check-label" for="male">
+    Male
+   </label>
+</div>
+
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="female">
+    <label class="form-check-label" for="female">
+      Female
+   </label>
+</div>
+
+<button type="button" class="btn btn-success mt-5" style="width:75%;" id="toNextMenu">Next</button>
+ </form>
+
+ <div class="col-6">
+  <h3 class="mt-5 pb-auto"> Upload a photo if any </h3>
+  <div class="d-flex justify-content-center flex-wrap">
+      <img src="./assets/img/portrait.jpg" class="img-thumbnail" alt="..." style="width:286px;height:286;">
+      <button  class="btn btn-primary mt-3" type="button" style="width:60%;">Upload</button>
+  </div>
+  
+</div>
+
+</div>
+
+<script>
+     $('#toNextMenu').click(function() {
+        $('#order-window').load('./pages/placeorder(2).html');
+        // increase the progress bar
+        
+      }) 
+</script>
+</body>
+</html>

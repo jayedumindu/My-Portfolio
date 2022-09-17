@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <!-- item selection -->
+        <div class="row" style="width: 50%;">
+            <div class="col-12 text-start">
+                <label for="items-selector"> Select an item from below</label>
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="items-selector">
+                    <option value="1">C-001</option>
+                    <option value="2">C-002</option>
+                    <option value="3">C-003</option>
+                  </select>
+            </div>
+            <!-- item preview -->
+            <div class="col-6">
+                <div class="card" style="width: 18rem;">
+                    <img src="./assets/img/item.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Tea</h5>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                  </div>
+            </div>
+            <!-- item initializer -->
+            <div class="col-6 d-flex flex-wrap justify-content-center">
+                <div class="mt-3">
+                    <h3>In Stock</h3>
+                    <h3 style="color: red;">500</h3>
+                </div>
+                <div class="text-start">
+                    <label for="cage" class="form-label">Amount</label>
+                    <input type="number" class="form-control" id="cage" placeholder="500">
+                    <button type="button" class="btn btn-primary mt-3"> Add to Cart</button>
+                </div>   
+            </div>
+        </div>  
+
+        <div class="row" style="width: 50%;">
+            <div style="max-height:500px; overflow-y: scroll;">
+                <table class="table align-middle" style="height: fit-content;">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Code</th>
+                        <th scope="col">U-Price</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                        <td>@mdo</td>
+                        <td><button class="btn btn-outline-danger pt-1">remove</button></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                        <td>@fat</td>
+                        <td><button class="btn btn-outline-danger pt-1">remove</button></td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                        <td><button class="btn btn-outline-danger pt-1">remove</button></td>
+                      </tr>
+                        <th scope="row">4</th>
+                        <td>Larry</td>
+                        <td>the Bird</td>
+                        <td>@twitter</td>
+                        <td>@twitter</td>
+                        <td><button class="btn btn-outline-danger pt-1">remove</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+
+        <div class="d-flex p-5 justify-content-around">
+            <button type="button" class="btn btn-outline-primary" id="toOrder1">back</button>
+            <button type="button" class="btn btn-outline-success" id="printInvoice">Proceed</button>    
+        </div>
+        
+        <script>
+
+            $('#toOrder1').click(() => {
+                $('#mainMenu').load('./pages/placeorder(1).html');
+            })
+
+            $('#printInvoice').click(() => {
+                
+            })
+
+        </script>
+    
+</body>
+</html>
