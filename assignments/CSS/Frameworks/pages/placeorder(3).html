@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row justify-content-center g-2">
+        <!-- centered img -->
+        <div class="col-12">
+            <img src="./assets/img/success.png" alt="successful" style="width: 150px; height:150px;">
+        </div>
+        <!-- successful card -->
+        <div class="col-4 d-flex justify-content-center">
+            <div class="card bg-success text-white border-0 m-3" style="width: 18rem; --bs-bg-opacity: .5;">
+                <div class="card-body">
+                  <h5 class="card-title">Order is successful!</h5>
+                  <h3> ID : T-001</h3>
+                  <h3> Total : 25,000/= </h3>
+                  <h4> Discount : 5000/= </h4>
+                </div>
+              </div>
+        </div>
+        <div class="col-12">
+            <div class="d-flex p-5 justify-content-around">
+                <button type="button" class="btn btn-outline-primary" id="toHome">Back to Home</button>
+                <button type="button" class="btn btn-outline-success" id="reOrder">Reorder</button>    
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $('#toHome').click(() => {
+                buttons[3].trigger('click');           
+             })
+        $('#reOrder').click(() => {
+            buttons[2].trigger('click');   
+            })
+    </script>
+
+</body>
+</html>

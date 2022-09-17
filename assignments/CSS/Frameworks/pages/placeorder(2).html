@@ -99,11 +99,14 @@
 
             $('#toOrder1').click(() => {
                 $('#order-window').load('./pages/placeorder(1).html');
-                $('#progress-bar').css('width','25%')
+                $('#header').html('Step 1 : Fill Customer Details');
+                $('#progress-bar').css('width','25%');
             })
 
             $('#printInvoice').click(() => {
-                
+                $('#progress-bar').css('width','100%');
+                $('#progress-bar').css('background-color','green');
+                $('#order-window').load('./pages/placeorder(3).html');
             })
 
         </script>
