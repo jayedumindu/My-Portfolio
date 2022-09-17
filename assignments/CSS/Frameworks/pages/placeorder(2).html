@@ -7,11 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-
         <!-- item selection -->
-        <div class="row" style="width: 50%;">
+        <div class="row" style="width: 50%;" id="main">
             <div class="col-12 text-start">
-                <label for="items-selector"> Select an item from below</label>
+                <label for="items-selector"> Select an item from below </label>
                 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="items-selector">
                     <option value="1">C-001</option>
                     <option value="2">C-002</option>
@@ -95,11 +94,12 @@
             <button type="button" class="btn btn-outline-primary" id="toOrder1">back</button>
             <button type="button" class="btn btn-outline-success" id="printInvoice">Proceed</button>    
         </div>
-        
+    </div>
         <script>
 
             $('#toOrder1').click(() => {
-                $('#mainMenu').load('./pages/placeorder(1).html');
+                $('#order-window').load('./pages/placeorder(1).html');
+                $('#progress-bar').css('width','25%')
             })
 
             $('#printInvoice').click(() => {

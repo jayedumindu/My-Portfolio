@@ -126,7 +126,10 @@
       });
 
       buttons[2].click( function() {
-          $('#mainMenu').load('./pages/placeorder(1).html'); 
+          $('#mainMenu').load('./pages/placeorder.html'); 
+          $.get("./pages/placeorder(1).html", function(data){
+              $('#mainMenu').append(data);
+          });
           clearAllActive()
           $(this).addClass('active');
       });

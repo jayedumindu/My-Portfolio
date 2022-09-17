@@ -7,10 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 class="p-5"> Under Maintenance : Orders </h1>
-<div class="progress">
-     <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div>
-</div>
+    
 
 <div class="row mt-5" id="order-window">
   <form class="col-6 text-start p-5">
@@ -43,7 +40,7 @@
 <div class="form-check">
   <input class="form-check-input" type="radio" name="flexRadioDefault" id="female">
     <label class="form-check-label" for="female">
-      Female
+    Female
    </label>
 </div>
 
@@ -56,17 +53,18 @@
       <img src="./assets/img/portrait.jpg" class="img-thumbnail" alt="..." style="width:286px;height:286;">
       <button  class="btn btn-primary mt-3" type="button" style="width:60%;">Upload</button>
   </div>
-  
+</div>
 </div>
 
-</div>
 
 <script>
-     $('#toNextMenu').click(function() {
-        $('#order-window').load('./pages/placeorder(2).html');
-        // increase the progress bar
-        
-      }) 
+    $('#toNextMenu').click(function() {
+       $('#order-window').load('./pages/placeorder(2).html');
+       // increase the progress bar
+       console.log("button clicked");
+       $('#progress-bar').css('width','75%')
+     }) 
 </script>
+
 </body>
 </html>
