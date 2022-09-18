@@ -35,7 +35,23 @@
           <li>Age : 21</li>
           <li>Orders : 10</li>
         </ul>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Cutomer</a>
+        <a href="#" class="btn btn-danger">Delete</a>
+    </div>
+    </div>
+  </div>
+
+  <div class="col-4 d-flex justify-content-center">
+    <div class="card" style="width: 18rem;">
+      <img src="./assets/img/portrait.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Dumindu Jayaseakara</h5>
+        <ul class="list-unstyled">
+          <li>ID : C-0001</li>
+          <li>Age : 21</li>
+          <li>Orders : 10</li>
+        </ul>
+      <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Cutomer</a>
       <a href="#" class="btn btn-danger">Delete</a>
     </div>
     </div>
@@ -51,8 +67,8 @@
           <li>Age : 21</li>
           <li>Orders : 10</li>
         </ul>
-      <a href="#" class="btn btn-primary">Update Cutomer</a>
-      <a href="#" class="btn btn-danger">Delete</a>
+        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Cutomer</a>
+        <a href="#" class="btn btn-danger">Delete</a>
     </div>
     </div>
   </div>
@@ -67,24 +83,8 @@
           <li>Age : 21</li>
           <li>Orders : 10</li>
         </ul>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-      <a href="#" class="btn btn-danger">Delete</a>
-    </div>
-    </div>
-  </div>
-
-  <div class="col-4 d-flex justify-content-center">
-    <div class="card" style="width: 18rem;">
-      <img src="./assets/img/portrait.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Dumindu Jayaseakara</h5>
-        <ul class="list-unstyled">
-          <li>ID : C-0001</li>
-          <li>Age : 21</li>
-          <li>Orders : 10</li>
-        </ul>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-      <a href="#" class="btn btn-danger">Delete</a>
+        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Cutomer</a>
+        <a href="#" class="btn btn-danger">Delete</a>
     </div>
     </div>
   </div>
@@ -93,6 +93,63 @@
 </div>
 
 <button class="btn btn-outline-secondary mt-5" type="button" style="width:50%">Add New Customer</button>  
+
+        <!-- add new customer modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">You're updating Customer : C-001</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body d-flex justify-content-around flex-wrap">
+                <!-- id -->
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">ID</span>
+                  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <!-- name -->
+                <div class="input-group">
+                  <span class="input-group-text">First and last name</span>
+                  <input type="text" aria-label="First name" class="form-control">
+                  <input type="text" aria-label="Last name" class="form-control">
+                </div>
+                <!-- age -->
+                <div class="form-check d-inline-block">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Male
+                  </label>
+                </div>
+                <div class="form-check d-inline-block">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    Female
+                  </label>
+                </div>
+                <!-- gender -->
+                <div class="input-group mb-3">
+                  <span class="input-group-text">Age</span>
+                  <input type="number" aria-label="First name" class="form-control" placeholder="20">
+                </div>
+                <!-- living-in -->
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Region</option>
+                  <option value="1">Colombo</option>
+                  <option value="2">Gampaha</option>
+                  <option value="3">Kelaniya</option>
+                  <option value="3">Other</option>
+                </select>
+                <!-- end -->
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
 </body>
 </html>
 
