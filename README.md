@@ -1,3 +1,4 @@
+<a name="readme-top"></a>
 # 1. Personal Portfolio 
 web based project for internet-tech module
 
@@ -44,8 +45,8 @@ Extends:
 
 ### Built With
 
-[![Bootstrap][Bootstrap.com]][Bootstrap-url]
-[![JQuery][JQuery.com]][JQuery-url]
+* Bootstrap [https://getbootstrap.com](https://getbootstrap.com/)
+* JQuery [https://jquery.com](https://jquery.com/)
 
 ### Prerequisites
 
