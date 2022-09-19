@@ -4,7 +4,7 @@ web based project for internet-tech module
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](/util/readme/portfolio.png)
 
 Designed with a professional flavour for further usage, including all features what would be expected from a CV + additional information.
 
@@ -32,7 +32,7 @@ web based project for implementing css frameworks
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](/util/readme/POS.png)
 
 Responsive web-site designed with HTML,CSS and other frameworks for front-end functionality. Aims CRUD operations of a store, hosted online.
 
