@@ -5,10 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../assets/css/custom.css"></link>
+    <style>
+      /* @media all and (min-width:1400px) {
+        .plo-2-row {
+          width: 100%;
+        }
+      }
+      .plo-2-row {
+          width: 100%;
+        } */
+    </style>
 </head>
 <body>
         <!-- item selection -->
-        <div class="row" style="width: 50%;" id="main">
+        <div class="row plo-2-row mb-5" id="main">
+          <!-- combo -->
             <div class="col-12 text-start">
                 <label for="items-selector"> Select an item from below </label>
                 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="items-selector">
@@ -18,7 +30,7 @@
                   </select>
             </div>
             <!-- item preview -->
-            <div class="col-6">
+            <div class="col-12 col-xl-6 d-flex justify-content-center">
                 <div class="card" style="width: 18rem;">
                     <img src="./assets/img/item.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -28,8 +40,8 @@
                   </div>
             </div>
             <!-- item initializer -->
-            <div class="col-6 d-flex flex-wrap justify-content-center">
-                <div class="mt-3">
+            <div class="col-12 col-xl-6 d-flex flex-wrap justify-content-center">
+                <div class="mt-3" style="width: 100%;">
                     <h3>In Stock</h3>
                     <h3 style="color: red;">500</h3>
                 </div>
@@ -41,7 +53,7 @@
             </div>
         </div>  
 
-        <div class="row" style="width: 50%;">
+        <div class="row plo-2-row">
             <div style="max-height:500px; overflow-y: scroll;">
                 <table class="table align-middle" style="height: fit-content;">
                     <thead>

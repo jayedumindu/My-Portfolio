@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        @media all and (max-width:768px) {
+            #payment-info {
+                width: 100%;
+            }
+        }
+        
+    </style>
 </head>
 <body>
     <div class="row justify-content-center g-2">
@@ -13,8 +21,8 @@
             <img src="./assets/img/success.png" alt="successful" style="width: 150px; height:150px;">
         </div>
         <!-- successful card -->
-        <div class="col-4 d-flex justify-content-center">
-            <div class="card bg-success text-white border-0 m-3" style="width: 18rem; --bs-bg-opacity: .5;">
+        <div class="col-4 d-flex justify-content-center" id="payment-info">
+            <div class="card bg-success text-white border-0 m-3" style="width: 100%; --bs-bg-opacity: .5;">
                 <div class="card-body">
                   <h5 class="card-title">Order is successful!</h5>
                   <h3> ID : T-001</h3>
