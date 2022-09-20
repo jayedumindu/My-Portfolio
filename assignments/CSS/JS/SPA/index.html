@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bootstrap demo for POS</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="./js/bootstrap.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 </head>
 <body>
@@ -142,7 +143,7 @@
       </section>
 
       <!--++++++++++++++++++++++++++++++++++ Customer ++++++++++++++++++++++++++++++++++++++++++++++++-->
-    <section class="container" id="customer">
+    <section class="container collapse" id="customer">
          <!-- SEARCH BAR -->
 <h1 class="p-5"> Manage Customers</h1>
 <form class="row g-3 justify-content-center">
@@ -331,7 +332,7 @@
       </section>
 
       <!--++++++++++++++++++++++++++++++++++ Item ++++++++++++++++++++++++++++++++++++++++++++++++-->
-    <section class="container" id="item">
+    <section class="container collapse" id="item">
     <h1 class="p-5">Manage Items</h1>
     <!-- SEARCH BAR -->
       <form class="row g-3 justify-content-center">
@@ -497,7 +498,7 @@
     </section>
 
       <!--++++++++++++++++++++++++++++++++++ Order ++++++++++++++++++++++++++++++++++++++++++++++++-->
-    <section class="container" id="order">
+    <section class="container collapse" id="order">
     <div id="main">
       <h1 class="p-5" id="header"> Step 1 : Fill Customer Details </h1>
   <div class="progress">
@@ -507,7 +508,7 @@
 </section>
 
       <!--++++++++++++++++++++++++++++++++++ Order-1 ++++++++++++++++++++++++++++++++++++++++++++++++-->
-    <section class="container" id="order(1)">
+    <section class="container collapse" id="order1">
     <div class="row my-5" id="order-window">
       <form class="col-12 col-lg-6 text-start p-5">
         <div class="mb-3">
@@ -557,7 +558,7 @@
   </section>
 
       <!--++++++++++++++++++++++++++++++++++ Order-2 ++++++++++++++++++++++++++++++++++++++++++++++++-->
-    <section class="container" id="order(2)">
+    <section class="container collapse" id="order2">
      <!-- item selection -->
      <div class="row plo-2-row mb-5" id="main">
       <!-- combo -->
@@ -650,7 +651,7 @@
 </section>
 
       <!--++++++++++++++++++++++++++++++++++ Order-3 ++++++++++++++++++++++++++++++++++++++++++++++++-->
-    <section class="container" id="order(3)">
+    <section class="container collapse" id="order3">
       <div class="row justify-content-center g-2">
         <!-- centered img -->
         <div class="col-12">
@@ -680,47 +681,72 @@
 
     </main>
 
-    <script src="./js/bootstrap.min.js">
-    </script>
+    
 
-    <!-- Jquery -->
     <script>
-      // buttons
-
+     
       var buttons = [ $('#navToItems'), $('#navToCustomers'), $('#navToOrders'), $('#navToHome')];
+      var sections = [ $('#customer'), $('#item'), $('#order'), $('#order1'), $('#order2'), $('#order3'), $('#mainMenu')];
 
+      // to item-form
       buttons[0].click( function() {
-      
-        $('#mainMenu').load('./pages/item.html');
+          load(sections[1]);
           clearAllActive()
           $(this).addClass('active');
       });
     
+      // to customer-form
       buttons[1].click( function() {
-          $('#mainMenu').load('./pages/customer.html');
+        load(sections[0]);
           clearAllActive()
           $(this).addClass('active');
       });
 
+      //  to order-form
       buttons[2].click( function() {
-          $('#mainMenu').load('./pages/placeorder.html'); 
-          $.get("./pages/placeorder(1).html", function(data){
-              $('#mainMenu').append(data);
-          });
+        load(sections[2]);
+        sections[3].removeClass('collapse')
           clearAllActive()
           $(this).addClass('active');
       });
 
+      // homepage
       buttons[3].click( function() {
-          location.reload(false);
+        load(sections[6]);
           clearAllActive()
           $(this).addClass('active');
       });
+
+      $('#toNextMenu').click(() => {
+        sections[3].addClass('collapse');
+        sections[4].removeClass('collapse');
+      })
+
+      $('#printInvoice').click(() => {
+        sections[4].addClass('collapse');
+        sections[5].removeClass('collapse');
+      })
 
       function clearAllActive(){
         buttons.forEach(element => {
           element.removeClass('active');
         });
+      }
+
+      function load(section) {
+        var cls = 'collapse';
+        // if the given section is collapsed then...
+        if (section.hasClass(cls)) {
+          sections.forEach(sec => {
+          if(sec!=section) {
+            if(!sec.hasClass(cls)){
+              sec.addClass(cls);
+            }
+          }
+        });
+        // load
+        section.removeClass(cls);
+        }
       }
 
     </script>
