@@ -558,7 +558,7 @@
   </section>
 
       <!--++++++++++++++++++++++++++++++++++ Order-2 ++++++++++++++++++++++++++++++++++++++++++++++++-->
-    <section class="container collapse" id="order2">
+    <section class="container collapse mt-3" id="order2">
      <!-- item selection -->
      <div class="row plo-2-row mb-5" id="main">
       <!-- combo -->
@@ -651,7 +651,7 @@
 </section>
 
       <!--++++++++++++++++++++++++++++++++++ Order-3 ++++++++++++++++++++++++++++++++++++++++++++++++-->
-    <section class="container collapse" id="order3">
+    <section class="container collapse  mt-3" id="order3">
       <div class="row justify-content-center g-2">
         <!-- centered img -->
         <div class="col-12">
@@ -725,6 +725,21 @@
       $('#printInvoice').click(() => {
         sections[4].addClass('collapse');
         sections[5].removeClass('collapse');
+      })
+
+      $('#toOrder1').click(() => {
+        sections[4].addClass('collapse');
+        sections[3].removeClass('collapse');
+      })
+
+      $('#toHome').click(() => {
+        buttons[3].click();
+      })
+
+      // to order-1
+      $('#reOrder').click(() => {
+        buttons[2].click();
+        sections[5].addClass('collapse');
       })
 
       function clearAllActive(){
