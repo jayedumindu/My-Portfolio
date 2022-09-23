@@ -35,6 +35,7 @@ _All pre-required information can be gathered from the links given below_
     <li><a href="./assignments/CSS/Animations/case_2/index.html">case-2</a></li>
     <li><a href="./assignments/CSS/Animations/case_3/index.html">case-3</a></li>
     <li><a href="./assignments/CSS/Animations/case_4/index.html">case-4</a></li>
+  </ol>
 </details>
 
 <details>
