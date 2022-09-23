@@ -31,7 +31,7 @@ _All pre-required information can be gathered from the links given below_
 <details>
   <summary>Animations</summary>
   <ol>
-    <<li><a href="./assignments/CSS/Animations/case_1/index.html">case-1</a></li>
+    <<li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Animations/case_1/index.html" target="_blank">case-1</a></li>
     <li><a href="./assignments/CSS/Animations/case_2/index.html">case-2</a></li>
     <li><a href="./assignments/CSS/Animations/case_3/index.html">case-3</a></li>
     <li><a href="./assignments/CSS/Animations/case_4/index.html">case-4</a></li>
