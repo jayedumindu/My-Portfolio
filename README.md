@@ -51,7 +51,22 @@ _All pre-required information can be gathered from the links given below_
   
 <details>
   <summary>Frameworks</summary>
-  [Click Here](https://jayedumindu.github.io/portfolio/) to view deployment.
+  <a href="#contributing">view deployment</a>
+</details>
+  
+<details>
+  <summary>JS</summary>
+  <ol>
+    <li><a href="#about-the-project">SPA</a></li>
+  </ol>
+</details>
+  
+<details>
+  <summary>Transitions</summary>
+  <ol>
+    <li><a href="#about-the-project">case-1</a></li>
+    <li><a href="#about-the-project">case-2</a></li>
+  </ol>
 </details>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
