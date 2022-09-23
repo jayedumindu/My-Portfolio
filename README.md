@@ -31,41 +31,41 @@ _All pre-required information can be gathered from the links given below_
 <details>
   <summary>Animations</summary>
   <ol>
-    <li><a href="#about-the-project">case-1</a></li>
-    <li><a href="#getting-started">case-2</a></li>
-    <li><a href="#usage">case-3</a></li>
-    <li><a href="#roadmap">case-4</a></li>
+    <<li><a href="./assignments/CSS/Animations/case_1/index.html">case-1</a></li>
+    <li><a href="./assignments/CSS/Animations/case_2/index.html">case-2</a></li>
+    <li><a href="./assignments/CSS/Animations/case_3/index.html">case-3</a></li>
+    <li><a href="./assignments/CSS/Animations/case_4/index.html">case-4</a></li>
 </details>
 
 <details>
   <summary>Basics</summary>
   <ol>
-    <li><a href="#about-the-project">case-1</a></li>
-    <li><a href="#getting-started">case-2</a></li>
-    <li><a href="#usage">case-3</a></li>
-    <li><a href="#roadmap">case-4</a></li>
-    <li><a href="#contributing">case-5</a></li>
-    <li><a href="#license">case-6</a></li>
+    <li><a href="./assignments/CSS/Basics/case_1/index.html">case-1</a></li>
+    <li><a href="./assignments/CSS/Basics/case_2/index.html">case-2</a></li>
+    <li><a href="./assignments/CSS/Basics/case_3/index.html">case-3</a></li>
+    <li><a href="./assignments/CSS/Basics/case_4/index.html">case-4</a></li>
+    <li><a href="./assignments/CSS/Basics/case_5/index.html">case-5</a></li>
+    <li><a href="./assignments/CSS/Basics/case_6/index.html">case-6</a></li>
   </ol>
 </details>
   
 <details>
   <summary>Frameworks</summary>
-  <a href="#contributing">view deployment</a>
+  <a href="./assignments/Frameworks/index.html">view deployment</a>
 </details>
   
 <details>
   <summary>JS</summary>
   <ol>
-    <li><a href="#about-the-project">SPA</a></li>
+    <li><a href="./assignments/JS/SPA/index.html">SPA</a></li>
   </ol>
 </details>
   
 <details>
   <summary>Transitions</summary>
   <ol>
-    <li><a href="#about-the-project">case-1</a></li>
-    <li><a href="#about-the-project">case-2</a></li>
+    <li><a href="./assignments/Transitions/case_1/index.html">case-1</a></li>
+    <li><a href="./assignments/Transitions/case_2/index.html">case-2</a></li>
   </ol>
 </details>
 
