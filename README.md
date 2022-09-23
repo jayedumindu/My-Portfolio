@@ -26,4 +26,17 @@ _All pre-required information can be gathered from the links given below_
 2. Mockup [https://www.figma.com](https://www.figma.com/file/7bSFkngJfciDNaparaGL57/personal-portfolio?node-id=0%3A1)
 3. SiteMap [https://www.gloomaps.com](https://www.gloomaps.com/nJEFJJyzen)
 
+### Assignments
+<details>
+  <summary>Animations</summary>
+  <ol>
+    <li><a href="#about-the-project">case-1</a></li>
+    <li><a href="#getting-started">case-2</a></li>
+    <li><a href="#usage">case-3</a></li>
+    <li><a href="#roadmap">case-4</a></li>
+    <li><a href="#contributing">case-5</a></li>
+    <li><a href="#license">case-6</a></li>
+  </ol>
+</details>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
