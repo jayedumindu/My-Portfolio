@@ -32,41 +32,41 @@ _All pre-required information can be gathered from the links given below_
   <summary>Animations</summary>
   <ol>
     <<li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Animations/case_1/index.html" target="_blank">case-1</a></li>
-    <li><a href="./assignments/CSS/Animations/case_2/index.html">case-2</a></li>
-    <li><a href="./assignments/CSS/Animations/case_3/index.html">case-3</a></li>
-    <li><a href="./assignments/CSS/Animations/case_4/index.html">case-4</a></li>
+    <li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Animations/case_2/index.html">case-2</a></li>
+    <li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Animations/case_3/index.html">case-3</a></li>
+    <li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Animations/case_4/index.html">case-4</a></li>
   </ol>
 </details>
 
 <details>
   <summary>Basics</summary>
   <ol>
-    <li><a href="./assignments/CSS/Basics/case_1/index.html">case-1</a></li>
-    <li><a href="./assignments/CSS/Basics/case_2/index.html">case-2</a></li>
-    <li><a href="./assignments/CSS/Basics/case_3/index.html">case-3</a></li>
-    <li><a href="./assignments/CSS/Basics/case_4/index.html">case-4</a></li>
-    <li><a href="./assignments/CSS/Basics/case_5/index.html">case-5</a></li>
-    <li><a href="./assignments/CSS/Basics/case_6/index.html">case-6</a></li>
+    <li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Basics/case_1/index.html">case-1</a></li>
+    <li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Basics/case_2/index.html">case-2</a></li>
+    <li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Basics/case_3/index.html">case-3</a></li>
+    <li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Basics/case_4/index.html">case-4</a></li>
+    <li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Basics/case_5/index.html">case-5</a></li>
+    <li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Basics/case_6/index.html">case-6</a></li>
   </ol>
 </details>
   
 <details>
   <summary>Frameworks</summary>
-  <a href="./assignments/Frameworks/index.html">view deployment</a>
+  <a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/Frameworks/index.html">view deployment</a>
 </details>
   
 <details>
   <summary>JS</summary>
   <ol>
-    <li><a href="./assignments/JS/SPA/index.html">SPA</a></li>
+    <li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/JS/SPA/index.html">SPA</a></li>
   </ol>
 </details>
   
 <details>
   <summary>Transitions</summary>
   <ol>
-    <li><a href="./assignments/Transitions/case_1/index.html">case-1</a></li>
-    <li><a href="./assignments/Transitions/case_2/index.html">case-2</a></li>
+    <li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/Transitions/case_1/index.html">case-1</a></li>
+    <li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/Transitions/case_2/index.html">case-2</a></li>
   </ol>
 </details>
 
