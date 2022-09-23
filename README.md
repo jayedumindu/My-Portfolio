@@ -28,6 +28,8 @@ _All pre-required information can be gathered from the links given below_
 
 ### Assignments
 
+_Click CTRL + link to open in new tab_
+
 <details>
   <summary>Animations</summary>
   <ol>
