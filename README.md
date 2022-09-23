@@ -12,7 +12,7 @@ Extends:
 * Contact or submit your opinion.
 * Platform for showing my skills to get hired.
 
-[Click Here](https://jayedumindu.github.io/portfolio/) to view deployment.
+[Click Here](https://jayedumindu.github.io/My-Portfolio/) to view deployment.
 
 ### Built With
 
