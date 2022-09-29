@@ -160,7 +160,7 @@
 <!-- SCROLLABLE CONTENT -->
 <div class="p-2 bg-light" style="height:500px; overflow-y:scroll; overflow-x:hidden;">
 
-<div class="row g-5">
+<div class="row g-5" id="cst-container">
 
   <div class="col col-lg-4 d-flex justify-content-center">
     <div class="card" style="width: 18rem;">
@@ -169,8 +169,8 @@
       <h5 class="card-title">Dumindu Jayaseakara</h5>
         <ul class="list-unstyled">
           <li>ID : C-0001</li>
-          <li>Age : 21</li>
-          <li>Orders : 10</li>
+          <li>Age : 20</li>
+          <li>City : Galle</li>
         </ul>
         <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Cutomer</a>
         <a href="#" class="btn btn-danger">Delete</a>
@@ -186,7 +186,7 @@
         <ul class="list-unstyled">
           <li>ID : C-0001</li>
           <li>Age : 21</li>
-          <li>Orders : 10</li>
+          <li>City : Galle</li>
         </ul>
       <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Cutomer</a>
       <a href="#" class="btn btn-danger">Delete</a>
@@ -202,7 +202,7 @@
         <ul class="list-unstyled">
           <li>ID : C-0001</li>
           <li>Age : 21</li>
-          <li>Orders : 10</li>
+          <li>City : Galle</li>
         </ul>
         <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Cutomer</a>
         <a href="#" class="btn btn-danger">Delete</a>
@@ -218,7 +218,7 @@
         <ul class="list-unstyled">
           <li>ID : C-0001</li>
           <li>Age : 21</li>
-          <li>Orders : 10</li>
+          <li>City : Galle</li>
         </ul>
         <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Cutomer</a>
         <a href="#" class="btn btn-danger">Delete</a>
@@ -292,39 +292,36 @@
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Adding New Customer ID : C-002</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Adding New Customer <span id="cst-id">ID : C-002</span> </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
                 <form class="row g-3">
                   <div class="col-md-6">
-                    <label for="inputEmail4" class="form-label">FirstName</label>
-                    <input type="email" class="form-control" id="inputEmail4">
+                    <label for="cst-fname" class="form-label">FirstName</label>
+                    <input type="text" class="form-control" id="cst-fname">
                   </div>
                   <div class="col-md-6">
-                    <label for="inputPassword4" class="form-label">LastName</label>
-                    <input type="password" class="form-control" id="inputPassword4">
-                  </div>
-                  <div class="col-12">
-                    <label for="inputAddress" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                    <label for="cst-lastname" class="form-label">LastName</label>
+                    <input type="text" class="form-control" id="cst-lastname">
                   </div>
                   <div class="col-md-6">
-                    <label for="inputCity" class="form-label">City</label>
-                    <input type="text" class="form-control" id="inputCity">
+                    <label for="cst-age" class="form-label">Age</label>
+                    <input type="text" class="form-control" id="cst-age">
                   </div>
                   <div class="col-md-6">
-                    <label for="inputState" class="form-label">State</label>
-                    <select id="inputState" class="form-select">
+                    <label for="cst-city" class="form-label">City</label>
+                    <select id="cst-city" class="form-select">
                       <option selected>Choose...</option>
-                      <option>...</option>
+                      <option>Galle</option>
+                      <option>Matara</option>
                     </select>
                   </div>
                 </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Add Customer</button>
+                <button type="button" class="btn btn-primary" id="addNewCustomer">Add Customer</button>
               </div>
             </div>
           </div>
@@ -349,7 +346,7 @@
      <!-- SCROLLABLE CONTENT -->
      <div class="p-2 bg-light" style="height:450px; overflow-y:scroll; overflow-x:hidden;">
 
-      <div class="row g-5">
+      <div class="row g-5" id="item-container">
 
         <div class="col col-lg-4 d-flex justify-content-center">
           <div class="card" style="width: 18rem;">
@@ -362,7 +359,7 @@
                 <li>Price : 2400.00</li>
                 <li>Weight : 250g</li>
               </ul>
-              <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Item</a>
+              <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#itemModal2">Update Item</a>
             <a href="#" class="btn btn-danger">Delete</a>
           </div>
           </div>
@@ -379,7 +376,7 @@
                 <li>Price : 2400.00</li>
                 <li>Weight : 250g</li>
               </ul>
-              <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Item</a>
+              <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#itemModal2">Update Item</a>
             <a href="#" class="btn btn-danger">Delete</a>
           </div>
           </div>
@@ -396,7 +393,7 @@
                 <li>Price : 2400.00</li>
                 <li>Weight : 250g</li>
               </ul>
-              <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Item</a>
+              <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#itemModal2">Update Item</a>
             <a href="#" class="btn btn-danger">Delete</a>
           </div>
           </div>
@@ -413,7 +410,7 @@
                 <li>Price : 2400.00</li>
                 <li>Weight : 250g</li>
               </ul>
-            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Item</a>
+            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#itemModal2">Update Item</a>
             <a href="#" class="btn btn-danger">Delete</a>
           </div>
           </div>
@@ -422,10 +419,10 @@
     </div>
   </div>
 
-  <button class="btn btn-outline-secondary mt-5" type="button" style="width:50%" data-bs-toggle="modal" data-bs-target="#exampleModal2">Add New Item</button>
+  <button class="btn btn-outline-secondary mt-5" type="button" style="width:50%" data-bs-toggle="modal" data-bs-target="#itemModal">Add New Item</button>
 
-        <!-- add new item modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- update item modal -->
+    <div class="modal fade" id="itemModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -463,34 +460,38 @@
     </div>
 
     <!-- Add New Item -->
-  <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="itemModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Adding New Item ID : C-002</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Adding New Item <span id="item-id">ID : C-002</span> </h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Item Name</span>
-            <input type="text" class="form-control" placeholder="Tea" aria-label="Username" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="Tea" aria-label="Username" aria-describedby="basic-addon1" id="item-name">
           </div>
           <!-- price -->
           <div class="input-group mb-3">
             <span class="input-group-text">Price and Currency</span>
-            <input type="text" aria-label="price" class="form-control">
-            <input type="text" aria-label="currency" class="form-control">
+            <input type="text" aria-label="price" class="form-control" id="item-price">
+            <input type="text" aria-label="currency" class="form-control" id="item-cr">
           </div>
           <!-- stock -->
           <div class="input-group mb-3">
             <span class="input-group-text">Stock</span>
-            <input type="number" aria-label="First name" class="form-control" placeholder="500">
+            <input type="number" aria-label="First name" class="form-control" placeholder="500" id="item-stock">
+          </div>
+          <div class="input-group mb-3">
+            <span class="input-group-text">Weight (g)</span>
+            <input type="number" aria-label="First name" class="form-control" placeholder="500" id="item-weight">
           </div>
         </div>
         <!-- </div> -->
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Add Item</button>
+          <button type="button" class="btn btn-primary" id="addNewItem">Add Item</button>
         </div>
       </div>
     </div>
@@ -770,6 +771,53 @@
         section.removeClass(cls);
         }
       }
+
+      // adding/updating items and customers (temp)
+
+      // add item
+      $('#addNewItem').click(() => {
+        $('#item-container').append(
+          `<div class="col col-lg-4 d-flex justify-content-center">
+          <div class="card" style="width: 18rem;">
+            <img src="./assets/img/item.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">${$('#item-name').val()}</h5>
+              <ul class="list-unstyled">
+                <li>${$('#item-id').text()}</li>
+                <li>Stock : ${$('#item-stock').val()}</li>
+                <li>Price : ${$('#item-price').val()}</li>
+                <li>Weight : ${$('#item-weight').val()}g</li>
+              </ul>
+              <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#itemModal2">Update Item</a>
+            <a href="#" class="btn btn-danger">Delete</a>
+          </div>
+          </div>
+        </div>`
+        )
+      })
+
+      // add customer
+      $('#addNewCustomer').click(() => {
+        $('#cst-container').append(
+          ` <div class="col col-lg-4 d-flex justify-content-center">
+       <div class="card" style="width: 18rem;">
+      <img src="./assets/img/portrait.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+      <h5 class="card-title">${$('#cst-fname').val()} ${$('#cst-lastname').val()}</h5>
+        <ul class="list-unstyled">
+          <li>${$('#cst-id').text()}</li>
+          <li>Age : ${$('#cst-age').val()}</li>
+          <li>City : ${$('#cst-city').val()}</li>
+        </ul>
+        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Cutomer</a>
+        <a href="#" class="btn btn-danger">Delete</a>
+      </div>
+     </div>
+     </div>
+     `
+        )
+      })
+
 
     </script>
 
