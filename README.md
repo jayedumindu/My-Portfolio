@@ -1,5 +1,7 @@
 <a name="readme-top"></a>
-#  Personal Portfolio 
+
+# Personal Portfolio
+
 web based project for internet-tech module
 
 ## About The Project
@@ -9,14 +11,15 @@ web based project for internet-tech module
 Designed with a professional flavour for further usage, including all features what would be expected from a CV + additional information.
 
 Extends:
-* Contact or submit your opinion.
-* Platform for showing my skills to get hired.
+
+- Contact or submit your opinion.
+- Platform for showing my skills to get hired.
 
 [Click Here](https://jayedumindu.github.io/My-Portfolio/) to view deployment.
 
 ### Built With
 
-* Pure CSS and HTML with no frameworks.
+- Pure CSS and HTML with no frameworks.
 
 ### Prerequisites
 
@@ -61,6 +64,7 @@ _Click CTRL + link to open in new tab_
   <summary>JS</summary>
   <ol>
     <li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/JS/SPA/index.html">SPA</a></li>
+    <li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/JS/Calculator/index.html">Calculator</a></li>
   </ol>
 </details>
   
