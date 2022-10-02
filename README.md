@@ -63,8 +63,8 @@ _Click CTRL + link to open in new tab_
 <details>
   <summary>JS</summary>
   <ol>
-    <li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/JS/SPA/index.html">SPA</a></li>
-    <li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/JS/Calculator/index.html">Calculator</a></li>
+    <li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/JS/SPA/index.html">SPA</a></li>
+    <li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/JS/Calculator/index.html">Calculator</a></li>
   </ol>
 </details>
   
