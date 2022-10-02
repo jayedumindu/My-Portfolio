@@ -187,45 +187,29 @@
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">ID</span>
                 <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                  aria-describedby="basic-addon1">
+                  aria-describedby="basic-addon1" id="cst-up-id">
               </div>
               <!-- name -->
               <div class="input-group">
                 <span class="input-group-text">First and last name</span>
-                <input type="text" aria-label="First name" class="form-control">
-                <input type="text" aria-label="Last name" class="form-control">
+                <input type="text" aria-label="First name" class="form-control" id="cst-up-fname">
+                <input type="text" aria-label="Last name" class="form-control" id="cst-up-lname">
               </div>
               <!-- age -->
-              <div class="form-check d-inline-block my-2">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                <label class="form-check-label" for="flexRadioDefault1">
-                  Male
-                </label>
-              </div>
-              <div class="form-check d-inline-block my-2">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                <label class="form-check-label" for="flexRadioDefault2">
-                  Female
-                </label>
-              </div>
-              <!-- gender -->
-              <div class="input-group mb-3">
+              <div class="input-group mb-3 mt-3">
                 <span class="input-group-text">Age</span>
-                <input type="number" aria-label="First name" class="form-control" placeholder="20">
+                <input type="number" aria-label="First name" class="form-control" placeholder="20" id="cst-up-age">
               </div>
               <!-- living-in -->
-              <select class="form-select" aria-label="Default select example">
-                <option selected>Region</option>
-                <option value="1">Colombo</option>
-                <option value="2">Gampaha</option>
-                <option value="3">Kelaniya</option>
-                <option value="3">Other</option>
+              <select class="form-select" aria-label="Default select example" id="cst-up-city">
+                <option value="1">Galle</option>
+                <option value="2">Matara</option>
               </select>
               <!-- end -->
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-primary" onclick="saveNewCustomerData()">Save changes</button>
             </div>
           </div>
         </div>
@@ -333,10 +317,15 @@
                 <span class="input-group-text">Stock</span>
                 <input type="number" aria-label="First name" class="form-control" placeholder="500" id="up-item-stock">
               </div>
+              <!-- weight -->
+              <div class="input-group mb-3">
+                <span class="input-group-text">Weight (g)</span>
+                <input type="number" aria-label="weight" class="form-control" placeholder="100" id="up-item-weight">
+              </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
+              <button type="button" class="btn btn-primary" onclick="saveNewItemData()">Save changes</button>
             </div>
           </div>
         </div>
@@ -681,12 +670,12 @@
           <div class="card-body">
             <h5 class="card-title">${item.name}</h5>
               <ul class="list-unstyled">
-                <li>${item.id}</li>
+                <li id="item-id-txt">${item.id}</li>
                 <li>Stock : ${item.stock}</li>
                 <li>Price : ${item.price}</li>
-                <li>Weight : ${item.weight}g</li>
+                <li>Weight (g) : ${item.weight}</li>
               </ul>
-              <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#itemModal2">Update Item</a>
+              <a href="#" class="btn btn-primary update-item" data-bs-toggle="modal" data-bs-target="#itemModal2">Update Item</a>
             <a href="#" class="btn btn-danger">Delete</a>
           </div>
           </div>
@@ -728,11 +717,11 @@
       <div class="card-body">
       <h5 class="card-title">${customer.fname} ${customer.lname}</h5>
         <ul class="list-unstyled">
-          <li>${customer.id}</li>
+          <li id="cst-id-txt">${customer.id}</li>
           <li>Age : ${customer.age}</li>
           <li>City : ${customer.city}</li>
         </ul>
-        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Cutomer</a>
+        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="update-customer">Update Cutomer</a>
         <a href="#" class="btn btn-danger">Delete</a>
       </div>
      </div>
@@ -771,9 +760,53 @@
       $('#up-item-id').val(item.id)
       $('#up-item-name').val(item.name)
       $('#up-item-price').val(item.price)
-      // $('#up-item-cr').val('Rs')
       $('#up-item-stock').val(item.stock)
+      $('#up-item-weight').val(item.weight)
     })
+
+    function saveNewItemData() {
+      let newItem = {
+        id: $('#up-item-id').val(),
+        name: $('#up-item-name').val(),
+        stock: $('#up-item-stock').val(),
+        price: $('#up-item-price').val(),
+        weight: $('#up-item-weight').val()
+      }
+      console.log(newItem)
+      items = items.map((item) => {
+        return newItem.id === item.id ? newItem : item
+      })
+      clearAllItems();
+      refreshItemsFromArray();
+    }
+
+    // customers
+    $('#update-customer').click(function () {
+      let id = $(this).parent().find("ul #cst-id-txt").text();
+      let customer = customers.find((element) => {
+        return element.id === id
+      })
+      $('#cst-up-id').val(customer.id)
+      $('#cst-up-fname').val(customer.fname)
+      $('#cst-up-lname').val(customer.lname)
+      $('#cst-up-age').val(customer.age)
+      customer.city === 'Galle' ? $('#cst-up-city').val(1) : $('#cst-up-city').val(2)
+    })
+
+    function saveNewCustomerData() {
+      let newCustomer = {
+        id: $('#cst-up-id').val(),
+        fname: $('#cst-up-fname').val(),
+        lname: $('#cst-up-lname').val(),
+        age: $('#cst-up-age').val()
+      }
+      $('#cst-up-city').val() === 1 ? newCustomer.city = 'Galle' : newCustomer.city = 'Matara';
+      customers = customers.map((cst) => {
+        return newCustomer.id === cst.id ? newCustomer : cst
+      })
+      clearAllCustomers();
+      refreshCustomersFromArray();
+    }
 
 
   </script>
