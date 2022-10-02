@@ -1,792 +1,690 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap demo for POS</title>
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <script src="./js/bootstrap.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap demo for POS</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 </head>
+
 <body>
-    <main class="container text-center">
+  <main class="container text-center">
 
-      <!-- navbar -->
-      <nav class="navbar pb-0 navbar-expand-lg" style="background-color: #e3f2fd;">
+    <!-- navbar -->
+    <nav class="navbar pb-0 navbar-expand-lg" style="background-color: #e3f2fd;">
 
-        <div class="container-fluid">
+      <div class="container-fluid">
 
-          <a class="navbar-brand h1 mb-0">Farmeez</a>
+        <a class="navbar-brand h1 mb-0">Farmeez</a>
 
-          <!-- toggler   -->
-          <!-- <button class="navbar-toggler mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- toggler   -->
+        <!-- <button class="navbar-toggler mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button> -->
 
-          <button class="navbar-toggler mb-2 bg-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-      
-          <!-- offcanvas-lg offcanvas-end navbar-collapse-lg -->
- 
-          <!-- responsive content -->
-          <div class="collapse navbar-collapse">
-            <ul class="nav nav-tabs me-auto">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" id="navToHome">Home</a>
+        <button class="navbar-toggler mb-2 bg-light" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- offcanvas-lg offcanvas-end navbar-collapse-lg -->
+
+        <!-- responsive content -->
+        <div class="collapse navbar-collapse">
+          <ul class="nav nav-tabs me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" id="navToHome">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="navToItems">Items</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="navToCustomers">Customer</a>
+            </li>
+            <li class="nav-item mx-auto">
+              <a class="nav-link" href="#" id="navToOrders">Place Order</a>
+            </li>
+          </ul>
+
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Log In</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Log Out</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- offcanvas -->
+        <div class="offcanvas offcanvas-top  d-lg-none" tabindex="-1" id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body px-0">
+            <ul class="navbar-nav justify-content-end flex-grow-1">
+              <li class="nav-item bg-light">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" id="navToItems">Items</a>
+                <a class="nav-link" href="#">Items</a>
+              </li>
+              <li class="nav-item bg-light">
+                <a class="nav-link" href="#">Customers</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#" id="navToCustomers">Customer</a>
-              </li>
-              <li class="nav-item mx-auto">
-                <a class="nav-link" href="#" id="navToOrders">Place Order</a>
-              </li>
-            </ul>
-           
-            <ul class="nav">
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="#">Log In</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#">Log Out</a>
+                <a class="nav-link" href="#">Place Order</a>
               </li>
             </ul>
           </div>
+        </div>
 
-          <!-- offcanvas -->
-          <div class="offcanvas offcanvas-top  d-lg-none" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body px-0">
-              <ul class="navbar-nav justify-content-end flex-grow-1">
-                <li class="nav-item bg-light">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Items</a>
-                </li>
-                <li class="nav-item bg-light">
-                  <a class="nav-link" href="#">Customers</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Place Order</a>
-                </li>
+
+      </div>
+
+    </nav>
+
+    <!--++++++++++++++++++++++++++++++++++ homepage menu ++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <section class="container" id="mainMenu">
+
+      <h1 class="p-5"> Select Options From Below </h1>
+
+      <!-- card selector menu -->
+      <div class="row g-5">
+
+        <!-- card 1 -->
+        <div class="col-12 col-lg-4 d-flex justify-content-center mb-3">
+          <div class="card" style="width: 18rem;">
+            <img src="./assets/img/customer.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Manage Customers</h5>
+              <p class="card-text">Options for handling customer details</p>
+              <ul class="list-unstyled">
+                <li>Register/Unregister Customers</li>
+                <li>View all customers</li>
+                <li>Search Customers</li>
               </ul>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
-          </div> 
-      
-
+          </div>
         </div>
 
-      </nav>
-
-      <!--++++++++++++++++++++++++++++++++++ homepage menu ++++++++++++++++++++++++++++++++++++++++++++++++-->
-      <section class="container" id="mainMenu">
-
-        <h1 class="p-5"> Select Options From Below </h1>
-
-        <!-- card selector menu -->
-          <div class="row g-5">
-
-            <!-- card 1 -->
-            <div class="col-12 col-lg-4 d-flex justify-content-center mb-3">
-              <div class="card" style="width: 18rem;">
-                <img src="./assets/img/customer.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Manage Customers</h5>
-                  <p class="card-text">Options for handling customer details</p>
-                  <ul class="list-unstyled">
-                    <li>Register/Unregister Customers</li>
-                    <li>View all customers</li>
-                    <li>Search Customers</li>
-                  </ul>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
-
-           <!-- card 2-->
-           <div class="col-12 col-lg-4 d-flex justify-content-center mb-3">
-            <div class="card" style="width: 18rem;">
-              <img src="./assets/img/items.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Manage Items</h5>
-                <p class="card-text">All available options to manage the store</p>
-                <ul class="list-unstyled">
-                  <li>Add/Remove Items</li>
-                  <li>View all Items</li>
-                  <li>Search Items</li>
-                </ul>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
+        <!-- card 2-->
+        <div class="col-12 col-lg-4 d-flex justify-content-center mb-3">
+          <div class="card" style="width: 18rem;">
+            <img src="./assets/img/items.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Manage Items</h5>
+              <p class="card-text">All available options to manage the store</p>
+              <ul class="list-unstyled">
+                <li>Add/Remove Items</li>
+                <li>View all Items</li>
+                <li>Search Items</li>
+              </ul>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
+        </div>
 
-          <!-- card 3 -->
-          <div class="col-12 col-lg-4 d-flex justify-content-center mb-3">
-            <div class="card" style="width: 18rem;">
-              <img src="./assets/img/order.jpg" class="card-img-top" alt="...">
-              <div class="card-body d-flex flex-wrap align-content-center justify-content-center">
-                <h5 class="card-title">Purchase Order</h5>
-                <p class="card-text">Make sure you're logged in!</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
+        <!-- card 3 -->
+        <div class="col-12 col-lg-4 d-flex justify-content-center mb-3">
+          <div class="card" style="width: 18rem;">
+            <img src="./assets/img/order.jpg" class="card-img-top" alt="...">
+            <div class="card-body d-flex flex-wrap align-content-center justify-content-center">
+              <h5 class="card-title">Purchase Order</h5>
+              <p class="card-text">Make sure you're logged in!</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
+        </div>
 
-       </div>
-      </section>
+      </div>
+    </section>
 
-      <!--++++++++++++++++++++++++++++++++++ Customer ++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <!--++++++++++++++++++++++++++++++++++ Customer ++++++++++++++++++++++++++++++++++++++++++++++++-->
     <section class="container collapse" id="customer">
-         <!-- SEARCH BAR -->
-<h1 class="p-5"> Manage Customers</h1>
-<form class="row g-3 justify-content-center">
-  <div class="col-auto">
-    <input type="text" class="form-control" id="searchCustomer" placeholder="Customer name /  ID">
-  </div>          
-  <div class="col-auto">
-    <button type="submit" class="btn btn-primary mb-3">search</button>
-  </div>
-</form>
-
-<hr>
-
-<!-- SCROLLABLE CONTENT -->
-<div class="p-2 bg-light" style="height:500px; overflow-y:scroll; overflow-x:hidden;">
-
-<div class="row g-5" id="cst-container">
-
-  <div class="col col-lg-4 d-flex justify-content-center">
-    <div class="card" style="width: 18rem;">
-      <img src="./assets/img/portrait.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Dumindu Jayaseakara</h5>
-        <ul class="list-unstyled">
-          <li>ID : C-0001</li>
-          <li>Age : 20</li>
-          <li>City : Galle</li>
-        </ul>
-        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Cutomer</a>
-        <a href="#" class="btn btn-danger">Delete</a>
-    </div>
-    </div>
-  </div>
-
-  <div class="col col-lg-4 d-flex justify-content-center">
-    <div class="card" style="width: 18rem;">
-      <img src="./assets/img/portrait.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Dumindu Jayaseakara</h5>
-        <ul class="list-unstyled">
-          <li>ID : C-0001</li>
-          <li>Age : 21</li>
-          <li>City : Galle</li>
-        </ul>
-      <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Cutomer</a>
-      <a href="#" class="btn btn-danger">Delete</a>
-    </div>
-    </div>
-  </div>
-
-  <div class="col col-lg-4 d-flex justify-content-center">
-    <div class="card" style="width: 18rem;">
-      <img src="./assets/img/portrait.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Dumindu Jayaseakara</h5>
-        <ul class="list-unstyled">
-          <li>ID : C-0001</li>
-          <li>Age : 21</li>
-          <li>City : Galle</li>
-        </ul>
-        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Cutomer</a>
-        <a href="#" class="btn btn-danger">Delete</a>
-    </div>
-    </div>
-  </div>
-
-  <div class="col col-lg-4 d-flex justify-content-center">
-    <div class="card" style="width: 18rem;">
-      <img src="./assets/img/portrait.jpg" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Dumindu Jayaseakara</h5>
-        <ul class="list-unstyled">
-          <li>ID : C-0001</li>
-          <li>Age : 21</li>
-          <li>City : Galle</li>
-        </ul>
-        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Cutomer</a>
-        <a href="#" class="btn btn-danger">Delete</a>
-    </div>
-    </div>
-  </div>
-
-</div>
-</div>
-
-<button class="btn btn-outline-secondary mt-5" type="button" style="width:50%" data-bs-toggle="modal" data-bs-target="#exampleModal2">Add New Customer</button>  
-
-        <!-- update customer modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">You're updating Customer : C-001</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body d-flex justify-content-around flex-wrap">
-                <!-- id -->
-                <div class="input-group mb-3">
-                  <span class="input-group-text" id="basic-addon1">ID</span>
-                  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
-                <!-- name -->
-                <div class="input-group">
-                  <span class="input-group-text">First and last name</span>
-                  <input type="text" aria-label="First name" class="form-control">
-                  <input type="text" aria-label="Last name" class="form-control">
-                </div>
-                <!-- age -->
-                <div class="form-check d-inline-block my-2">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    Male
-                  </label>
-                </div>
-                <div class="form-check d-inline-block my-2">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                  <label class="form-check-label" for="flexRadioDefault2">
-                    Female
-                  </label>
-                </div>
-                <!-- gender -->
-                <div class="input-group mb-3">
-                  <span class="input-group-text">Age</span>
-                  <input type="number" aria-label="First name" class="form-control" placeholder="20">
-                </div>
-                <!-- living-in -->
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Region</option>
-                  <option value="1">Colombo</option>
-                  <option value="2">Gampaha</option>
-                  <option value="3">Kelaniya</option>
-                  <option value="3">Other</option>
-                </select>
-                <!-- end -->
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Add New Customer -->
-        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Adding New Customer <span id="cst-id">ID : C-002</span> </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <form class="row g-3">
-                  <div class="col-md-6">
-                    <label for="cst-fname" class="form-label">FirstName</label>
-                    <input type="text" class="form-control" id="cst-fname">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="cst-lastname" class="form-label">LastName</label>
-                    <input type="text" class="form-control" id="cst-lastname">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="cst-age" class="form-label">Age</label>
-                    <input type="text" class="form-control" id="cst-age">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="cst-city" class="form-label">City</label>
-                    <select id="cst-city" class="form-select">
-                      <option selected>Choose...</option>
-                      <option>Galle</option>
-                      <option>Matara</option>
-                    </select>
-                  </div>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" id="addNewCustomer">Add Customer</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!--++++++++++++++++++++++++++++++++++ Item ++++++++++++++++++++++++++++++++++++++++++++++++-->
-    <section class="container collapse" id="item">
-    <h1 class="p-5">Manage Items</h1>
-    <!-- SEARCH BAR -->
+      <!-- SEARCH BAR -->
+      <h1 class="p-5"> Manage Customers</h1>
       <form class="row g-3 justify-content-center">
         <div class="col-auto">
-          <input type="text" class="form-control" id="searchItem" placeholder="Item name / Item Code">
-        </div>          
+          <input type="text" class="form-control" id="searchCustomer" placeholder="Customer name /  ID">
+        </div>
         <div class="col-auto">
           <button type="submit" class="btn btn-primary mb-3">search</button>
         </div>
-     </form>
+      </form>
 
-     <hr>
-    
-     <!-- SCROLLABLE CONTENT -->
-     <div class="p-2 bg-light" style="height:450px; overflow-y:scroll; overflow-x:hidden;">
+      <hr>
 
-      <div class="row g-5" id="item-container">
+      <!-- SCROLLABLE CONTENT -->
+      <div class="p-2 bg-light" style="height:500px; overflow-y:scroll; overflow-x:hidden;">
 
-        <div class="col col-lg-4 d-flex justify-content-center">
-          <div class="card" style="width: 18rem;">
-            <img src="./assets/img/item.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Tea</h5>
-              <ul class="list-unstyled">
-                <li>ID : I-0001</li>
-                <li>Stock : 21</li>
-                <li>Price : 2400.00</li>
-                <li>Weight : 250g</li>
-              </ul>
-              <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#itemModal2">Update Item</a>
-            <a href="#" class="btn btn-danger">Delete</a>
-          </div>
-          </div>
+        <div class="row g-5" id="cst-container">
+
+          <!-- where customers get added -->
+
         </div>
+      </div>
 
-        <div class="col col-lg-4 d-flex justify-content-center">
-          <div class="card" style="width: 18rem;">
-            <img src="./assets/img/item.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Tea</h5>
-              <ul class="list-unstyled">
-                <li>ID : I-0001</li>
-                <li>Stock : 21</li>
-                <li>Price : 2400.00</li>
-                <li>Weight : 250g</li>
-              </ul>
-              <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#itemModal2">Update Item</a>
-            <a href="#" class="btn btn-danger">Delete</a>
-          </div>
-          </div>
-        </div>
+      <button class="btn btn-outline-secondary mt-5" type="button" style="width:50%" data-bs-toggle="modal"
+        data-bs-target="#exampleModal2">Add New Customer</button>
 
-        <div class="col col-lg-4 d-flex justify-content-center">
-          <div class="card" style="width: 18rem;">
-            <img src="./assets/img/item.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Tea</h5>
-              <ul class="list-unstyled">
-                <li>ID : I-0001</li>
-                <li>Stock : 21</li>
-                <li>Price : 2400.00</li>
-                <li>Weight : 250g</li>
-              </ul>
-              <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#itemModal2">Update Item</a>
-            <a href="#" class="btn btn-danger">Delete</a>
-          </div>
-          </div>
-        </div>
-
-        <div class="col col-lg-4 d-flex justify-content-center">
-          <div class="card" style="width: 18rem;">
-            <img src="./assets/img/item.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Tea</h5>
-              <ul class="list-unstyled">
-                <li>ID : I-0001</li>
-                <li>Stock : 21</li>
-                <li>Price : 2400.00</li>
-                <li>Weight : 250g</li>
-              </ul>
-            <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#itemModal2">Update Item</a>
-            <a href="#" class="btn btn-danger">Delete</a>
-          </div>
-          </div>
-        </div>
-
-    </div>
-  </div>
-
-  <button class="btn btn-outline-secondary mt-5" type="button" style="width:50%" data-bs-toggle="modal" data-bs-target="#itemModal">Add New Item</button>
-
-        <!-- update item modal -->
-    <div class="modal fade" id="itemModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">You're updating Item : I-001</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body d-flex justify-content-around flex-wrap">
-            <!-- id -->
-            <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon1">ID</span>
-              <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+      <!-- update customer modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">You're updating Customer : C-001</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="input-group mb-3">
-              <span class="input-group-text" id="basic-addon1">Item Name</span>
-              <input type="text" class="form-control" placeholder="Tea" aria-label="Username" aria-describedby="basic-addon1">
+            <div class="modal-body d-flex justify-content-around flex-wrap">
+              <!-- id -->
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">ID</span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                  aria-describedby="basic-addon1">
+              </div>
+              <!-- name -->
+              <div class="input-group">
+                <span class="input-group-text">First and last name</span>
+                <input type="text" aria-label="First name" class="form-control">
+                <input type="text" aria-label="Last name" class="form-control">
+              </div>
+              <!-- age -->
+              <div class="form-check d-inline-block my-2">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Male
+                </label>
+              </div>
+              <div class="form-check d-inline-block my-2">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Female
+                </label>
+              </div>
+              <!-- gender -->
+              <div class="input-group mb-3">
+                <span class="input-group-text">Age</span>
+                <input type="number" aria-label="First name" class="form-control" placeholder="20">
+              </div>
+              <!-- living-in -->
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Region</option>
+                <option value="1">Colombo</option>
+                <option value="2">Gampaha</option>
+                <option value="3">Kelaniya</option>
+                <option value="3">Other</option>
+              </select>
+              <!-- end -->
             </div>
-            <!-- price -->
-            <div class="input-group mb-3">
-              <span class="input-group-text">Price and Currency</span>
-              <input type="text" aria-label="price" class="form-control">
-              <input type="text" aria-label="currency" class="form-control">
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
             </div>
-            <!-- stock -->
-            <div class="input-group mb-3">
-              <span class="input-group-text">Stock</span>
-              <input type="number" aria-label="First name" class="form-control" placeholder="500">
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- Add New Item -->
-  <div class="modal fade" id="itemModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Adding New Item <span id="item-id">ID : C-002</span> </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Item Name</span>
-            <input type="text" class="form-control" placeholder="Tea" aria-label="Username" aria-describedby="basic-addon1" id="item-name">
+      <!-- Add New Customer -->
+      <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Adding New Customer <span id="cst-id">ID : C-002</span>
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form class="row g-3">
+                <div class="col-md-6">
+                  <label for="cst-fname" class="form-label">FirstName</label>
+                  <input type="text" class="form-control" id="cst-fname">
+                </div>
+                <div class="col-md-6">
+                  <label for="cst-lastname" class="form-label">LastName</label>
+                  <input type="text" class="form-control" id="cst-lastname">
+                </div>
+                <div class="col-md-6">
+                  <label for="cst-age" class="form-label">Age</label>
+                  <input type="text" class="form-control" id="cst-age">
+                </div>
+                <div class="col-md-6">
+                  <label for="cst-city" class="form-label">City</label>
+                  <select id="cst-city" class="form-select">
+                    <option selected>Choose...</option>
+                    <option>Galle</option>
+                    <option>Matara</option>
+                  </select>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="addNewCustomer">Add Customer</button>
+            </div>
           </div>
-          <!-- price -->
-          <div class="input-group mb-3">
-            <span class="input-group-text">Price and Currency</span>
-            <input type="text" aria-label="price" class="form-control" id="item-price">
-            <input type="text" aria-label="currency" class="form-control" id="item-cr">
-          </div>
-          <!-- stock -->
-          <div class="input-group mb-3">
-            <span class="input-group-text">Stock</span>
-            <input type="number" aria-label="First name" class="form-control" placeholder="500" id="item-stock">
-          </div>
-          <div class="input-group mb-3">
-            <span class="input-group-text">Weight (g)</span>
-            <input type="number" aria-label="First name" class="form-control" placeholder="500" id="item-weight">
-          </div>
-        </div>
-        <!-- </div> -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary" id="addNewItem">Add Item</button>
         </div>
       </div>
-    </div>
-  </div>
     </section>
 
-      <!--++++++++++++++++++++++++++++++++++ Order ++++++++++++++++++++++++++++++++++++++++++++++++-->
-    <section class="container collapse" id="order">
-    <div id="main">
-      <h1 class="p-5" id="header"> </h1>
-  <div class="progress">
-       <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div>
-  </div>
-  </div>
-</section>
+    <!--++++++++++++++++++++++++++++++++++ Item ++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <section class="container collapse" id="item">
+      <h1 class="p-5">Manage Items</h1>
+      <!-- SEARCH BAR -->
+      <form class="row g-3 justify-content-center">
+        <div class="col-auto">
+          <input type="text" class="form-control" id="searchItem" placeholder="Item name / Item Code">
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-3">search</button>
+        </div>
+      </form>
 
-      <!--++++++++++++++++++++++++++++++++++ Order-1 ++++++++++++++++++++++++++++++++++++++++++++++++-->
+      <hr>
+
+      <!-- SCROLLABLE CONTENT -->
+      <div class="p-2 bg-light" style="height:450px; overflow-y:scroll; overflow-x:hidden;">
+
+        <div class="row g-5" id="item-container">
+
+          <!-- where items get added -->
+
+        </div>
+      </div>
+
+      <button class="btn btn-outline-secondary mt-5" type="button" style="width:50%" data-bs-toggle="modal"
+        data-bs-target="#itemModal">Add New Item</button>
+
+      <!-- update item modal -->
+      <div class="modal fade" id="itemModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">You're updating Item : I-001</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex justify-content-around flex-wrap">
+              <!-- id -->
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">ID</span>
+                <input type="text" class="form-control" placeholder="I-XXX" aria-label="Username"
+                  aria-describedby="basic-addon1" id="up-item-id">
+              </div>
+              <!-- name -->
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Item Name</span>
+                <input type="text" class="form-control" placeholder="Tea" aria-label="Username"
+                  aria-describedby="basic-addon1" id="up-item-name">
+              </div>
+              <!-- price -->
+              <div class="input-group mb-3">
+                <span class="input-group-text">Price and Currency</span>
+                <input type="text" aria-label="price" class="form-control" id="up-item-price">
+                <input type="text" aria-label="currency" value="Rs" class="form-control" id="up-item-cr" readonly>
+              </div>
+              <!-- stock -->
+              <div class="input-group mb-3">
+                <span class="input-group-text">Stock</span>
+                <input type="number" aria-label="First name" class="form-control" placeholder="500" id="up-item-stock">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add New Item -->
+      <div class="modal fade" id="itemModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Adding New Item <span id="item-id">ID : C-002</span> </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Item Name</span>
+                <input type="text" class="form-control" placeholder="Tea" aria-label="Username"
+                  aria-describedby="basic-addon1" id="item-name">
+              </div>
+              <!-- price -->
+              <div class="input-group mb-3">
+                <span class="input-group-text">Price and Currency</span>
+                <input type="text" aria-label="price" class="form-control" id="item-price">
+                <input type="text" aria-label="currency" value="Rs" class="form-control" id="item-cr" readonly>
+              </div>
+              <!-- stock -->
+              <div class="input-group mb-3">
+                <span class="input-group-text">Stock</span>
+                <input type="number" aria-label="First name" class="form-control" placeholder="500" id="item-stock">
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text">Weight (g)</span>
+                <input type="number" aria-label="First name" class="form-control" placeholder="500" id="item-weight">
+              </div>
+            </div>
+            <!-- </div> -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="addNewItem">Add Item</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--++++++++++++++++++++++++++++++++++ Order ++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <section class="container collapse" id="order">
+      <div id="main">
+        <h1 class="p-5" id="header"> </h1>
+        <div class="progress">
+          <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+            aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+            style="width: 25%"></div>
+        </div>
+      </div>
+    </section>
+
+    <!--++++++++++++++++++++++++++++++++++ Order-1 ++++++++++++++++++++++++++++++++++++++++++++++++-->
     <section class="container collapse" id="order1">
-    <div class="row my-5" id="order-window">
-      <form class="col-12 col-lg-6 text-start p-5">
-        <div class="mb-3">
+      <div class="row my-5" id="order-window">
+        <form class="col-12 col-lg-6 text-start p-5">
+          <div class="mb-3">
             <h3> Customer ID : C-002 </h3>
           </div>
-    
-        <div class="mb-3">
-              <label for="cname" class="form-label">Customer Name</label>
-              <input type="text" class="form-control" id="cname" placeholder="Gamini Senarathna">
-        </div>
-    
-    <div class="mb-3" style="width:25%;">
-        <label for="cage" class="form-label">Age</label>
-            <input type="number" class="form-control" id="cage" placeholder="20">
-    </div>
-    
-    <div class="mb-3">
-        <label for="casdd" class="form-label">Address</label>
-            <input type="text" class="form-control" id="casdd" placeholder="15-A/Chatham Street/Colombo7">
-    </div>
-    
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="male">
-        <label class="form-check-label" for="male">
-        Male
-       </label>
-    </div>
-    
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="flexRadioDefault" id="female">
-        <label class="form-check-label" for="female">
-        Female
-       </label>
-    </div>
-    
-    <button type="button" class="btn btn-success mt-5" style="width:75%;" id="toNextMenu">Next</button>
-     </form>
-    
-     <div class="col-12 col-lg-6">
-      <h3 class="mt-5 pb-auto"> Upload a photo if any </h3>
-      <div class="d-flex justify-content-center flex-wrap">
-          <img src="./assets/img/portrait.jpg" class="img-thumbnail" alt="..." style="width:286px;height:286;">
-          <button  class="btn btn-primary mt-3" type="button" style="width:60%;">Upload</button>
-      </div>
-    </div>
-    </div>
-  </section>
 
-      <!--++++++++++++++++++++++++++++++++++ Order-2 ++++++++++++++++++++++++++++++++++++++++++++++++-->
+          <div class="mb-3">
+            <label for="cname" class="form-label">Customer Name</label>
+            <input type="text" class="form-control" id="cname" placeholder="Gamini Senarathna">
+          </div>
+
+          <div class="mb-3" style="width:25%;">
+            <label for="cage" class="form-label">Age</label>
+            <input type="number" class="form-control" id="cage" placeholder="20">
+          </div>
+
+          <div class="mb-3">
+            <label for="casdd" class="form-label">Address</label>
+            <input type="text" class="form-control" id="casdd" placeholder="15-A/Chatham Street/Colombo7">
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="male">
+            <label class="form-check-label" for="male">
+              Male
+            </label>
+          </div>
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="female">
+            <label class="form-check-label" for="female">
+              Female
+            </label>
+          </div>
+
+          <button type="button" class="btn btn-success mt-5" style="width:75%;" id="toNextMenu">Next</button>
+        </form>
+
+        <div class="col-12 col-lg-6">
+          <h3 class="mt-5 pb-auto"> Upload a photo if any </h3>
+          <div class="d-flex justify-content-center flex-wrap">
+            <img src="./assets/img/portrait.jpg" class="img-thumbnail" alt="..." style="width:286px;height:286;">
+            <button class="btn btn-primary mt-3" type="button" style="width:60%;">Upload</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--++++++++++++++++++++++++++++++++++ Order-2 ++++++++++++++++++++++++++++++++++++++++++++++++-->
     <section class="container collapse mt-3" id="order2">
-     <!-- item selection -->
-     <div class="row plo-2-row mb-5" id="main">
-      <!-- combo -->
+      <!-- item selection -->
+      <div class="row plo-2-row mb-5" id="main">
+        <!-- combo -->
         <div class="col-12 text-start">
-            <label for="items-selector"> Select an item from below </label>
-            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="items-selector">
-                <option value="1">C-001</option>
-                <option value="2">C-002</option>
-                <option value="3">C-003</option>
-              </select>
+          <label for="items-selector"> Select an item from below </label>
+          <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" id="items-selector">
+            <option value="1">C-001</option>
+            <option value="2">C-002</option>
+            <option value="3">C-003</option>
+          </select>
         </div>
         <!-- item preview -->
         <div class="col-12 col-xl-6 d-flex justify-content-center">
-            <div class="card" style="width: 18rem;">
-                <img src="./assets/img/item.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Tea</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-              </div>
+          <div class="card" style="width: 18rem;">
+            <img src="./assets/img/item.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Tea</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            </div>
+          </div>
         </div>
         <!-- item initializer -->
         <div class="col-12 col-xl-6 d-flex flex-wrap justify-content-center">
-            <div class="mt-3" style="width: 100%;">
-                <h3>In Stock</h3>
-                <h3 style="color: red;">500</h3>
-            </div>
-            <div class="text-start">
-                <label for="cage" class="form-label">Amount</label>
-                <input type="number" class="form-control" id="cage" placeholder="500">
-                <button type="button" class="btn btn-primary mt-3"> Add to Cart</button>
-            </div>   
+          <div class="mt-3" style="width: 100%;">
+            <h3>In Stock</h3>
+            <h3 style="color: red;">500</h3>
+          </div>
+          <div class="text-start">
+            <label for="cage" class="form-label">Amount</label>
+            <input type="number" class="form-control" id="cage" placeholder="500">
+            <button type="button" class="btn btn-primary mt-3"> Add to Cart</button>
+          </div>
         </div>
-    </div>  
+      </div>
 
-    <div class="row plo-2-row">
+      <div class="row plo-2-row">
         <div style="max-height:500px; overflow-y: scroll;">
-            <table class="table align-middle" style="height: fit-content;">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Code</th>
-                    <th scope="col">U-Price</th>
-                    <th scope="col">Amount</th>
-                    <th scope="col">Total</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                    <td><button class="btn btn-outline-danger pt-1">remove</button></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    <td>@fat</td>
-                    <td><button class="btn btn-outline-danger pt-1">remove</button></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td><button class="btn btn-outline-danger pt-1">remove</button></td>
-                  </tr>
-                    <th scope="row">4</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td>@twitter</td>
-                    <td>@twitter</td>
-                    <td><button class="btn btn-outline-danger pt-1">remove</button></td>
-                  </tr>
-                </tbody>
-              </table>
+          <table class="table align-middle" style="height: fit-content;">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Code</th>
+                <th scope="col">U-Price</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td><button class="btn btn-outline-danger pt-1">remove</button></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+                <td>@fat</td>
+                <td><button class="btn btn-outline-danger pt-1">remove</button></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+                <td>@twitter</td>
+                <td><button class="btn btn-outline-danger pt-1">remove</button></td>
+              </tr>
+              <th scope="row">4</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+              <td>@twitter</td>
+              <td><button class="btn btn-outline-danger pt-1">remove</button></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-    </div>
+      </div>
 
-    <div class="d-flex flex-wrap p-5 justify-content-around">
+      <div class="d-flex flex-wrap p-5 justify-content-around">
         <button type="button" class="btn btn-outline-primary mb-3" id="toOrder1">back</button>
-        <button type="button" class="btn btn-outline-success mb-3" id="printInvoice">Proceed</button>    
-    </div>
-</div>
-</section>
+        <button type="button" class="btn btn-outline-success mb-3" id="printInvoice">Proceed</button>
+      </div>
+      </div>
+    </section>
 
-      <!--++++++++++++++++++++++++++++++++++ Order-3 ++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <!--++++++++++++++++++++++++++++++++++ Order-3 ++++++++++++++++++++++++++++++++++++++++++++++++-->
     <section class="container collapse  mt-3" id="order3">
       <div class="row justify-content-center g-2">
         <!-- centered img -->
         <div class="col-12">
-            <img src="./assets/img/success.png" alt="successful" style="width: 150px; height:150px;">
+          <img src="./assets/img/success.png" alt="successful" style="width: 150px; height:150px;">
         </div>
         <!-- successful card -->
         <div class="col-4 d-flex justify-content-center" id="payment-info">
-            <div class="card bg-success text-white border-0 m-3" style="width: 100%; --bs-bg-opacity: .5;">
-                <div class="card-body">
-                  <h5 class="card-title">Order is successful!</h5>
-                  <h3> ID : T-001</h3>
-                  <h3> Total : 25,000/= </h3>
-                  <h4> Discount : 5000/= </h4>
-                </div>
-              </div>
+          <div class="card bg-success text-white border-0 m-3" style="width: 100%; --bs-bg-opacity: .5;">
+            <div class="card-body">
+              <h5 class="card-title">Order is successful!</h5>
+              <h3> ID : T-001</h3>
+              <h3> Total : 25,000/= </h3>
+              <h4> Discount : 5000/= </h4>
+            </div>
+          </div>
         </div>
         <div class="col-12">
-            <div class="d-flex flex-wrap p-5 justify-content-around">
-                <button type="button" class="btn btn-outline-primary mb-3" id="toHome">Back to Home</button>
-                <button type="button " class="btn btn-outline-success mb-3" id="reOrder">Reorder</button>    
-            </div>
+          <div class="d-flex flex-wrap p-5 justify-content-around">
+            <button type="button" class="btn btn-outline-primary mb-3" id="toHome">Back to Home</button>
+            <button type="button " class="btn btn-outline-success mb-3" id="reOrder">Reorder</button>
+          </div>
         </div>
-    </div>
-  
+      </div>
+
     </section>
-  
 
-    </main>
 
-    
+  </main>
 
-    <script>
-     
-      var buttons = [ $('#navToItems'), $('#navToCustomers'), $('#navToOrders'), $('#navToHome')];
-      var sections = [ $('#customer'), $('#item'), $('#order'), $('#order1'), $('#order2'), $('#order3'), $('#mainMenu')];
 
-      // to item-form
-      buttons[0].click( function() {
-          load(sections[1]);
-          clearAllActive()
-          $(this).addClass('active');
+
+  <script>
+
+    var buttons = [$('#navToItems'), $('#navToCustomers'), $('#navToOrders'), $('#navToHome')];
+    var sections = [$('#customer'), $('#item'), $('#order'), $('#order1'), $('#order2'), $('#order3'), $('#mainMenu')];
+
+    var items = [];
+    var customers = [];
+
+    //  adding default items and customers
+    items.push({ id: 'I-001', name: 'Tea', stock: 200, price: 200.00, weight: 250 });
+    customers.push({ id: 'C-001', fname: 'Dumindu', lname: 'Jayasekara', age: 20, city: 'Galle' });
+
+    // first load data
+    refreshCustomersFromArray()
+    refreshItemsFromArray()
+
+    // to item-form
+    buttons[0].click(function () {
+      load(sections[1]);
+      clearAllActive()
+      $(this).addClass('active');
+    });
+
+    // to customer-form
+    buttons[1].click(function () {
+      load(sections[0]);
+      clearAllActive()
+      $(this).addClass('active');
+    });
+
+    //  to order-form
+    buttons[2].click(function () {
+      load(sections[2]);
+      $('#header').html(' Step 1 : Fill Customer Details');
+      sections[3].removeClass('collapse');
+      clearAllActive()
+      $(this).addClass('active');
+    });
+
+    // homepage
+    buttons[3].click(function () {
+      load(sections[6]);
+      clearAllActive()
+      $(this).addClass('active');
+    });
+
+    $('#toNextMenu').click(() => {
+      sections[3].addClass('collapse');
+      sections[4].removeClass('collapse');
+      $('#progress').css('width', '75%')
+      $('#header').html('Step 2 : Add Items to Cart ');
+    })
+
+    $('#printInvoice').click(() => {
+      sections[4].addClass('collapse');
+      sections[5].removeClass('collapse');
+      $('#progress').css('width', '75%');
+      $('#header').html('SUCCESS');
+    })
+
+    $('#toOrder1').click(() => {
+      sections[4].addClass('collapse');
+      sections[3].removeClass('collapse');
+      $('#header').html(' Step 1 : Fill Customer Details');
+    })
+
+    $('#toHome').click(() => {
+      buttons[3].click();
+    })
+
+    // to order-1
+    $('#reOrder').click(() => {
+      buttons[2].click();
+      sections[5].addClass('collapse');
+      $('#header').html(' Step 1 : Fill Customer Details');
+    })
+
+    function clearAllActive() {
+      buttons.forEach(element => {
+        element.removeClass('active');
       });
-    
-      // to customer-form
-      buttons[1].click( function() {
-        load(sections[0]);
-          clearAllActive()
-          $(this).addClass('active');
-      });
+    }
 
-      //  to order-form
-      buttons[2].click( function() {
-        load(sections[2]);
-        $('#header').html(' Step 1 : Fill Customer Details');
-        sections[3].removeClass('collapse');
-          clearAllActive()
-          $(this).addClass('active');
-      });
-
-      // homepage
-      buttons[3].click( function() {
-        load(sections[6]);
-          clearAllActive()
-          $(this).addClass('active');
-      });
-
-      $('#toNextMenu').click(() => {
-        sections[3].addClass('collapse');
-        sections[4].removeClass('collapse');
-        $('#progress').css('width','75%')
-        $('#header').html('Step 2 : Add Items to Cart ');
-      })
-
-      $('#printInvoice').click(() => {
-        sections[4].addClass('collapse');
-        sections[5].removeClass('collapse');
-        $('#progress').css('width','75%');
-        $('#header').html('SUCCESS');
-      })
-
-      $('#toOrder1').click(() => {
-        sections[4].addClass('collapse');
-        sections[3].removeClass('collapse');
-        $('#header').html(' Step 1 : Fill Customer Details');
-      })
-
-      $('#toHome').click(() => {
-        buttons[3].click();
-      })
-
-      // to order-1
-      $('#reOrder').click(() => {
-        buttons[2].click();
-        sections[5].addClass('collapse');
-        $('#header').html(' Step 1 : Fill Customer Details');
-      })
-
-      function clearAllActive(){
-        buttons.forEach(element => {
-          element.removeClass('active');
-        });
-      }
-
-      function load(section) {
-        var cls = 'collapse';
-        // if the given section is collapsed then...
-        if (section.hasClass(cls)) {
-          sections.forEach(sec => {
-          if(sec!=section) {
-            if(!sec.hasClass(cls)){
+    function load(section) {
+      var cls = 'collapse';
+      // if the given section is collapsed then...
+      if (section.hasClass(cls)) {
+        sections.forEach(sec => {
+          if (sec != section) {
+            if (!sec.hasClass(cls)) {
               sec.addClass(cls);
             }
           }
         });
         // load
         section.removeClass(cls);
-        }
       }
+    }
 
-      // adding/updating items and customers (temp)
+    // adding/updating items and customers (temp)
 
-      // add item
-      $('#addNewItem').click(() => {
+    function refreshItemsFromArray() {
+      items.forEach((item) => {
         $('#item-container').append(
-          `<div class="col col-lg-4 d-flex justify-content-center">
+          `<div class="col col-lg-4 d-flex justify-content-center item">
           <div class="card" style="width: 18rem;">
             <img src="./assets/img/item.jpg" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">${$('#item-name').val()}</h5>
+            <h5 class="card-title">${item.name}</h5>
               <ul class="list-unstyled">
-                <li>${$('#item-id').text()}</li>
-                <li>Stock : ${$('#item-stock').val()}</li>
-                <li>Price : ${$('#item-price').val()}</li>
-                <li>Weight : ${$('#item-weight').val()}g</li>
+                <li>${item.id}</li>
+                <li>Stock : ${item.stock}</li>
+                <li>Price : ${item.price}</li>
+                <li>Weight : ${item.weight}g</li>
               </ul>
               <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#itemModal2">Update Item</a>
             <a href="#" class="btn btn-danger">Delete</a>
@@ -795,31 +693,91 @@
         </div>`
         )
       })
+    }
 
-      // add customer
-      $('#addNewCustomer').click(() => {
+    function clearAllItems() {
+      // remove all existing items
+      $('.item').remove();
+    }
+
+    // add item
+    $('#addNewItem').click(() => {
+      // appending to array
+      let item = {
+        id: $('#item-id').text(),
+        name: $('#item-name').val(),
+        stock: $('#item-stock').val(),
+        price: $('#item-price').val(),
+        weight: $('#item-weight').val()
+      }
+
+      items.push(item);
+      clearAllItems();
+      refreshItemsFromArray();
+    })
+
+    // add customer
+    // appending to array
+
+    function refreshCustomersFromArray() {
+      customers.forEach((customer) => {
         $('#cst-container').append(
-          ` <div class="col col-lg-4 d-flex justify-content-center">
+          ` <div class="col col-lg-4 d-flex justify-content-center customer">
        <div class="card" style="width: 18rem;">
       <img src="./assets/img/portrait.jpg" class="card-img-top" alt="...">
       <div class="card-body">
-      <h5 class="card-title">${$('#cst-fname').val()} ${$('#cst-lastname').val()}</h5>
+      <h5 class="card-title">${customer.fname} ${customer.lname}</h5>
         <ul class="list-unstyled">
-          <li>${$('#cst-id').text()}</li>
-          <li>Age : ${$('#cst-age').val()}</li>
-          <li>City : ${$('#cst-city').val()}</li>
+          <li>${customer.id}</li>
+          <li>Age : ${customer.age}</li>
+          <li>City : ${customer.city}</li>
         </ul>
         <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Update Cutomer</a>
         <a href="#" class="btn btn-danger">Delete</a>
       </div>
      </div>
      </div>
-     `
-        )
+     `)
       })
+    }
+
+    function clearAllCustomers() {
+      // remove all existing items
+      $('.customer').remove();
+    }
+
+    $('#addNewCustomer').click(() => {
+      let customer = {
+        id: $('#cst-id').text(),
+        fname: $('#cst-fname').val(),
+        lname: $('#cst-lastname').val(),
+        age: $('#cst-age').val(),
+        city: $('#cst-city').val()
+      }
+      customers.push(customer);
+      clearAllCustomers();
+      refreshCustomersFromArray();
+    })
+
+    // updating customers and items
+
+    // items
+    $('.update-item').click(function (event) {
+      let id = $(this).parent().find("ul #item-id-txt").text();
+      let item = items.find((element) => {
+        return element.id === id
+      })
+      console.log(item);
+      $('#up-item-id').val(item.id)
+      $('#up-item-name').val(item.name)
+      $('#up-item-price').val(item.price)
+      // $('#up-item-cr').val('Rs')
+      $('#up-item-stock').val(item.stock)
+    })
 
 
-    </script>
+  </script>
 
 </body>
+
 </html>
