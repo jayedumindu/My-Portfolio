@@ -64,7 +64,7 @@ _Click CTRL + link to open in new tab_
   <summary>JS</summary>
   <ol>
     <li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/JS/SPA/index.html">SPA</a></li>
-    <li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/JS/Calculator/index.html">Calculator</a></li>
+    <li><a href="https://6339f4c70f3c3824a45afca5--cosmic-sundae-8e5d13.netlify.app/assignments/js/calculator/">Calculator</a></li>
   </ol>
 </details>
   
