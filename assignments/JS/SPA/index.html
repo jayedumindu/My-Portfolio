@@ -9,6 +9,12 @@
   <link rel="stylesheet" href="./css/bootstrap.min.css">
   <script src="./js/bootstrap.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+  <style>
+    .form-control:focus {
+      border-color: initial;
+      box-shadow: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -187,18 +193,21 @@
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">ID</span>
                 <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                  aria-describedby="basic-addon1" id="cst-up-id">
+                  aria-describedby="basic-addon1" id="cst-up-id" onkeyup="validate(this,)" readonly>
               </div>
               <!-- name -->
               <div class="input-group">
                 <span class="input-group-text">First and last name</span>
-                <input type="text" aria-label="First name" class="form-control" id="cst-up-fname">
-                <input type="text" aria-label="Last name" class="form-control" id="cst-up-lname">
+                <input type="text" aria-label="First name" class="form-control" id="cst-up-fname"
+                  onkeyup="validate(event,'[a-z]{3,}')">
+                <input type="text" aria-label="Last name" class="form-control" id="cst-up-lname"
+                  onkeyup="validate(event,'[a-z]{3,}')">
               </div>
               <!-- age -->
               <div class="input-group mb-3 mt-3">
                 <span class="input-group-text">Age</span>
-                <input type="number" aria-label="First name" class="form-control" placeholder="20" id="cst-up-age">
+                <input type="number" aria-label="First name" class="form-control" placeholder="20" id="cst-up-age"
+                  onkeyup="validate(event,'[0-9]{2}')">
               </div>
               <!-- living-in -->
               <select class="form-select" aria-label="Default select example" id="cst-up-city">
@@ -220,7 +229,7 @@
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Adding New Customer <span id="cst-id">ID : C-002</span>
+              <h5 class="modal-title" id="exampleModalLabel">Adding New Customer ID : <span id="cst-id"></span>
               </h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -228,15 +237,15 @@
               <form class="row g-3">
                 <div class="col-md-6">
                   <label for="cst-fname" class="form-label">FirstName</label>
-                  <input type="text" class="form-control" id="cst-fname">
+                  <input type="text" class="form-control" id="cst-fname" onkeyup="validate(event,'[a-z]{3,}')">
                 </div>
                 <div class="col-md-6">
                   <label for="cst-lastname" class="form-label">LastName</label>
-                  <input type="text" class="form-control" id="cst-lastname">
+                  <input type="text" class="form-control" id="cst-lastname" onkeyup="validate(event,'[a-z]{3,}')">
                 </div>
                 <div class="col-md-6">
                   <label for="cst-age" class="form-label">Age</label>
-                  <input type="text" class="form-control" id="cst-age">
+                  <input type="text" class="form-control" id="cst-age" onkeyup="validate(event,'[0-9]{2}')">
                 </div>
                 <div class="col-md-6">
                   <label for="cst-city" class="form-label">City</label>
@@ -250,7 +259,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" id="addNewCustomer">Add Customer</button>
+              <button type="button" class="btn btn-primary" id="addNewCustomer" disabled>Add Customer</button>
             </div>
           </div>
         </div>
@@ -298,29 +307,32 @@
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">ID</span>
                 <input type="text" class="form-control" placeholder="I-XXX" aria-label="Username"
-                  aria-describedby="basic-addon1" id="up-item-id">
+                  aria-describedby="basic-addon1" id="up-item-id" readonly>
               </div>
               <!-- name -->
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Item Name</span>
                 <input type="text" class="form-control" placeholder="Tea" aria-label="Username"
-                  aria-describedby="basic-addon1" id="up-item-name">
+                  aria-describedby="basic-addon1" id="up-item-name" onkeyup="validate(event,'[a-z]{3}')">
               </div>
               <!-- price -->
               <div class="input-group mb-3">
                 <span class="input-group-text">Price and Currency</span>
                 <input type="text" aria-label="price" class="form-control" id="up-item-price">
-                <input type="text" aria-label="currency" value="Rs" class="form-control" id="up-item-cr" readonly>
+                <input type="text" aria-label="currency" value="Rs" class="form-control" id="up-item-cr" readonly
+                  onkeyup="validate(event,'[0-9]{3,}\.[0-9]{2}')">
               </div>
               <!-- stock -->
               <div class="input-group mb-3">
                 <span class="input-group-text">Stock</span>
-                <input type="number" aria-label="First name" class="form-control" placeholder="500" id="up-item-stock">
+                <input type="number" aria-label="First name" class="form-control" placeholder="500" id="up-item-stock"
+                  onkeyup="validate(event,'[0-9]{2,}')">
               </div>
               <!-- weight -->
               <div class="input-group mb-3">
                 <span class="input-group-text">Weight (g)</span>
-                <input type="number" aria-label="weight" class="form-control" placeholder="100" id="up-item-weight">
+                <input type="number" aria-label="weight" class="form-control" placeholder="100" id="up-item-weight"
+                  onkeyup="validate(event,'[0-9]{2,}')">
               </div>
             </div>
             <div class="modal-footer">
@@ -336,35 +348,38 @@
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Adding New Item <span id="item-id">ID : C-002</span> </h5>
+              <h5 class="modal-title" id="exampleModalLabel">Adding New Item ID : <span id="item-id"></span> </h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Item Name</span>
                 <input type="text" class="form-control" placeholder="Tea" aria-label="Username"
-                  aria-describedby="basic-addon1" id="item-name">
+                  aria-describedby="basic-addon1" id="item-name" onkeyup="validate(event,'[a-z]{3}')">
               </div>
               <!-- price -->
               <div class="input-group mb-3">
                 <span class="input-group-text">Price and Currency</span>
-                <input type="text" aria-label="price" class="form-control" id="item-price">
+                <input type="text" aria-label="price" class="form-control" id="item-price"
+                  onkeyup="validate(event,'[0-9]{3,}\.[0-9]{2}')">
                 <input type="text" aria-label="currency" value="Rs" class="form-control" id="item-cr" readonly>
               </div>
               <!-- stock -->
               <div class="input-group mb-3">
                 <span class="input-group-text">Stock</span>
-                <input type="number" aria-label="First name" class="form-control" placeholder="500" id="item-stock">
+                <input type="number" aria-label="First name" class="form-control" placeholder="500" id="item-stock"
+                  onkeyup="validate(event,'[0-9]{2,}')">
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text">Weight (g)</span>
-                <input type="number" aria-label="First name" class="form-control" placeholder="500" id="item-weight">
+                <input type="number" aria-label="First name" class="form-control" placeholder="500" id="item-weight"
+                  onkeyup="validate(event,'[0-9]{2,}')">
               </div>
             </div>
             <!-- </div> -->
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" id="addNewItem">Add Item</button>
+              <button type="button" class="btn btn-primary" id="addNewItem" disabled>Add Item</button>
             </div>
           </div>
         </div>
@@ -676,12 +691,20 @@
                 <li>Weight (g) : ${item.weight}</li>
               </ul>
               <a href="#" class="btn btn-primary update-item" data-bs-toggle="modal" data-bs-target="#itemModal2">Update Item</a>
-            <a href="#" class="btn btn-danger">Delete</a>
+            <a href="#" class="btn btn-danger" onclick="delItem('${item.id}')">Delete</a>
           </div>
           </div>
         </div>`
         )
       })
+    }
+
+    function delItem(id) {
+      items = items.filter((item) => {
+        return item.id != id
+      })
+      clearAllItems();
+      refreshItemsFromArray();
     }
 
     function clearAllItems() {
@@ -703,6 +726,7 @@
       items.push(item);
       clearAllItems();
       refreshItemsFromArray();
+      $('#item-id').text(calculateNextId(items))
     })
 
     // add customer
@@ -735,6 +759,10 @@
       $('.customer').remove();
     }
 
+    // setting initial value
+    $('#item-id').text(calculateNextId(items))
+    $('#cst-id').text(calculateNextId(customers))
+
     $('#addNewCustomer').click(() => {
       let customer = {
         id: $('#cst-id').text(),
@@ -746,6 +774,7 @@
       customers.push(customer);
       clearAllCustomers();
       refreshCustomersFromArray();
+      $('#cst-id').text(calculateNextId(customers))
     })
 
     // updating customers and items
@@ -807,6 +836,38 @@
       clearAllCustomers();
       refreshCustomersFromArray();
     }
+
+    // adding listeners for keyUp on textfields
+    // let textFieldsForItem = [$('#item-id'), $('#item-name'), $('#item-price'), $('#item-stock'), $('#item-weight')]
+    // let textFieldsForCustomer = [$('#cst-id'), $('#cst-fname'), $('#cst-lastname'), $('#cst-age'), $('#cst-city')]
+
+    let globalItemValidator = false
+    let globalCustomerValidator = false
+    function validate(event, regex) {
+      let exp = new RegExp(regex, 'i')
+      if (exp.test(event.target.value)) {
+        $(event.target).css("border-color", "green")
+      } else {
+        // invalid
+        $(event.target).css("border-color", "rgb(179, 106, 106)")
+      }
+    }
+
+    function calculateNextId(arr) {
+      let id = arr[arr.length - 1].id;
+      let [pre, frag] = id.split('-');
+      let num = parseInt(frag) + 1;
+      let count = num.toString().length
+      if (count == 1) {
+        return pre + '-00' + num
+      }
+      else if (count == 2) {
+        return pre + '-0' + num
+      } else {
+        return pre + '-' + num
+      }
+    }
+
 
 
   </script>
