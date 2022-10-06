@@ -702,6 +702,13 @@
       clearAllItems();
       refreshItemsFromArray();
     }
+    function delCustomer(id) {
+      customers = customers.filter((item) => {
+        return item.id != id
+      })
+      clearAllCustomers();
+      refreshCustomersFromArray();
+    }
 
     function clearAllItems() {
       // remove all existing items
@@ -742,7 +749,7 @@
           <li>City : ${customer.city}</li>
         </ul>
         <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="update-customer">Update Cutomer</a>
-        <a href="#" class="btn btn-danger">Delete</a>
+        <a href="#" class="btn btn-danger" onclick="delCustomer('${customer.id}')">Delete</a>
       </div>
      </div>
      </div>
