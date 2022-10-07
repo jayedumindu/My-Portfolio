@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Personal Portfolio</title>
@@ -18,7 +19,7 @@
     <script src="https://kit.fontawesome.com/fc094c53fd.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/responsive.css">
 
-    <!-- <style>
+    <style>
         #subnav-main {
             list-style-type: none;
             position: absolute;
@@ -30,14 +31,16 @@
             background-color: #c2d3d8;
         }
 
-        #subnav li{
+        #subnav li {
             border-bottom: 1px solid #ededed;
             position: relative;
             height: 50px;
+            transition: all 2s;
         }
 
-        .sub-nav-links {
-            position: absolute;
+        .sub-nav-links,
+        .inner-nav {
+            list-style-type: none;
             display: inline-block;
             text-decoration: none;
             text-align: center;
@@ -47,13 +50,57 @@
             height: fit-content;
             top: 0;
             bottom: 0;
-            padding: 0;
-            font-size: 15px;
+            padding: 5px 0;
+            font-size: 20px;
         }
-    </style> -->
+
+        #assignments-tab:hover+#subnav-main {
+            visibility: visible;
+        }
+
+        #subnav-main:hover {
+            visibility: visible;
+        }
+
+        .sub-nav-links:hover+.inner-nav {
+            display: block;
+        }
+
+        .inner-nav {
+            font-size: 15px;
+            display: none;
+            transition: all 2s;
+            padding: 5px;
+        }
+
+        .inner-nav li {
+            padding: 3px;
+            width: 88%;
+            font-style: italic;
+        }
+
+        .inner-nav li a {
+            all: initial;
+        }
+
+        .inner-nav li:hover {
+            background-color: #1b3740;
+            cursor: pointer;
+        }
+
+        .inner-nav li a:hover {
+            cursor: pointer;
+            color: aliceblue;
+        }
+
+        .inner-nav:hover {
+            display: block;
+        }
+    </style>
 
 
 </head>
+
 <body>
 
     <!-- navigation bar -->
@@ -66,28 +113,90 @@
                 <li class="nav-items"><a href="#" class="nav-links">Carrier</a></li>
                 <li class="nav-items"><a href="#" class="nav-links">Services</a></li>
                 <li class="nav-items"><a href="#" class="nav-links">Projects</a></li>
-                <!-- <li class="nav-items"><a href="#" class="nav-links" id="assignments-tab">Assignments</a> </li> -->
+                <li class="nav-items">
+                    <a href="#" class="nav-links" id="assignments-tab">Assignments</a>
+                    <ul id="subnav-main">
+                        <li><a href="#" class="sub-nav-links">Basics</a>
+                            <ul class="inner-nav">
+                                <li><a
+                                        href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Basics/case_1/index.html">case
+                                        1</a></li>
+                                <li><a
+                                        href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Basics/case_2/index.html">case
+                                        2</a></li>
+                                <li><a
+                                        href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Basics/case_3/index.html">case
+                                        3</a></li>
+                                <li><a
+                                        href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Basics/case_4/index.html">case
+                                        4</a></li>
+                                <li><a
+                                        href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Basics/case_5/index.html">case
+                                        5</a></li>
+                                <li><a
+                                        href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Basics/case_6/index.html">case
+                                        6</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="sub-nav-links">Frameworks</a>
+                            <ul class="inner-nav">
+                                <li><a
+                                        href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Frameworks/index.html">view
+                                        deployment</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="sub-nav-links">Transitions</a>
+                            <ul class="inner-nav">
+                                <li><a
+                                        href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Transitions/case_1/index.html">case
+                                        1</a></li>
+                                <li><a
+                                        href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Transitions/case_2/index.html">case
+                                        2</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="sub-nav-links">JS</a>
+                            <ul class="inner-nav">
+                                <li><a
+                                        href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/JS/SPA/index.html">SPA</a>
+                                </li>
+                                <li><a
+                                        href="https://6339f4c70f3c3824a45afca5--cosmic-sundae-8e5d13.netlify.app/assignments/js/calculator/">Calculator</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="sub-nav-links">Animations</a>
+                            <ul class="inner-nav">
+                                <li><a
+                                        href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Animations/case_1/index.html">case
+                                        1</a></li>
+                                <li><a
+                                        href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Animations/case_2/index.html">case
+                                        2</a></li>
+                                <li><a
+                                        href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Animations/case_3/index.html">case
+                                        3</a></li>
+                                <li><a
+                                        href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Animations/case_4/index.html">case
+                                        4</a></li>
+                            </ul>
+                    </ul>
+                </li>
                 <li class="nav-items"><a href="#" class="nav-links">Feedback</a></li>
-                <li class="nav-items"><a href="#" class="nav-links">Contact</a> </li>              
+                <li class="nav-items"><a href="#" class="nav-links">Contact</a> </li>
             </ul>
         </nav>
 
         <h4 id="opener"><i class="fa-sharp fa-solid fa-bars"></i></h4>
 
-        <!-- <ul id="subnav-main">
-            <li><a href="#" class="sub-nav-links">Basics</a></li>
-            <li><a href="#" class="sub-nav-links">Frameworks</a></li>
-            <li><a href="#" class="sub-nav-links">Transitions</a></li>
-            <li><a href="#" class="sub-nav-links">JS</a></li>
-            <li><a href="#" class="sub-nav-links">Animations</a></li>    
-        </ul>
 
-        <ul id="subnav-1">
+
+        <!-- <ul id="subnav-1">
             <li><a href="#" class="sub-nav-links">Basics</a></li>
             <li><a href="#" class="sub-nav-links">Frameworks</a></li>
             <li><a href="#" class="sub-nav-links">Transitions</a></li>
             <li><a href="#" class="sub-nav-links">JS</a></li>
-            <li><a href="#" class="sub-nav-links">Animations</a></li>    
+            <li><a href="#" class="sub-nav-links">Animations</a></li>
         </ul> -->
 
     </header>
@@ -101,22 +210,25 @@
                 <img src="assets/images/home-portrait.png" alt="personal-portrait" id="home-portrait">
                 <h1 id="overflow-text">DUMINDU JAYASEKARA</h1>
                 <p>
-                    Student, teenager, <b>programming enthusiast</b> and currently studying while <br> working as a freelancer. <br>
+                    Student, teenager, <b>programming enthusiast</b> and currently studying while <br> working as a
+                    freelancer. <br>
                     Skilled in advanced-maths. <br>
-                    Fond of dogs, specially <br class="optional"> dobermans.....love to hike, do <br class="optional"> camping, travel. <br>
-                    Doing major from <b>CS</b> and love <br class="optional"> to work with <b>WEB</b> 
-                </p>    
+                    Fond of dogs, specially <br class="optional"> dobermans.....love to hike, do <br class="optional">
+                    camping, travel. <br>
+                    Doing major from <b>CS</b> and love <br class="optional"> to work with <b>WEB</b>
+                </p>
             </div>
             <div id="more">
                 <h3>Want to know more about me?</h3>
                 <img src="assets/images/expand.svg" alt="go" id="expand">
-            </div>      
+            </div>
         </section>
 
         <section id="about" class="main-section">
             <div id="about-container">
                 <img src="assets/images/about-portrait.png" alt="personal-image:sitting by a lake" id="about-portrait">
-                <img src="assets/images/about-portrait-2.png" alt="personal-image:sitting by a lake" id="about-portrait-2">
+                <img src="assets/images/about-portrait-2.png" alt="personal-image:sitting by a lake"
+                    id="about-portrait-2">
             </div>
             <div id="about-text">
                 <!-- <h1>About Me</h1><br> -->
@@ -156,15 +268,17 @@
 
                     <h4>Customer Service 🛂</h4>
                     <ul class="about-desc">
-                        <li>Friendly and professional customer service<br>specialist with extensive experience<br>resolving escalated customer complaints and<br>issues</li>
+                        <li>Friendly and professional customer service<br>specialist with extensive
+                            experience<br>resolving escalated customer complaints and<br>issues</li>
                     </ul>
 
                 </div>
-                
+
             </div>
         </section>
-        
-        <section id="carrier" class="main-section" style="background-image:  url(assets/images/carrier-background-1.jpg);">
+
+        <section id="carrier" class="main-section"
+            style="background-image:  url(assets/images/carrier-background-1.jpg);">
             <h1 id="carrier-heading">ACCOMPLISHMENTS</h1>
             <!-- divs for article-box(s) -->
             <div class="info-box" id="carrier-box1">
@@ -202,12 +316,13 @@
                 <img src="assets/images/carrier-laptop.png" alt="icon:laptop" id="lap3">
                 <img src="assets/images/carrier-laptop.png" alt="icon:laptop" id="lap4">
             </div>
-            
+
         </section>
 
         <section id="services" class="main-section">
             <div id="service-desc">
-                <h1 id="service-heading" style="letter-spacing: 5px;">SERVICES <i class="fa-solid fa-street-view"></i> </h1>
+                <h1 id="service-heading" style="letter-spacing: 5px;">SERVICES <i class="fa-solid fa-street-view"></i>
+                </h1>
                 <img src="assets/images/services-eclipse.png" alt="eclipse" id="ser-eclipse">
                 <div id="service-main">
                     <div class="services-box" id="apps">
@@ -215,9 +330,9 @@
                         <h3 class="ser-list-head">mobile/desktop app development</h3>
                         <ul class="ser-list">
                             <li>modern technologies</li>
-                            <li>harware independant</li> 
-                            <li>cloud servers</li> 
-                            <li>data management</li> 
+                            <li>harware independant</li>
+                            <li>cloud servers</li>
+                            <li>data management</li>
                         </ul>
                     </div>
                     <div class="services-box" id="web">
@@ -225,9 +340,9 @@
                         <h3 class="ser-list-head">web development</h3>
                         <ul class="ser-list">
                             <li>UI-UX</li>
-                            <li>responsive designs</li> 
-                            <li>interactive</li> 
-                            <li>hosting</li> 
+                            <li>responsive designs</li>
+                            <li>interactive</li>
+                            <li>hosting</li>
                         </ul>
                     </div>
                     <div class="services-box" id="ui">
@@ -235,9 +350,9 @@
                         <h3 class="ser-list-head">UI/UX designing</h3>
                         <ul class="ser-list">
                             <li>colour schemas</li>
-                            <li>unique layouts</li> 
-                            <li>reliable service</li> 
-                            <li>design from scratch</li> 
+                            <li>unique layouts</li>
+                            <li>reliable service</li>
+                            <li>design from scratch</li>
                         </ul>
                     </div>
                 </div>
@@ -251,7 +366,10 @@
             <article id="pro-article">
                 <h1 id="pro-header">FEATURED PROJECTS</h1>
                 <p id="pro-desc">
-                    <i class="fa-solid fa-quote-left"></i> If enough time, research and analysis isn’t put into designing a proper foundation for a house or a building, it won’t matter what kind of building materials and manpower you put into building everything on top of the foundation <i class="fa-solid fa-quote-right"></i>
+                    <i class="fa-solid fa-quote-left"></i> If enough time, research and analysis isn’t put into
+                    designing a proper foundation for a house or a building, it won’t matter what kind of building
+                    materials and manpower you put into building everything on top of the foundation <i
+                        class="fa-solid fa-quote-right"></i>
                 </p>
             </article>
             <div class="pro-pallets-grp1" id="farmeez">
@@ -265,35 +383,35 @@
                         <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
                         <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
                     </svg>
-                  <img src="assets/images/download.png" alt="download">
+                    <img src="assets/images/download.png" alt="download">
                 </button>
             </div><br>
             <div class="pro-pallets-grp2" id="expo-rail">
                 <img src="assets/images/projects-exporail.png" alt="logo">
                 <h2>Expo-Rail</h2>
                 <p>
-                    Railway booking system for a leading private company<br>to manage their inquiries on real-time  
+                    Railway booking system for a leading private company<br>to manage their inquiries on real-time
                 </p>
                 <button class="pro-btn">
                     <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
                         <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
                         <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
                     </svg>
-                  <img src="assets/images/download.png" alt="download">
+                    <img src="assets/images/download.png" alt="download">
                 </button>
             </div><br>
             <div class="pro-pallets-grp2" id="e-school">
                 <img src="assets/images/projects-eschool.png" alt="logo">
                 <h2>E-School</h2>
                 <p>
-                    Student management system<br>to store curriculam data 
+                    Student management system<br>to store curriculam data
                 </p>
                 <button class="pro-btn">
                     <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
                         <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
                         <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
                     </svg>
-                  <img src="assets/images/download.png" alt="download">
+                    <img src="assets/images/download.png" alt="download">
                 </button>
             </div><br>
             <div class="pro-pallets-grp1" id="blue-ocean">
@@ -307,7 +425,7 @@
                         <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
                         <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
                     </svg>
-                  <img src="assets/images/download.png" alt="download">
+                    <img src="assets/images/download.png" alt="download">
                 </button>
             </div><br>
         </section>
@@ -320,7 +438,8 @@
                 <i class="fa-solid fa-circle-chevron-left feedback-sliders" id="feedback-slider2"></i>
                 <div id="slide">
                     <img src="assets/images/demo-profile.png" alt="profile" id="feedback-profile">
-                    <p> simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</p>
+                    <p> simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+                        standard dummy text ever since the 1500s, when an unknown printer took a galley</p>
                     <h4 id="profile-name">Sundar Pichai <br> <span>CEO at Google</span></h4>
                 </div>
                 <!-- buttons for navigation -->
@@ -330,20 +449,20 @@
             <!-- for input area -->
             <section id="feedbackArea">
                 <form id="feedback-form">
-                        <h4 style="font-size: 80px; color:rgb(198, 215, 230);"><i class="fa-solid fa-ellipsis"></i></h4>
-                        <div>
-                            <p>Name</p>
-                            <input type="text" id="name">
-                            <p>Proffession</p>
-                            <input type="text" id="proffesion">
-                        </div>
-                        <div>
-                            <p>Message</p>
-                            <textarea id="message" name="story" rows="5" cols="33"></textarea>
-                        </div>
-                        <div>
-                            <button type="submit" id="feedback">Submit</button>
-                        </div>
+                    <h4 style="font-size: 80px; color:rgb(198, 215, 230);"><i class="fa-solid fa-ellipsis"></i></h4>
+                    <div>
+                        <p>Name</p>
+                        <input type="text" id="name">
+                        <p>Proffession</p>
+                        <input type="text" id="proffesion">
+                    </div>
+                    <div>
+                        <p>Message</p>
+                        <textarea id="message" name="story" rows="5" cols="33"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" id="feedback">Submit</button>
+                    </div>
                 </form>
             </section>
         </section>
@@ -352,7 +471,10 @@
             <h1 style="color: rgb(25, 25, 46);">CONTACT ME <i class="fa-solid fa-id-card"></i> </h1>
             <!-- for map representation -->
             <section id="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.2575955204825!2d80.22275401547236!3d6.095964829675154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae171058da444fd%3A0x10579ae3439627ba!2sAddaragoda!5e0!3m2!1sen!2slk!4v1659290164414!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.2575955204825!2d80.22275401547236!3d6.095964829675154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae171058da444fd%3A0x10579ae3439627ba!2sAddaragoda!5e0!3m2!1sen!2slk!4v1659290164414!5m2!1sen!2slk"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </section>
             <section id="info">
                 <address>
@@ -382,7 +504,8 @@
                         <!-- <label for="subject">Subject (a small intro) : </label> -->
                         <input type="text" id="subject" placeholder="Subject">
                         <!-- <label for="msg">Massage : </label> -->
-                        <textarea name="client-message" rows="5" cols="33" id="client-msg" placeholder="keep your response short"></textarea>
+                        <textarea name="client-message" rows="5" cols="33" id="client-msg"
+                            placeholder="keep your response short"></textarea>
                         <button type="submit" id="contact-btn"><i class="fa-solid fa-paper-plane"></i>&nbspSend</button>
                     </form>
                 </div>
@@ -391,12 +514,12 @@
         </section>
 
     </main>
-    
+
     <footer>
         <div>
             <h1><i class="fa-brands fa-github"></i></h1>
-           <h1><i class="fa-brands fa-twitter"></i></h1>
-           <h1><i class="fa-brands fa-facebook"></i></h1>
+            <h1><i class="fa-brands fa-twitter"></i></h1>
+            <h1><i class="fa-brands fa-facebook"></i></h1>
         </div>
         <ul>
             <li>Terms of Use • </i></li>
@@ -409,23 +532,23 @@
 <script>
     // menu opener
     let isClicked = false;
-    document.getElementById('opener').addEventListener('click',openMenu)
+    document.getElementById('opener').addEventListener('click', openMenu)
 
     function openMenu() {
-   
+
         let navbar = document.querySelector('nav');
         if (!isClicked) {
             navbar.style.cssText = 'transform: translateY(0); margin-top: 44px;';
-            document.getElementById('home').style.cssText = 'margin-top: 296px;'; 
+            document.getElementById('home').style.cssText = 'margin-top: 296px;';
             isClicked = true;
         } else {
             navbar.style.cssText = 'transform: translateY(-100%);';
-            document.getElementById('home').style.cssText = 'margin-top: 0;'; 
-            isClicked = false 
+            document.getElementById('home').style.cssText = 'margin-top: 0;';
+            isClicked = false
         }
-        
-    }
-    
-</script>
-</html>
 
+    }
+
+</script>
+
+</html>
