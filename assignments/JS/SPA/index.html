@@ -185,7 +185,8 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">You're updating Customer : C-001</h5>
+              <h5 class="modal-title" id="exampleModalLabel">You're updating Customer : <span id="up-txt-cst-id"></span>
+              </h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body d-flex justify-content-around flex-wrap">
@@ -297,7 +298,8 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">You're updating Item : I-001</h5>
+              <h5 class="modal-title" id="exampleModalLabel">You're updating Item : <span id="up-txt-item-id"></span>
+              </h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body d-flex justify-content-around flex-wrap">
@@ -572,236 +574,8 @@
 
 
   <script src="./controller/indexController.js"></script>
-  <script>
-
-
-
-    var items = [];
-    var customers = [];
-
-    //  adding default items and customers
-    items.push({ id: 'I-001', name: 'Tea', stock: 200, price: 200.00, weight: 250 });
-    customers.push({ id: 'C-001', fname: 'Dumindu', lname: 'Jayasekara', age: 20, city: 'Galle' });
-
-    // first load data
-    refreshCustomersFromArray()
-    refreshItemsFromArray()
-
-    // adding/updating items and customers (temp)
-
-    function refreshItemsFromArray() {
-      items.forEach((item) => {
-        $('#item-container').append(
-          `<div class="col col-lg-4 d-flex justify-content-center item">
-          <div class="card" style="width: 18rem;">
-            <img src="./assets/img/item.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">${item.name}</h5>
-              <ul class="list-unstyled">
-                <li id="item-id-txt">${item.id}</li>
-                <li>Stock : ${item.stock}</li>
-                <li>Price : ${item.price}</li>
-                <li>Weight (g) : ${item.weight}</li>
-              </ul>
-              <a href="#" class="btn btn-primary update-item" data-bs-toggle="modal" data-bs-target="#itemModal2">Update Item</a>
-            <a href="#" class="btn btn-danger" onclick="delItem('${item.id}')">Delete</a>
-          </div>
-          </div>
-        </div>`
-        )
-      })
-    }
-
-    function delItem(id) {
-      items = items.filter((item) => {
-        return item.id != id
-      })
-      clearAllItems();
-      refreshItemsFromArray();
-    }
-    function delCustomer(id) {
-      customers = customers.filter((item) => {
-        return item.id != id
-      })
-      clearAllCustomers();
-      refreshCustomersFromArray();
-    }
-
-    function clearAllItems() {
-      // remove all existing items
-      $('.item').remove();
-    }
-
-    // add item
-    $('#addNewItem').click(() => {
-      // appending to array
-      let item = {
-        id: $('#item-id').text(),
-        name: $('#item-name').val(),
-        stock: $('#item-stock').val(),
-        price: $('#item-price').val(),
-        weight: $('#item-weight').val()
-      }
-
-      items.push(item);
-      clearAllItems();
-      refreshItemsFromArray();
-      $('#item-id').text(calculateNextId(items))
-    })
-
-    // add customer
-    // appending to array
-
-    function refreshCustomersFromArray() {
-      customers.forEach((customer) => {
-        $('#cst-container').append(
-          ` <div class="col col-lg-4 d-flex justify-content-center customer">
-       <div class="card" style="width: 18rem;">
-      <img src="./assets/img/portrait.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-      <h5 class="card-title">${customer.fname} ${customer.lname}</h5>
-        <ul class="list-unstyled">
-          <li id="cst-id-txt">${customer.id}</li>
-          <li>Age : ${customer.age}</li>
-          <li>City : ${customer.city}</li>
-        </ul>
-        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="update-customer">Update Cutomer</a>
-        <a href="#" class="btn btn-danger" onclick="delCustomer('${customer.id}')">Delete</a>
-      </div>
-     </div>
-     </div>
-     `)
-      })
-    }
-
-    function clearAllCustomers() {
-      // remove all existing items
-      $('.customer').remove();
-    }
-
-    // setting initial value
-    $('#item-id').text(calculateNextId(items))
-    $('#cst-id').text(calculateNextId(customers))
-
-    $('#addNewCustomer').click(() => {
-      let customer = {
-        id: $('#cst-id').text(),
-        fname: $('#cst-fname').val(),
-        lname: $('#cst-lastname').val(),
-        age: $('#cst-age').val(),
-        city: $('#cst-city').val()
-      }
-      customers.push(customer);
-      clearAllCustomers();
-      refreshCustomersFromArray();
-      $('#cst-id').text(calculateNextId(customers))
-    })
-
-    // updating customers and items
-
-    // items
-    $('.update-item').click(function (event) {
-      let id = $(this).parent().find("ul #item-id-txt").text();
-      let item = items.find((element) => {
-        return element.id === id
-      })
-      console.log(item);
-      $('#up-item-id').val(item.id)
-      $('#up-item-name').val(item.name)
-      $('#up-item-price').val(item.price)
-      $('#up-item-stock').val(item.stock)
-      $('#up-item-weight').val(item.weight)
-    })
-
-    function saveNewItemData() {
-      let newItem = {
-        id: $('#up-item-id').val(),
-        name: $('#up-item-name').val(),
-        stock: $('#up-item-stock').val(),
-        price: $('#up-item-price').val(),
-        weight: $('#up-item-weight').val()
-      }
-      console.log(newItem)
-      items = items.map((item) => {
-        return newItem.id === item.id ? newItem : item
-      })
-      clearAllItems();
-      refreshItemsFromArray();
-    }
-
-    // customers
-    $('#update-customer').click(function () {
-      let id = $(this).parent().find("ul #cst-id-txt").text();
-      let customer = customers.find((element) => {
-        return element.id === id
-      })
-      $('#cst-up-id').val(customer.id)
-      $('#cst-up-fname').val(customer.fname)
-      $('#cst-up-lname').val(customer.lname)
-      $('#cst-up-age').val(customer.age)
-      customer.city === 'Galle' ? $('#cst-up-city').val(1) : $('#cst-up-city').val(2)
-    })
-
-    function saveNewCustomerData() {
-      let newCustomer = {
-        id: $('#cst-up-id').val(),
-        fname: $('#cst-up-fname').val(),
-        lname: $('#cst-up-lname').val(),
-        age: $('#cst-up-age').val()
-      }
-      $('#cst-up-city').val() === 1 ? newCustomer.city = 'Galle' : newCustomer.city = 'Matara';
-      customers = customers.map((cst) => {
-        return newCustomer.id === cst.id ? newCustomer : cst
-      })
-      clearAllCustomers();
-      refreshCustomersFromArray();
-    }
-
-    // adding listeners for keyUp on textfields
-    // let textFieldsForItem = [$('#item-id'), $('#item-name'), $('#item-price'), $('#item-stock'), $('#item-weight')]
-    // let textFieldsForCustomer = [$('#cst-id'), $('#cst-fname'), $('#cst-lastname'), $('#cst-age'), $('#cst-city')]
-
-    let globalItemValidator = false
-    let globalCustomerValidator = false
-    function validate(event, regex) {
-      if (event.which == 13) {
-        // to the next input
-        var input = $(event.target).parent(".pass").next().find('input');
-        if (input.length == 1) {
-          input.focus();
-        } else {
-          $(event.target).parent(".pass").parent().next().find('.btn-primary').click()
-        }
-        return
-      }
-      let exp = new RegExp(regex, 'i')
-      if (exp.test(event.target.value)) {
-        $(event.target).css("border-color", "green")
-      } else {
-        // invalid
-        $(event.target).css("border-color", "rgb(179, 106, 106)")
-      }
-    }
-
-    function calculateNextId(arr) {
-      let id = arr[arr.length - 1].id;
-      let [pre, frag] = id.split('-');
-      let num = parseInt(frag) + 1;
-      let count = num.toString().length
-      if (count == 1) {
-        return pre + '-00' + num
-      }
-      else if (count == 2) {
-        return pre + '-0' + num
-      } else {
-        return pre + '-' + num
-      }
-    }
-
-
-
-  </script>
-
+  <script src="./controller/itemController.js"></script>
+  <script src="./controller/customerController.js"></script>
 </body>
 
 </html>
