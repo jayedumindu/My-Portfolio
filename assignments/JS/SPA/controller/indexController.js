@@ -3,6 +3,7 @@ var buttons = [
   $("#navToCustomers"),
   $("#navToOrders"),
   $("#navToHome"),
+  $("#navToViewOrderDetails"),
 ];
 var sections = [
   $("#customer"),
@@ -12,6 +13,7 @@ var sections = [
   $("#order2"),
   $("#order3"),
   $("#mainMenu"),
+  $("#view-orders"),
 ];
 
 // to item-form
@@ -40,6 +42,13 @@ buttons[2].click(function () {
 // homepage
 buttons[3].click(function () {
   load(sections[6]);
+  clearAllActive();
+  $(this).addClass("active");
+});
+
+// to view orders
+buttons[4].click(function () {
+  load(sections[7]);
   clearAllActive();
   $(this).addClass("active");
 });

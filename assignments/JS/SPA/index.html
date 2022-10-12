@@ -54,6 +54,9 @@
             <li class="nav-item mx-auto">
               <a class="nav-link" href="#" id="navToOrders">Place Order</a>
             </li>
+            <li class="nav-item mx-auto">
+              <a class="nav-link" href="#" id="navToViewOrderDetails">Orders</a>
+            </li>
           </ul>
 
           <ul class="nav">
@@ -237,15 +240,16 @@
             <div class="modal-body row">
               <div class="col-md-6 pass">
                 <label for="cst-fname" class="form-label">FirstName</label>
-                <input type="text" class="form-control" id="cst-fname" onkeyup="validate(event,'[a-z]{3,}')">
+                <input type="text" class="form-control" id="cst-fname" onkeyup="validateItem(event,'[a-z]{3,}','add')">
               </div>
               <div class="col-md-6 pass">
                 <label for="cst-lastname" class="form-label">LastName</label>
-                <input type="text" class="form-control" id="cst-lastname" onkeyup="validate(event,'[a-z]{3,}')">
+                <input type="text" class="form-control" id="cst-lastname"
+                  onkeyup="validateItem(event,'[a-z]{3,}','add')">
               </div>
               <div class="col-md-6 pass">
                 <label for="cst-age" class="form-label">Age</label>
-                <input type="text" class="form-control" id="cst-age" onkeyup="validate(event,'[0-9]{2}')">
+                <input type="text" class="form-control" id="cst-age" onkeyup="validateItem(event,'[0-9]{2}','add')">
               </div>
               <div class="col-md-6">
                 <label for="cst-city" class="form-label">City</label>
@@ -313,30 +317,31 @@
               <div class="input-group mb-3 pass">
                 <span class="input-group-text" id="basic-addon1">Item Name</span>
                 <input type="text" class="form-control" placeholder="Tea" aria-label="Username"
-                  aria-describedby="basic-addon1" id="up-item-name" onkeyup="validate(event,'[a-z]{3}')">
+                  aria-describedby="basic-addon1" id="up-item-name" onkeyup="validateItem(event,'[a-z]{3}','update')">
               </div>
               <!-- price -->
               <div class="input-group mb-3 pass">
                 <span class="input-group-text">Price and Currency</span>
                 <input type="text" aria-label="price" class="form-control" id="up-item-price"
-                  onkeyup="validate(event,'[0-9]{3,}\.[0-9]{2}')">
+                  onkeyup="validateItem(event,'[0-9]{3,}\.[0-9]{2}','update')">
               </div>
               <!-- stock -->
               <div class="input-group mb-3 pass">
                 <span class="input-group-text">Stock</span>
                 <input type="number" aria-label="First name" class="form-control" placeholder="500" id="up-item-stock"
-                  onkeyup="validate(event,'[0-9]{2,}')">
+                  onkeyup="validateItem(event,'[0-9]{2,}','update')">
               </div>
               <!-- weight -->
               <div class="input-group mb-3 pass">
                 <span class="input-group-text">Weight (g)</span>
                 <input type="number" aria-label="weight" class="form-control" placeholder="100" id="up-item-weight"
-                  onkeyup="validate(event,'[0-9]{2,}')">
+                  onkeyup="validateItem(event,'[0-9]{2,}','update')">
               </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" onclick="saveNewItemData()">Save changes</button>
+              <button type="button" class="btn btn-primary" id="updateItem" onclick="saveNewItemData()">Save
+                changes</button>
             </div>
           </div>
         </div>
@@ -354,30 +359,30 @@
               <div class="input-group mb-3 pass">
                 <span class="input-group-text" id="basic-addon1">Item Name</span>
                 <input type="text" class="form-control" placeholder="Tea" aria-label="Username"
-                  aria-describedby="basic-addon1" id="item-name" onkeyup="validate(event,'[a-z]{3}')">
+                  aria-describedby="basic-addon1" id="item-name" onkeyup="validateItem(event,'[a-z]{3}','add')">
               </div>
               <!-- price -->
               <div class="input-group mb-3 pass">
                 <span class="input-group-text">Price and Currency</span>
                 <input type="text" aria-label="price" class="form-control" id="item-price"
-                  onkeyup="validate(event,'[0-9]{3,}\.[0-9]{2}')">
+                  onkeyup="validateItem(event,'[0-9]{3,}\.[0-9]{2}','add')">
               </div>
               <!-- stock -->
               <div class="input-group mb-3 pass">
                 <span class="input-group-text">Stock</span>
                 <input type="number" aria-label="First name" class="form-control" placeholder="500" id="item-stock"
-                  onkeyup="validate(event,'[0-9]{2,}')">
+                  onkeyup="validateItem(event,'[0-9]{2,}','add')">
               </div>
               <div class="input-group mb-3 pass">
                 <span class="input-group-text">Weight (g)</span>
                 <input type="number" aria-label="First name" class="form-control" placeholder="500" id="item-weight"
-                  onkeyup="validate(event,'[0-9]{2,}')">
+                  onkeyup="validateItem(event,'[0-9]{2,}','add')">
               </div>
             </div>
             <!-- </div> -->
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" id="addNewItem">Add Item</button>
+              <button type="button" class="btn btn-primary" id="addNewItem" disabled>Add Item</button>
             </div>
           </div>
         </div>
@@ -415,8 +420,8 @@
           </div>
 
           <div class="mb-3">
-            <label for="cst-city" class="form-label">City</label>
-            <select id="cst-city" class="form-select">
+            <label for="order-cst-city" class="form-label">City</label>
+            <select id="order-cst-city" class="form-select">
               <option selected>Choose...</option>
               <option>Galle</option>
               <option>Matara</option>
@@ -508,9 +513,8 @@
           <div class="card bg-success text-white border-0 m-3" style="width: 100%; --bs-bg-opacity: .5;">
             <div class="card-body">
               <h5 class="card-title">Order is successful!</h5>
-              <h3> ID : T-001</h3>
-              <h3> Total : 25,000/= </h3>
-              <h4> Discount : 5000/= </h4>
+              <h3> ID : <span id="o-id"></span></h3>
+              <h3> Total : <span id="o-total"></span>/= </h3>
             </div>
           </div>
         </div>
@@ -524,6 +528,48 @@
 
     </section>
 
+    <section id="view-orders" class="row collapse container justify-content-end">
+      <div class="col-12" style="max-height: 50%; overflow-y:scroll;">
+        <h1 class="mt-5">View Order Details</h1>
+      </div>
+      <!-- for choosing orders -->
+      <div class="col-3 list-group mt-5" id="order-list">
+        <!-- <button type="button" class="list-group-item list-group-item-action">A fourth button item</button> -->
+      </div>
+
+      <div class="col-9 mt-5">
+        <!-- for order -->
+        <table class="table table-success table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Ordered By</th>
+              <th scope="col">Customer ID</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody id="order-details-1">
+
+          </tbody>
+        </table>
+
+      </div>
+
+      <div class="col-9 mt-5">
+        <table class="table table-success table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Item Code</th>
+              <th scope="col">Name</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody id="order-details-2">
+
+          </tbody>
+        </table>
+      </div>
+    </section>
 
   </main>
 

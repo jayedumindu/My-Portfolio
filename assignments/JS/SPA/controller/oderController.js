@@ -9,10 +9,10 @@ $(
     let [fname, lname] = $("#cname").val().split(" ");
     tmpCustomer = {
       id: $("#cst-id-order-text").text(),
-      name: fname,
-      name: lname,
+      fname: fname,
+      lname: lname,
       age: $("#cage").val(),
-      city: $("#cst-city").val(),
+      city: $("#order-cst-city").val(),
     };
     console.log(tmpCustomer);
   })
@@ -87,4 +87,82 @@ function removeFromCart(id) {
   loadAllFromCart();
 }
 
-$($("#printInvoice").click(() => {}));
+$(
+  $("#printInvoice").click(() => {
+    // save customer
+    saveCustomerFromOrder(tmpCustomer);
+    // save order details
+    let total = 0;
+    cart.forEach((item) => {
+      total += item.total;
+    });
+    let order = {
+      id: calculateNextId(orders),
+      customer: tmpCustomer,
+      items: [...cart],
+      total: total,
+    };
+    orders.push(order);
+    // print invoice
+    $("#o-id").text(order.id);
+    $("#o-total").text(total);
+    // add to the order list
+    $("#order-list").append(`
+    <button type="button" class="list-group-item list-group-item-action" onclick="loadOrderDetails('${order.id}')">${order.id}</button>
+  `);
+  })
+);
+
+function loadOrderDetails(id) {
+  let order = orders.find((order) => {
+    return order.id == id;
+  });
+  clearOrderDetails();
+  $("#order-details-1").append(`
+    <tr class="order-details-rows">
+      <td>${order.customer.fname + " " + order.customer.lname}</td>
+      <td>${order.customer.id}</td>
+      <td>${order.total}</td>
+    </tr>
+  `);
+  order.items.forEach((item) => {
+    $("#order-details-2").append(`
+ <tr class="order-details-rows">
+      <td>${item.id}</td>
+      <td>${item.name}</td>
+      <td>${item.amount}</td>
+      <td>${item.total}</td>
+    </tr>
+  `);
+  });
+}
+
+function clearOrderDetails() {
+  $(".order-details-rows").remove();
+}
+
+function saveCustomerFromOrder(customer) {
+  customers.push(customer);
+  clearAllCustomers();
+  refreshCustomersFromArray();
+  $("#cst-id").text(calculateNextId(customers));
+  $("#cst-id-order-text").text(calculateNextId(customers));
+}
+
+function calculateNextId(arr) {
+  if (arr.length > 0) {
+    let id = arr[arr.length - 1].id;
+    let [pre, frag] = id.split("-");
+    let num = parseInt(frag) + 1;
+    let count = num.toString().length;
+    if (count == 1) {
+      return pre + "-00" + num;
+    } else if (count == 2) {
+      return pre + "-0" + num;
+    } else {
+      return pre + "-" + num;
+    }
+  } else {
+    return "T-001";
+  }
+}

@@ -2,6 +2,7 @@
 var customers = [];
 refreshCustomersFromArray();
 $("#cst-id").text(calculateNextId(customers));
+$("#cst-id-order-text").text(calculateNextId(customers));
 
 function delCustomer(id) {
   customers = customers.filter((item) => {
@@ -52,6 +53,7 @@ $(document).ready(function () {
     clearAllCustomers();
     refreshCustomersFromArray();
     $("#cst-id").text(calculateNextId(customers));
+    $("#cst-id-order-text").text(calculateNextId(customers));
   });
 });
 

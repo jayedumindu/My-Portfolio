@@ -115,10 +115,11 @@ function calculateNextId(arr) {
   }
 }
 
-function validate(event, regex) {
+function validateItem(event, regex, func) {
   event.preventDefault();
   // if enter key is pressed
   if (event.which == 13) {
+    console.log("this happens bn");
     // to the next input
     var input = $(event.target).parent(".pass").next().find("input");
     if (input.length == 1) {
@@ -133,6 +134,7 @@ function validate(event, regex) {
     }
     return;
   }
+
   let exp = new RegExp(regex, "i");
   if (exp.test(event.target.value)) {
     $(event.target).css("border-color", "green");
@@ -140,25 +142,28 @@ function validate(event, regex) {
     // invalid
     $(event.target).css("border-color", "rgb(179, 106, 106)");
   }
-  if (validateAllFields()) {
-    $("#addNewItem").removeAttr("disabled");
-  } else {
-    $("#addNewItem").attr("disabled", true);
-  }
+  func == "add"
+    ? validateAllFields(regex1, "#addNewItem")
+    : validateAllFields(regex2, "#updateItem");
 }
 
-let regex = new Map();
+let regex2 = new Map();
+let regex1 = new Map();
 (function () {
-  regex.set("#item-name", "[a-z]{3}");
-  regex.set("#item-price", "[0-9]{3,}.[0-9]{2}");
-  regex.set("#item-stock", "[0-9]{2,}");
-  regex.set("#item-weight", "[0-9]{2,}");
+  regex1.set("#item-name", "[a-z]{3}");
+  regex1.set("#item-price", "[0-9]{3,}.[0-9]{2}");
+  regex1.set("#item-stock", "[0-9]{2,}");
+  regex1.set("#item-weight", "[0-9]{2,}");
+  regex2.set("#up-item-name", "[a-z]{3}");
+  regex2.set("#up-item-price", "[0-9]{3,}.[0-9]{2}");
+  regex2.set("#up-item-stock", "[0-9]{2,}");
+  regex2.set("#up-item-weight", "[0-9]{2,}");
 })();
 
-function validateAllFields() {
+function validateAllFields(map, section) {
   console.log("validation happens");
   let validated = true;
-  regex.forEach((value, key) => {
+  map.forEach((value, key) => {
     console.log(value, key);
     let exp = new RegExp(value, "i");
     if (!exp.test($(key).val())) {
@@ -166,11 +171,9 @@ function validateAllFields() {
       validated = false;
     }
   });
-  return validated;
+  if (validated) {
+    $(section).removeAttr("disabled");
+  } else {
+    $(section).attr("disabled", true);
+  }
 }
-
-//  id: $("#item-id").text(),
-//       name: $("#item-name").val(),
-//       stock: $("#item-stock").val(),
-//       price: $("#item-price").val(),
-//       weight: $("#item-weight").val(),
