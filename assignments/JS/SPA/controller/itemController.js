@@ -1,7 +1,7 @@
 var items = [];
 items.push(
-  { id: "I-001", name: "Tea", stock: 200, price: 200.0, weight: 250 },
-  { id: "I-002", name: "Rice", stock: 100, price: 750.0, weight: 1000 }
+  { id: "I-001", name: "Tea", stock: 200, price: "200.00", weight: 250 },
+  { id: "I-002", name: "Rice", stock: 100, price: "750.00", weight: 1000 }
 );
 
 // settle up
@@ -74,10 +74,6 @@ function openUpdateItemMenu(event) {
   console.log(item);
   $("#up-txt-item-id").text(item.id);
   $("#up-item-id").val(item.id);
-  $("#up-item-name").val(item.name);
-  $("#up-item-price").val(item.price);
-  $("#up-item-stock").val(item.stock);
-  $("#up-item-weight").val(item.weight);
 }
 
 function saveNewItemData() {
