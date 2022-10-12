@@ -1,5 +1,8 @@
 var items = [];
-items.push({ id: "I-001", name: "Tea", stock: 200, price: 200.0, weight: 250 });
+items.push(
+  { id: "I-001", name: "Tea", stock: 200, price: 200.0, weight: 250 },
+  { id: "I-002", name: "Rice", stock: 100, price: 750.0, weight: 1000 }
+);
 
 // settle up
 refreshItemsFromArray();
@@ -25,6 +28,10 @@ function refreshItemsFromArray() {
           </div>
         </div>`
     );
+    // add to combo
+    $("#items-selector").append(`
+        <option value="${item.id}">${item.id}</option>
+    `);
   });
 }
 
@@ -110,6 +117,7 @@ function calculateNextId(arr) {
 
 function validate(event, regex) {
   event.preventDefault();
+  // if enter key is pressed
   if (event.which == 13) {
     // to the next input
     var input = $(event.target).parent(".pass").next().find("input");
@@ -132,4 +140,37 @@ function validate(event, regex) {
     // invalid
     $(event.target).css("border-color", "rgb(179, 106, 106)");
   }
+  if (validateAllFields()) {
+    $("#addNewItem").removeAttr("disabled");
+  } else {
+    $("#addNewItem").attr("disabled", true);
+  }
 }
+
+let regex = new Map();
+(function () {
+  regex.set("#item-name", "[a-z]{3}");
+  regex.set("#item-price", "[0-9]{3,}.[0-9]{2}");
+  regex.set("#item-stock", "[0-9]{2,}");
+  regex.set("#item-weight", "[0-9]{2,}");
+})();
+
+function validateAllFields() {
+  console.log("validation happens");
+  let validated = true;
+  regex.forEach((value, key) => {
+    console.log(value, key);
+    let exp = new RegExp(value, "i");
+    if (!exp.test($(key).val())) {
+      console.log("failed");
+      validated = false;
+    }
+  });
+  return validated;
+}
+
+//  id: $("#item-id").text(),
+//       name: $("#item-name").val(),
+//       stock: $("#item-stock").val(),
+//       price: $("#item-price").val(),
+//       weight: $("#item-weight").val(),
