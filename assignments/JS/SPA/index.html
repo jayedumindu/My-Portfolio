@@ -203,15 +203,15 @@
               <div class="input-group pass">
                 <span class="input-group-text">First and last name</span>
                 <input type="text" aria-label="First name" class="form-control" id="cst-up-fname"
-                  onkeyup="validateCustomer(event,'[a-z]{3,}','update')">
+                  onkeyup="validateCustomer(event,'[a-z]{3,}','update')" tabindex="-1">
                 <input type="text" aria-label="Last name" class="form-control" id="cst-up-lname"
-                  onkeyup="validateCustomer(event,'[a-z]{3,}','update')">
+                  onkeyup="validateCustomer(event,'[a-z]{3,}','update')" tabindex="-1">
               </div>
               <!-- age -->
               <div class="input-group mb-3 mt-3 pass">
                 <span class="input-group-text">Age</span>
                 <input type="number" aria-label="First name" class="form-control" placeholder="20" id="cst-up-age"
-                  onkeyup="validateCustomer(event,'[0-9]{2}','update')">
+                  onkeyup="validateCustomer(event,'[0-9]{2}','update')" tabindex="-1">
               </div>
               <!-- living-in -->
               <select class="form-select" aria-label="Default select example" id="cst-up-city">
@@ -221,9 +221,9 @@
               <!-- end -->
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" id="updateCustomer" onclick="saveNewCustomerData()"
-                disabled>Save changes</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" tabindex="-1">Close</button>
+              <button type="button" class="btn btn-primary" id="updateCustomer" onclick="saveNewCustomerData()" disabled
+                tabindex="-1">Save changes</button>
             </div>
           </div>
         </div>
@@ -242,16 +242,17 @@
               <div class="col-md-6 pass">
                 <label for="cst-fname" class="form-label">FirstName</label>
                 <input type="text" class="form-control" id="cst-fname"
-                  onkeyup="validateCustomer(event,'[a-z]{3,}','add')">
+                  onkeyup="validateCustomer(event,'[a-z]{3,}','add')" tabindex="-1">
               </div>
               <div class="col-md-6 pass">
                 <label for="cst-lastname" class="form-label">LastName</label>
                 <input type="text" class="form-control" id="cst-lastname"
-                  onkeyup="validateCustomer(event,'[a-z]{3,}','add')">
+                  onkeyup="validateCustomer(event,'[a-z]{3,}','add')" tabindex="-1">
               </div>
               <div class="col-md-6 pass">
                 <label for="cst-age" class="form-label">Age</label>
-                <input type="text" class="form-control" id="cst-age" onkeyup="validateCustomer(event,'[0-9]{2}','add')">
+                <input type="text" class="form-control" id="cst-age" onkeyup="validateCustomer(event,'[0-9]{2}','add')"
+                  tabindex="-1">
               </div>
               <div class="col-md-6">
                 <label for="cst-city" class="form-label">City</label>
@@ -262,8 +263,9 @@
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" id="addNewCustomer" disabled>Add Customer</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" tabindex="-1">Close</button>
+              <button type="button" class="btn btn-primary" id="addNewCustomer" disabled tabindex="-1">Add
+                Customer</button>
             </div>
           </div>
         </div>
@@ -312,36 +314,38 @@
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">ID</span>
                 <input type="text" class="form-control" placeholder="I-XXX" aria-label="Username"
-                  aria-describedby="basic-addon1" id="up-item-id" readonly>
+                  aria-describedby="basic-addon1" id="up-item-id" readonly tabindex="-1">
               </div>
               <!-- name -->
               <div class="input-group mb-3 pass">
                 <span class="input-group-text" id="basic-addon1">Item Name</span>
                 <input type="text" class="form-control" placeholder="Tea" aria-label="Username"
-                  aria-describedby="basic-addon1" id="up-item-name" onkeyup="validateItem(event,'[a-z]{3}','update')">
+                  aria-describedby="basic-addon1" id="up-item-name" onkeyup="validateItem(event,'[a-z]{3}','update')"
+                  tabindex="-1">
               </div>
               <!-- price -->
               <div class="input-group mb-3 pass">
                 <span class="input-group-text">Price and Currency</span>
                 <input type="text" aria-label="price" class="form-control" id="up-item-price"
-                  onkeyup="validateItem(event,'[0-9]{3,}\.[0-9]{2}','update')">
+                  onkeyup="validateItem(event,'[0-9]{3,}\.[0-9]{2}','update')" tabindex="-1">
               </div>
               <!-- stock -->
               <div class="input-group mb-3 pass">
                 <span class="input-group-text">Stock</span>
                 <input type="number" aria-label="First name" class="form-control" placeholder="500" id="up-item-stock"
-                  onkeyup="validateItem(event,'[0-9]{2,}','update')">
+                  onkeyup="validateItem(event,'[0-9]{2,}','update')" tabindex="-1">
               </div>
               <!-- weight -->
               <div class="input-group mb-3 pass">
                 <span class="input-group-text">Weight (g)</span>
                 <input type="number" aria-label="weight" class="form-control" placeholder="100" id="up-item-weight"
-                  onkeyup="validateItem(event,'[0-9]{2,}','update')">
+                  onkeyup="validateItem(event,'[0-9]{2,}','update')" tabindex="-1">
               </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" id="updateItem" onclick="saveNewItemData()" disabled>Save
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" tabindex="-1">Close</button>
+              <button type="button" class="btn btn-primary" id="updateItem" onclick="saveNewItemData()" disabled
+                tabindex="-1">Save
                 changes</button>
             </div>
           </div>
@@ -360,30 +364,31 @@
               <div class="input-group mb-3 pass">
                 <span class="input-group-text" id="basic-addon1">Item Name</span>
                 <input type="text" class="form-control" placeholder="Tea" aria-label="Username"
-                  aria-describedby="basic-addon1" id="item-name" onkeyup="validateItem(event,'[a-z]{3}','add')">
+                  aria-describedby="basic-addon1" id="item-name" onkeyup="validateItem(event,'[a-z]{3}','add')"
+                  tabindex="-1">
               </div>
               <!-- price -->
               <div class="input-group mb-3 pass">
                 <span class="input-group-text">Price and Currency</span>
                 <input type="text" aria-label="price" class="form-control" id="item-price"
-                  onkeyup="validateItem(event,'[0-9]{3,}\.[0-9]{2}','add')">
+                  onkeyup="validateItem(event,'[0-9]{3,}\.[0-9]{2}','add')" tabindex="-1">
               </div>
               <!-- stock -->
               <div class="input-group mb-3 pass">
                 <span class="input-group-text">Stock</span>
                 <input type="number" aria-label="First name" class="form-control" placeholder="500" id="item-stock"
-                  onkeyup="validateItem(event,'[0-9]{2,}','add')">
+                  onkeyup="validateItem(event,'[0-9]{2,}','add')" tabindex="-1">
               </div>
               <div class="input-group mb-3 pass">
                 <span class="input-group-text">Weight (g)</span>
                 <input type="number" aria-label="First name" class="form-control" placeholder="500" id="item-weight"
-                  onkeyup="validateItem(event,'[0-9]{2,}','add')">
+                  onkeyup="validateItem(event,'[0-9]{2,}','add')" tabindex="-1">
               </div>
             </div>
             <!-- </div> -->
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" id="addNewItem" disabled>Add Item</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" tabindex="-1">Close</button>
+              <button type="button" class="btn btn-primary" id="addNewItem" disabled tabindex="-1">Add Item</button>
             </div>
           </div>
         </div>
@@ -524,11 +529,11 @@
     </section>
 
     <section id="view-orders" class="row collapse container justify-content-end">
-      <div class="col-12" style="max-height: 50%; overflow-y:scroll;">
+      <div class="col-12">
         <h1 class="mt-5">View Order Details</h1>
       </div>
       <!-- for choosing orders -->
-      <div class="col-3 list-group mt-5" id="order-list">
+      <div class="col-3 list-group mt-5" id="order-list" style="max-height: 50%; overflow-y:scroll;">
         <!-- <button type="button" class="list-group-item list-group-item-action">A fourth button item</button> -->
       </div>
 

@@ -112,10 +112,8 @@ function calculateNextId(arr) {
 }
 
 function validateItem(event, regex, func) {
-  event.preventDefault();
   // if enter key is pressed
   if (event.which == 13) {
-    console.log("this happens bn");
     // to the next input
     var input = $(event.target).parent(".pass").next().find("input");
     if (input.length == 1) {

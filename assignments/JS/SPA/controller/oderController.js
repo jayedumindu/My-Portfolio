@@ -113,6 +113,12 @@ function removeFromCart(id) {
   loadAllFromCart();
 }
 
+function calDate() {
+  let today = new Date();
+  today = today.getFullYear() + "/" + today.getMonth() + "/" + today.getDate();
+  return today;
+}
+
 $(
   $("#printInvoice").click((e) => {
     // if cart is empty cancell the order
@@ -150,6 +156,7 @@ $(
       customer: tmpCustomer,
       items: [...cart],
       total: total,
+      date: calDate(),
     };
     orders.push(order);
     // print invoice
@@ -176,6 +183,7 @@ function loadOrderDetails(id) {
   clearOrderDetails();
   $("#order-details-1").append(`
     <tr class="order-details-rows">
+    <td>${order.date}</td>
       <td>${order.customer.fname + " " + order.customer.lname}</td>
       <td>${order.customer.id}</td>
       <td>${order.total}</td>
