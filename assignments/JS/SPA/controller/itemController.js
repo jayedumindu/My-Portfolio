@@ -157,13 +157,11 @@ let regex1 = new Map();
 })();
 
 function validateAllFields(map, section) {
-  console.log("validation happens");
   let validated = true;
   map.forEach((value, key) => {
     console.log(value, key);
     let exp = new RegExp(value, "i");
     if (!exp.test($(key).val())) {
-      console.log("failed");
       validated = false;
     }
   });

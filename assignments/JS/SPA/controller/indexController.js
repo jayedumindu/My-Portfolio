@@ -56,16 +56,16 @@ buttons[4].click(function () {
 $("#toNextMenu").click(() => {
   sections[3].addClass("collapse");
   sections[4].removeClass("collapse");
-  $("#progress").css("width", "75%");
+  $("#progress-bar").css("width", "75%");
   $("#header").html("Step 2 : Add Items to Cart ");
 });
 
-$("#printInvoice").click(() => {
-  sections[4].addClass("collapse");
-  sections[5].removeClass("collapse");
-  $("#progress").css("width", "75%");
-  $("#header").html("SUCCESS");
-});
+// $("#printInvoice").click(() => {
+//   sections[4].addClass("collapse");
+//   sections[5].removeClass("collapse");
+//   $("#progress").css("width", "75%");
+//   $("#header").html("SUCCESS");
+// });
 
 $("#toOrder1").click(() => {
   sections[4].addClass("collapse");

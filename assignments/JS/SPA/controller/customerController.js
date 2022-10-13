@@ -65,9 +65,6 @@ function openCustomerUpdateMenu(event) {
   console.log(customer);
   $("#up-txt-cst-id").text(customer.id);
   $("#cst-up-id").val(customer.id);
-  $("#cst-up-fname").val(customer.fname);
-  $("#cst-up-lname").val(customer.lname);
-  $("#cst-up-age").val(customer.age);
   customer.city === "Galle"
     ? $("#cst-up-city").val(1)
     : $("#cst-up-city").val(2);
@@ -90,7 +87,7 @@ function saveNewCustomerData() {
   refreshCustomersFromArray();
 }
 
-function validate(event, regex) {
+function validateCustomer(event, regex, func) {
   event.preventDefault();
   if (event.which == 13) {
     // to the next input
@@ -115,7 +112,21 @@ function validate(event, regex) {
     // invalid
     $(event.target).css("border-color", "rgb(179, 106, 106)");
   }
+  func == "add"
+    ? validateAllFields(regex3, "#addNewCustomer")
+    : validateAllFields(regex4, "#updateCustomer");
 }
+
+let regex3 = new Map();
+let regex4 = new Map();
+(function () {
+  regex3.set("#cst-fname", "[a-z]{3,}");
+  regex3.set("#cst-lastname", "[a-z]{3,}");
+  regex3.set("#cst-age", "[0-9]{2}");
+  regex4.set("#cst-up-fname", "[a-z]{3,}");
+  regex4.set("#cst-up-lname", "[a-z]{3,}");
+  regex4.set("#cst-up-age", "[0-9]{2}");
+})();
 
 function calculateNextId(arr) {
   if (arr.length > 0) {

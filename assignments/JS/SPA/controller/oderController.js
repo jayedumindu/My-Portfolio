@@ -15,8 +15,34 @@ $(
       city: $("#order-cst-city").val(),
     };
     console.log(tmpCustomer);
+    loadItem($("#items-selector"));
   })
 );
+
+let regex5 = new Map();
+(function () {
+  regex5.set("#cname", "[a-z]{3,}\\s[a-z]{3,}");
+  regex5.set("#cage", "[0-9]{2}");
+})();
+
+function validateOrder1() {
+  let validated = true;
+  regex5.forEach((value, key) => {
+    console.log(value, key);
+    let exp = new RegExp(value, "i");
+    if (!exp.test($(key).val())) {
+      validated = false;
+      $(`${key}`).css("border-color", "rgb(179, 106, 106)");
+    } else {
+      $(`${key}`).css("border-color", "green");
+    }
+  });
+  if (validated) {
+    $("#toNextMenu").removeAttr("disabled");
+  } else {
+    $("#toNextMenu").attr("disabled", true);
+  }
+}
 
 $(
   $("#addToCart").click(() => {
@@ -88,7 +114,30 @@ function removeFromCart(id) {
 }
 
 $(
-  $("#printInvoice").click(() => {
+  $("#printInvoice").click((e) => {
+    // if cart is empty cancell the order
+    let failed = false;
+    if (cart.length == 0) {
+      alert("Order failed, possible reasons : \nCart is empty \nretry!");
+      failed = true;
+    } else {
+      cart.forEach((item) => {
+        product = findItem(item.id);
+        if (product.stock < item.amount) {
+          alert("Item " + item.id + " exceeds stock : not enough items...");
+          failed = true;
+          return;
+        } else {
+          product.stock -= item.amount;
+        }
+      });
+    }
+
+    if (failed) {
+      failed = false;
+      e.stopPropagation();
+      return;
+    }
     // save customer
     saveCustomerFromOrder(tmpCustomer);
     // save order details
@@ -110,6 +159,13 @@ $(
     $("#order-list").append(`
     <button type="button" class="list-group-item list-group-item-action" onclick="loadOrderDetails('${order.id}')">${order.id}</button>
   `);
+    clearCart();
+    loadItem($("#items-selector"));
+    // to printing the bill
+    sections[4].addClass("collapse");
+    sections[5].removeClass("collapse");
+    $("#progress-bar").css("width", "75%");
+    $("#header").html("SUCCESS");
   })
 );
 
