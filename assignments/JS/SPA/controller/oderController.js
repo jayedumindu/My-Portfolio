@@ -149,20 +149,22 @@ $(
     cart.forEach((item) => {
       total += item.total;
     });
-    orderModel.id = calculateNextId(orders);
-    orderModel.customer = tmpCustomer;
-    orderModel.items = [...cart];
-    orderModel.total = total;
-    orderModel.date = calDate();
-    orders.push(orderModel);
+    orderModelCopy = { ...orderModel };
+    orderModelCopy.id = calculateNextId(orders);
+    orderModelCopy.customer = tmpCustomer;
+    orderModelCopy.items = [...cart];
+    orderModelCopy.total = total;
+    orderModelCopy.date = calDate();
+    orders.push(orderModelCopy);
     // print invoice
     $("#o-id").text(order.id);
     $("#o-total").text(total);
     // add to the order list
     $("#order-list").append(`
-    <button type="button" class="list-group-item list-group-item-action" onclick="loadOrderDetails('${order.id}')">${order.id}</button>
+    <button type="button" class="list-group-item list-group-item-action" onclick="loadOrderDetails('${orderModelCopy.id}')">${orderModelCopy.id}</button>
   `);
     clearCart();
+    cart = [];
     loadItem($("#items-selector"));
     // to printing the bill
     sections[4].addClass("collapse");
