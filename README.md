@@ -75,5 +75,5 @@ _Click CTRL + link to open in new tab_
     <li><a href="https://htmlpreview.github.io/?https://github.com/jayedumindu/My-Portfolio/blob/master/assignments/CSS/Transitions/case_2/index.html">case-2</a></li>
   </ol>
 </details>
-
+<p>Developed by <i>Dumindu Jayasekara</i> </p>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
