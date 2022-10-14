@@ -1,5 +1,3 @@
-let cart = [];
-let orders = [];
 let tmpCustomer;
 let tmpItem;
 
@@ -151,14 +149,12 @@ $(
     cart.forEach((item) => {
       total += item.total;
     });
-    let order = {
-      id: calculateNextId(orders),
-      customer: tmpCustomer,
-      items: [...cart],
-      total: total,
-      date: calDate(),
-    };
-    orders.push(order);
+    orderModel.id = calculateNextId(orders);
+    orderModel.customer = tmpCustomer;
+    orderModel.items = [...cart];
+    orderModel.total = total;
+    orderModel.date = calDate();
+    orders.push(orderModel);
     // print invoice
     $("#o-id").text(order.id);
     $("#o-total").text(total);

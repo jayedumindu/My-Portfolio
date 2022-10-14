@@ -161,10 +161,11 @@
       <h1 class="p-5"> Manage Customers</h1>
       <form class="row g-3 justify-content-center">
         <div class="col-auto">
-          <input type="text" class="form-control" id="searchCustomer" placeholder="Customer name /  ID">
+          <input type="text" class="form-control" id="searchCustomer" placeholder="Customer name /  ID"
+            onkeyup="searchCustomerValidate()">
         </div>
         <div class="col-auto">
-          <button type="submit" class="btn btn-primary mb-3">search</button>
+          <button type="button" class="btn btn-primary mb-3" id="searchCustomerHandler">search</button>
         </div>
       </form>
 
@@ -214,7 +215,7 @@
                   onkeyup="validateCustomer(event,'[0-9]{2}','update')" tabindex="-1">
               </div>
               <!-- living-in -->
-              <select class="form-select" aria-label="Default select example" id="cst-up-city">
+              <select class="form-select" aria-label="Default select example" id="cst-up-city" tabindex="-1">
                 <option value="1">Galle</option>
                 <option value="2">Matara</option>
               </select>
@@ -256,7 +257,7 @@
               </div>
               <div class="col-md-6">
                 <label for="cst-city" class="form-label">City</label>
-                <select id="cst-city" class="form-select">
+                <select id="cst-city" class="form-select" tabindex="-1">
                   <option selected>Galle</option>
                   <option>Matara</option>
                 </select>
@@ -278,10 +279,11 @@
       <!-- SEARCH BAR -->
       <form class="row g-3 justify-content-center">
         <div class="col-auto">
-          <input type="text" class="form-control" id="searchItem" placeholder="Item name / Item Code">
+          <input type="text" class="form-control" id="searchItem" placeholder="Item name / Item Code"
+            onkeyup="searchItemValidate()">
         </div>
         <div class="col-auto">
-          <button type="submit" class="btn btn-primary mb-3">search</button>
+          <button type="button" class="btn btn-primary mb-3" id="searchItemHandler">search</button>
         </div>
       </form>
 
@@ -573,7 +575,10 @@
     </section>
 
   </main>
-
+  <script src="./model/customer.js"></script>
+  <script src="./model/item.js"></script>
+  <script src="./model/order.js"></script>
+  <script src="./db/db.js"></script>
   <script src="./controller/indexController.js"></script>
   <script src="./controller/itemController.js"></script>
   <script src="./controller/customerController.js"></script>

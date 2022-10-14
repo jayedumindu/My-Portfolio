@@ -1,4 +1,3 @@
-var items = [];
 items.push(
   { id: "I-001", name: "Tea", stock: 200, price: "200.00", weight: 250 },
   { id: "I-002", name: "Rice", stock: 100, price: "750.00", weight: 1000 }
@@ -51,15 +50,13 @@ function clearAllItems() {
 $(function () {
   $("#addNewItem").click(() => {
     // appending to array
-    let item = {
-      id: $("#item-id").text(),
-      name: $("#item-name").val(),
-      stock: $("#item-stock").val(),
-      price: $("#item-price").val(),
-      weight: $("#item-weight").val(),
-    };
-    console.log("add item runs");
-    items.push(item);
+    let itemModelCopy = { ...itemModel };
+    itemModelCopy.id = $("#item-id").text();
+    itemModelCopy.name = $("#item-name").val();
+    itemModelCopy.stock = $("#item-stock").val();
+    itemModelCopy.price = $("#item-price").val();
+    itemModelCopy.weight = $("#item-weight").val();
+    items.push(itemModelCopy);
     clearAllItems();
     refreshItemsFromArray();
     $("#item-id").text(calculateNextId(items));
@@ -167,5 +164,31 @@ function validateAllFields(map, section) {
     $(section).removeAttr("disabled");
   } else {
     $(section).attr("disabled", true);
+  }
+}
+
+$(function () {
+  $("#searchItemHandler").click(() => {
+    let id = $("#searchItem").val();
+    //  focus on the div
+    $(".item").each((i, div) => {
+      if ($(div).find("#item-id-txt").text() != id) {
+        // collapse all card
+        $(div).addClass("d-none");
+        console.log("found");
+      } else {
+        // if found
+        $(div).removeClass("d-none");
+      }
+    });
+  });
+});
+
+function searchItemValidate() {
+  // if input-field value is empty
+  if ($("#searchItem").val() == "") {
+    $(".item").each((i, div) => {
+      $(div).removeClass("d-none");
+    });
   }
 }

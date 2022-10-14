@@ -1,5 +1,4 @@
 // first load data
-var customers = [];
 refreshCustomersFromArray();
 $("#cst-id").text(calculateNextId(customers));
 $("#cst-id-order-text").text(calculateNextId(customers));
@@ -42,14 +41,13 @@ function clearAllCustomers() {
 
 $(document).ready(function () {
   $("#addNewCustomer").click(() => {
-    let customer = {
-      id: $("#cst-id").text(),
-      fname: $("#cst-fname").val(),
-      lname: $("#cst-lastname").val(),
-      age: $("#cst-age").val(),
-      city: $("#cst-city").val(),
-    };
-    customers.push(customer);
+    let customerModelCopy = { ...customerModel };
+    customerModelCopy.id = $("#cst-id").text();
+    customerModelCopy.fname = $("#cst-fname").val();
+    customerModelCopy.lname = $("#cst-lastname").val();
+    customerModelCopy.age = $("#cst-age").val();
+    customerModelCopy.city = $("#cst-city").val();
+    customers.push(customerModelCopy);
     clearAllCustomers();
     refreshCustomersFromArray();
     $("#cst-id").text(calculateNextId(customers));
@@ -143,5 +141,30 @@ function calculateNextId(arr) {
     }
   } else {
     return "C-001";
+  }
+}
+
+$(function () {
+  $("#searchCustomerHandler").click(() => {
+    let id = $("#searchCustomer").val();
+    //  focus on the div
+    $(".customer").each((i, div) => {
+      if ($(div).find("#cst-id-txt").text() != id) {
+        // collapse all card
+        $(div).addClass("d-none");
+      } else {
+        // if found
+        $(div).removeClass("d-none");
+      }
+    });
+  });
+});
+
+function searchCustomerValidate() {
+  // if input-field value is empty
+  if ($("#searchCustomer").val() == "") {
+    $(".customer").each((i, div) => {
+      $(div).removeClass("d-none");
+    });
   }
 }
