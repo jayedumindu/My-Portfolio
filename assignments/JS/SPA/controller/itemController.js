@@ -8,6 +8,7 @@ refreshItemsFromArray();
 $("#item-id").text(calculateNextId(items));
 
 function refreshItemsFromArray() {
+  $("#items-selector").empty();
   items.forEach((item) => {
     $("#item-container").append(
       `<div class="col col-lg-4 d-flex justify-content-center item">

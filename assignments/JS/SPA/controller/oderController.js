@@ -169,7 +169,8 @@ $(
     // to printing the bill
     sections[4].addClass("collapse");
     sections[5].removeClass("collapse");
-    $("#progress-bar").css("width", "75%");
+    $("#progress-bar").css("width", "100%");
+    $("#progress-bar").css("backgroundColor", "green");
     $("#header").html("SUCCESS");
   })
 );

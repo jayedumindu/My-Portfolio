@@ -35,8 +35,11 @@ buttons[2].click(function () {
   load(sections[2]);
   $("#header").html(" Step 1 : Fill Customer Details");
   sections[3].removeClass("collapse");
+  sections[5].addClass("collapse");
   clearAllActive();
   $(this).addClass("active");
+  $("#progress-bar").css("backgroundColor", "#4764f5");
+  $("#progress-bar").css("width", "25%");
 });
 
 // homepage
@@ -60,17 +63,11 @@ $("#toNextMenu").click(() => {
   $("#header").html("Step 2 : Add Items to Cart ");
 });
 
-// $("#printInvoice").click(() => {
-//   sections[4].addClass("collapse");
-//   sections[5].removeClass("collapse");
-//   $("#progress").css("width", "75%");
-//   $("#header").html("SUCCESS");
-// });
-
 $("#toOrder1").click(() => {
   sections[4].addClass("collapse");
   sections[3].removeClass("collapse");
   $("#header").html(" Step 1 : Fill Customer Details");
+  $("#progress-bar").css("width", "25%");
 });
 
 $("#toHome").click(() => {
@@ -82,6 +79,7 @@ $("#reOrder").click(() => {
   buttons[2].click();
   sections[5].addClass("collapse");
   $("#header").html(" Step 1 : Fill Customer Details");
+  $("#progress-bar").css("width", "25%");
 });
 
 function clearAllActive() {
