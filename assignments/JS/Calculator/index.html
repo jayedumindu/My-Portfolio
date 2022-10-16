@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,13 @@
     <title>Calculator</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <script src="./js/bootstrap.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <style>
         body {
             height: 100vh;
         }
+
         .cal-body {
             position: absolute;
             width: 450px;
@@ -22,6 +25,7 @@
             left: 0;
             right: 0;
         }
+
         .btn {
             width: 100px;
             height: 100px;
@@ -29,29 +33,35 @@
         }
     </style>
 </head>
+
 <body>
 
     <section class="container cal-body m-auto">
         <!-- input field -->
 
         <div class="row g-2" style="padding: 10px 0;">
-            <div class="col-12"><input class="form-control form-control-lg text-end" type="text" placeholder="0" aria-label=".form-control-lg example" id="panel" disabled readonly></div>
+            <div class="col-12"><input class="form-control form-control-lg text-end" type="text" placeholder="0"
+                    aria-label=".form-control-lg example" id="panel" disabled readonly></div>
             <div class="col-3"><button type="button" class="btn btn-light" id="cal9">9</button></div>
             <div class="col-3"><button type="button" class="btn btn-light" id="cal8">8</button></div>
-            <div class="col-3"><button type="button" class="btn btn-light" id="cal7">7</button></div>   
-            <div class="col-3"><button type="button" class="btn btn-light" id="sum">+</button></div>   
+            <div class="col-3"><button type="button" class="btn btn-light" id="cal7">7</button></div>
+            <div class="col-3"><button type="button" class="btn btn-light" id="sum">+</button></div>
             <div class="col-3"><button type="button" class="btn btn-light" id="cal6">6</button></div>
             <div class="col-3"><button type="button" class="btn btn-light" id="cal5">5</button></div>
-            <div class="col-3"><button type="button" class="btn btn-light" id="cal4">4</button></div>   
-            <div class="col-3"><button type="button" class="btn btn-light" id="min">-</button></div>   
-            <div class="col-3"><button type="button" class="btn btn-light" id="cal3">3</button></div>   
-            <div class="col-3"><button type="button" class="btn btn-light" id="cal2">2</button></div>   
-            <div class="col-3"><button type="button" class="btn btn-light" id="cal1">1</button></div>   
-            <div class="col-3"><button type="button" class="btn btn-light" id="div">/</button></div>   
-            <div class="col-4"><button type="button" class="btn btn-light" style="width: 100%;" id="clear">CLEAR</button></div>   
-            <div class="col-4"><button type="button" class="btn btn-light" style="width: 100%;" id="cal0">0</button></div>   
-            <div class="col-4"><button type="button" class="btn btn-light" style="width: 100%;" id="mul">*</button></div>   
-            <div class="col-12"><button type="button" class="btn btn-light" style="width: 100%;" id="eq">=</button></div>   
+            <div class="col-3"><button type="button" class="btn btn-light" id="cal4">4</button></div>
+            <div class="col-3"><button type="button" class="btn btn-light" id="min">-</button></div>
+            <div class="col-3"><button type="button" class="btn btn-light" id="cal3">3</button></div>
+            <div class="col-3"><button type="button" class="btn btn-light" id="cal2">2</button></div>
+            <div class="col-3"><button type="button" class="btn btn-light" id="cal1">1</button></div>
+            <div class="col-3"><button type="button" class="btn btn-light" id="div">/</button></div>
+            <div class="col-4"><button type="button" class="btn btn-light" style="width: 100%;"
+                    id="clear">CLEAR</button></div>
+            <div class="col-4"><button type="button" class="btn btn-light" style="width: 100%;" id="cal0">0</button>
+            </div>
+            <div class="col-4"><button type="button" class="btn btn-light" style="width: 100%;" id="mul">*</button>
+            </div>
+            <div class="col-12"><button type="button" class="btn btn-light" style="width: 100%;" id="eq">=</button>
+            </div>
         </div>
 
     </section>
@@ -60,7 +70,7 @@
 
         let inputPanel = $('#panel');
 
-        let  buttons = [$('#cal0'),$('#cal1'),$('#cal2'),$('#cal3'),$('#cal4'),$('#cal5'),$('#cal6'),$('#cal7'),$('#cal8'),$('#cal9'),$('#mul'),$('#min'),$('#sum'),$('#div')];
+        let buttons = [$('#cal0'), $('#cal1'), $('#cal2'), $('#cal3'), $('#cal4'), $('#cal5'), $('#cal6'), $('#cal7'), $('#cal8'), $('#cal9'), $('#mul'), $('#min'), $('#sum'), $('#div')];
 
         buttons.forEach(button => {
             button.click(() => {
@@ -70,11 +80,11 @@
 
         $('#clear').click(() => {
             $('#panel').val('');
-        } )
-        
+        })
+
         $('#eq').click(() => {
             calc(inputPanel.val());
-        } )
+        })
 
         function calc(stream) {
             // split the stream and do the calculations
@@ -90,15 +100,15 @@
                 let tot = signs.length;
                 let numCount = 0;
                 let signCount = 0;
-                let val = calcExtended(parseInt(num[numCount++]),signs[signCount++],parseInt(num[numCount++]));
-                while (signCount<tot) {
-                   val = calcExtended(val,signs[signCount++],parseInt(num[numCount++]));
+                let val = calcExtended(parseInt(num[numCount++]), signs[signCount++], parseInt(num[numCount++]));
+                while (signCount < tot) {
+                    val = calcExtended(val, signs[signCount++], parseInt(num[numCount++]));
                 }
-               inputPanel.val(val);
+                inputPanel.val(val);
             }
         }
 
-        function calcExtended(fnm,fnc,lnm) {
+        function calcExtended(fnm, fnc, lnm) {
             let finVal;
             switch (fnc) {
                 case '+':
@@ -119,6 +129,7 @@
 
 
     </script>
-    
+
 </body>
+
 </html>
