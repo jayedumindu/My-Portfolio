@@ -1,0 +1,27 @@
+.container {
+  background-color: antiquewhite;
+  height: 100vh;
+}
+
+/* body {
+  max-width: 1420px;
+} */
+
+.main {
+  margin-top: 20pt;
+  position: relative;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  min-width: 648px;
+  width: 50%;
+}
+
+.col {
+  height: 60pt;
+  border: 1px solid brown;
+}
+
+.score {
+  background-color: aliceblue;
+}
