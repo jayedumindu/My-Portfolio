@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <style>
+        .box {
+            display: inline;
+            margin-right: 20pt;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="name">
+    <input type="color" id="color" style="margin-bottom: 100pt;">
+    <button onclick="addUser()">Add Student</button>
+    <div class="container" style="display: flex;"></div>
+
+    <script>
+        let users = [{ name: "Pasan", color: "blue" }, { name: "Kamal", color: "red" }, { name: "Dasun", color: "yellow" }];
+
+        function startChain() {
+            $(".container").empty()
+            let last = users[users.length - 1]
+            let temp = users.slice(0, users.length - 1)
+            users = temp.unshift(last)
+            users = temp
+            users.forEach(({ name, color }) => {
+                $(".container").prepend(`<div class="box" style="background-color:${color}"><h1>${name}</h1></div>`)
+            })
+        }
+
+        function addUser() {
+            users.push({ name: $("#name").val(), color: $("#color").val() })
+            $(".container").empty()
+            startChain()
+        }
+
+        setInterval(startChain, 1000)
+    </script>
+</body>
+
+</html>
