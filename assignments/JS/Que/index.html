@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <style>
+        .rider {
+            border: 1px solid black;
+            width: 10rem;
+            height: 5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="d" style="display: flex; margin-bottom: 10pt;">
+        <div class="rider"></div>
+        <div class="rider"></div>
+        <div class="rider"></div>
+        <div class="rider"></div>
+        <div class="rider"></div>
+    </div>
+    <button onclick="start()">Start</button> &nbsp; <button onclick="stop()">Stop</button>
+
+
+
+    <script>
+
+        let colors = ["#8B0001", "#9E1711", "#B12E21", "#C34632", "#E97452"]
+        let divs = [];
+        let intervalId;
+
+        $('#d').children().each(v => {
+            let d = $('#d').children().get(v);
+            divs.push(d)
+        })
+
+        function applyColours() {
+            let index = 0;
+            let time = 300
+            let time2 = 100
+            divs.forEach(function (d) {
+                setTimeout(() => {
+                    $(d).css("background-color", colors[index])
+                    index++
+                    setTimeout(() => {
+                        $(d).css("background-color", "white")
+                    }, time2 + 100)
+                }, time + 300)
+                time += 300;
+                time2 += 100;
+            });
+            index = 0;
+            colors.reverse()
+            divs.reverse()
+        }
+
+        function start() {
+            intervalId = setInterval(applyColours, 2000)
+        }
+
+        function stop() {
+            // stop the qeue
+            clearInterval(intervalId)
+        }
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
