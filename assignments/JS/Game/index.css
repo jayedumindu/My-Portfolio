@@ -23,6 +23,11 @@
   height: 80%;
 }
 
-.character .score {
+.character {
+  width: 100px;
+  background: url("./sprites/still_01.png");
+}
+
+.score {
   background-color: aliceblue;
 }
