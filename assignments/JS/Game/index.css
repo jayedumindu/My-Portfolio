@@ -1,33 +1,58 @@
 .container {
+  position: relative;
   background-color: antiquewhite;
   height: 100vh;
+  z-index: 2;
 }
 .row {
   margin-top: 20pt;
 }
 
 .main-inner {
+  position: relative;
   background: url("https://t3.ftcdn.net/jpg/00/88/98/18/360_F_88981880_YjJManMJ6hJmKr5CZteFJAkEzXIh8mxW.jpg")
     no-repeat;
   background-size: cover;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
+  /* z-index: -1; */
+  margin: auto;
 }
 
 .main {
-  position: relative;
-  margin: auto;
-  top: 0;
-  bottom: 0;
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 90%;
+  /* background-color: aqua; */
 }
 
 .character {
-  width: 100px;
-  background: url("./sprites/still_01.png");
+  width: 50px;
+  height: 80px;
+  position: absolute;
+  top: 62%;
+  right: 120pt;
+  z-index: 2;
+}
+
+.slime {
+  position: absolute;
+  top: 66%;
+  z-index: 2;
 }
 
 .score {
   background-color: aliceblue;
+}
+
+.background1 {
+  position: absolute;
+  top: 55%;
+  height: 100pt;
+  /* z-index: -1; */
+}
+
+.background2 {
+  position: absolute;
+  top: 228pt;
+  height: 180pt;
 }
