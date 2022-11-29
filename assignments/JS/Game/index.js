@@ -87,7 +87,7 @@ function makeSpriteJump() {
       top: "62%",
     });
     rectSelection = selection.getBoundingClientRect();
-  }, 750);
+  }, 700);
 }
 
 document.body.onkeyup = function (e) {
@@ -136,6 +136,8 @@ function createSlimesRepeatedly() {
       src: "./sprites/bat.gif",
     });
     $(".main-inner").append(img);
+    // score ++
+    changeScore();
     //  then animate
     let intervalId = setInterval(function () {
       let prevPos = $(elem).css("left").match(/(\d+)/)[0];
@@ -151,10 +153,6 @@ function createSlimesRepeatedly() {
       clearInterval(intervalId);
       $(elem).remove();
     }, 5000);
-    // if (!terminateAll & started) {
-    //   setTimeout(changeScore, 5000);
-    // }
-    // set the next slime
     setTimeout(() => {
       slimeId++;
       createSlimesRepeatedly();
@@ -250,6 +248,7 @@ $("#startBtn").click(function (event) {
   started = true;
   resetScore();
   $(this).fadeOut();
+  resetAllRunningSettings();
   if (backgroundAudio.paused) backgroundAudio.play();
   // start the process
   //  change background
@@ -290,23 +289,40 @@ function stopTimer() {
   timer = 0;
 }
 
+function resetAllRunningSettings() {
+  pixelDepth = 2;
+  generator.postfix = 2000;
+}
+
 function changerTimer() {
   timer++;
-  if (timer == 30) {
+  if (timer == 20) {
     // level 2
     makeBannerVisible($("#lvl2Banner"));
     // change the speed
     pixelDepth = 3;
-  } else if (timer == 60) {
+    generator.postfix = 1000;
+  } else if (timer == 40) {
     // level 3
     makeBannerVisible($("#lvl3Banner"));
     //  change pixel-depth
-    generator.postfix = 1000;
-  } else if (timer == 90) {
+    pixelDepth = 4;
+    generator.postfix = 700;
+  } else if (timer == 60) {
     // level 4
     makeBannerVisible($("lvl4Banner"));
+    pixelDepth = 4.5;
+  } else if (timer == 80) {
+    console.log("game over!");
+    terminateAll = true;
+    $("#closeBtn").fadeOut();
+    $(".congrats").css("visibility", "visible");
+    // $(".congrats").fadeIn();
+    setTimeout(() => {
+      $(".congrats").fadeOut();
+      $("#startBtn").fadeIn();
+    }, 5000);
   }
-  console.log(timer);
 }
 
 //  banners for levels

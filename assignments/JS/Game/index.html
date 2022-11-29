@@ -31,9 +31,8 @@
         <div class="score text-center">
             <h1>Street Runner</h1>
             <div class="row">
-                <div class="col-6"><button>New Game</button></div>
-                <div class="col-6">
-                    <h3>Level-1</h3>
+                <div class="col-12">
+                    <h3>Score : <span id="score"></span></h3>
                 </div>
             </div>
         </div>
@@ -41,9 +40,35 @@
         <div class="main">
             <div class="main-inner">
                 <img class="character">
+                <img src="./buttons/close.png" alt="exit" class="button" id="closeBtn">
                 <img src="./buttons/start.png" alt="start" id="startBtn" class="button">
-                <!-- <img src="./sprites/bat.gif" alt="slime"> -->
-                <img src="./backgrounds/tempel clone.gif" class="background2">
+                <div class="congrats">
+                    <img src="./sprites/congratulations.gif">
+                    <!-- SVG text -->
+                    <svg width="100%" height="100%">
+                        <defs>
+                            <pattern id="polka-dots" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                                <circle fill="#be9ddf" cx="25" cy="25" r="3"></circle>
+                            </pattern>
+                            <style>
+                                @import url("https://fonts.googleapis.com/css?  family=Lora:400,400i,700,700i");
+                            </style>
+
+                        </defs>
+
+                        <rect x="0" y="0" width="100%" height="100%" fill="url(#polka-dots)"> </rect>
+
+
+
+                        <text x="50%" y="60%" text-anchor="middle">
+                            Congratulations
+                        </text>
+                    </svg>
+                </div>
+                <h1 class="banner" id="lvl1Banner">Level 1</h1>
+                <h1 class="banner" id="lvl2Banner">Level 2</h1>
+                <h1 class="banner" id="lvl3Banner">Level 3</h1>
+                <h1 class="banner" id="lvl4Banner">Level 4</h1>
             </div>
         </div>
 
@@ -53,7 +78,6 @@
 
 
     </div>
-
 
     <script src="./index.js"></script>
 

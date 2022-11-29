@@ -10,13 +10,14 @@
 
 .main-inner {
   position: relative;
-  background: url("https://t3.ftcdn.net/jpg/00/88/98/18/360_F_88981880_YjJManMJ6hJmKr5CZteFJAkEzXIh8mxW.jpg")
-    no-repeat;
-  background-size: cover;
+  background: url("https://t3.ftcdn.net/jpg/00/88/98/18/360_F_88981880_YjJManMJ6hJmKr5CZteFJAkEzXIh8mxW.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   width: 80%;
   height: 80%;
-  /* z-index: -1; */
   margin: auto;
+  overflow: hidden;
+  background-repeat: repeat-x;
 }
 
 .main {
@@ -66,10 +67,69 @@
   left: 40%;
 }
 
-#startBtn:hover {
+.button {
+  cursor: pointer;
+}
+
+.button:hover {
   opacity: 0.8;
 }
 
-.button {
-  cursor: pointer;
+#closeBtn {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.banner {
+  color: aquamarine;
+  position: absolute;
+  margin: auto;
+  right: 45%;
+  top: 20%;
+  visibility: hidden;
+}
+
+.congrats {
+  position: absolute;
+  visibility: hidden;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 10%;
+}
+
+.congrats > img {
+  position: inherit;
+  margin: auto;
+  right: 0;
+  left: 0;
+}
+
+/*  SVG utilities */
+svg text {
+  font-family: sans-serif;
+  letter-spacing: 5px;
+  stroke: rgb(187, 24, 24);
+  font-size: 50px;
+  font-weight: 700;
+  stroke-width: 3;
+
+  animation: textAnimate 5s infinite alternate;
+}
+
+@keyframes textAnimate {
+  0% {
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset: 20%;
+    fill: hsl(0, 26%, 47%);
+  }
+
+  100% {
+    stroke-dasharray: 50% 0;
+    stroke-dashoffstet: -20%;
+    fill: rgba(162, 94, 94, 0);
+  }
 }
