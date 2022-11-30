@@ -1,11 +1,27 @@
 .container {
   position: relative;
-  background-color: antiquewhite;
+  background-color: aliceblue;
   height: 100vh;
+  width: 100vw;
   z-index: 2;
 }
+
+body {
+  overflow-y: hidden;
+}
+
 .row {
   margin-top: 20pt;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#myVideo {
+  position: fixed;
+  width: 100%;
+  height: 100%;
 }
 
 .main-inner {
@@ -13,8 +29,8 @@
   background: url("https://t3.ftcdn.net/jpg/00/88/98/18/360_F_88981880_YjJManMJ6hJmKr5CZteFJAkEzXIh8mxW.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 90%;
   margin: auto;
   overflow: hidden;
   background-repeat: repeat-x;
@@ -99,6 +115,7 @@
   left: 0;
   right: 0;
   top: 10%;
+  z-index: 3;
 }
 
 .congrats > img {
@@ -106,13 +123,14 @@
   margin: auto;
   right: 0;
   left: 0;
+  top: 50%;
 }
 
 /*  SVG utilities */
 svg text {
   font-family: sans-serif;
   letter-spacing: 5px;
-  stroke: rgb(187, 24, 24);
+  stroke: rgb(115, 144, 193);
   font-size: 50px;
   font-weight: 700;
   stroke-width: 3;
@@ -124,12 +142,12 @@ svg text {
   0% {
     stroke-dasharray: 0 50%;
     stroke-dashoffset: 20%;
-    fill: hsl(0, 26%, 47%);
+    fill: hsl(210, 61%, 35%);
   }
 
   100% {
     stroke-dasharray: 50% 0;
     stroke-dashoffstet: -20%;
-    fill: rgba(162, 94, 94, 0);
+    fill: rgba(51, 122, 221, 0.218);
   }
 }

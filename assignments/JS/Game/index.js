@@ -136,8 +136,6 @@ function createSlimesRepeatedly() {
       src: "./sprites/bat.gif",
     });
     $(".main-inner").append(img);
-    // score ++
-    changeScore();
     //  then animate
     let intervalId = setInterval(function () {
       let prevPos = $(elem).css("left").match(/(\d+)/)[0];
@@ -152,7 +150,11 @@ function createSlimesRepeatedly() {
     setTimeout(function () {
       clearInterval(intervalId);
       $(elem).remove();
-    }, 5000);
+      // score ++
+      if (started) {
+        changeScore();
+      }
+    }, 5500);
     setTimeout(() => {
       slimeId++;
       createSlimesRepeatedly();
@@ -233,7 +235,10 @@ function checkForTheCollision(elem, id) {
     putCharacterToDeadMode();
     clearInterval(id);
     // make start button appear
-    $("#startBtn").fadeIn();
+    setTimeout(() => {
+      $("#startBtn").fadeIn();
+    }, 10000);
+
     $("#closeBtn").fadeOut();
   } else {
     // if global atttr is set pause the game
@@ -273,7 +278,10 @@ $("#closeBtn").click(function () {
   resetScore();
   terminateAll = true;
   $(this).fadeOut();
-  $("#startBtn").fadeIn();
+  clearInterval(moveBackgroundAnimationId);
+  setTimeout(() => {
+    $("#startBtn").fadeIn();
+  }, 10000);
 });
 
 //  countdown for switching levels
@@ -308,20 +316,27 @@ function changerTimer() {
     //  change pixel-depth
     pixelDepth = 4;
     generator.postfix = 700;
-  } else if (timer == 60) {
+  } else if (timer == 50) {
     // level 4
     makeBannerVisible($("lvl4Banner"));
     pixelDepth = 4.5;
-  } else if (timer == 80) {
+    generator.postfix = 600;
+  } else if (timer == 15) {
     console.log("game over!");
+    // $(".main-inner").fadeOut();
+    // make game background fade away for some time
+    new Audio("./audio/character-win.mp3").play();
     terminateAll = true;
     $("#closeBtn").fadeOut();
+    // $(".main-inner").fadeOut();
     $(".congrats").css("visibility", "visible");
-    // $(".congrats").fadeIn();
+    $(".congrats").fadeIn();
     setTimeout(() => {
       $(".congrats").fadeOut();
+      // $(".main-inner").fadeIn();
       $("#startBtn").fadeIn();
-    }, 5000);
+      resetScore();
+    }, 10000);
   }
 }
 
@@ -361,3 +376,34 @@ function resetScore() {
   score = 0;
   $("#score").html(score);
 }
+
+var alertMsgs = [
+  "Press Spacebar to avoid obtacles!",
+  "Reach Level 4 to win...",
+  "Don't get hit by evil bats 🦇",
+];
+
+setInterval(() => {
+  $("#alertText").html(nextAlert());
+}, 1540);
+
+var alertCount = 0;
+function nextAlert() {
+  if (alertCount == 3) {
+    alertCount = 0;
+    return alertMsgs[alertCount++];
+  } else {
+    return alertMsgs[alertCount++];
+  }
+}
+
+function animateAlertText() {
+  setInterval(function () {
+    $("#alertText").fadeOut();
+    setTimeout(function () {
+      $("#alertText").fadeIn();
+    }, 1000);
+  }, 2000);
+}
+
+animateAlertText();
